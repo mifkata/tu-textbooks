@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
+    "start": "pnpm build && pnpm preview",
     "astro": "astro",
     "check": "eslint . && prettier --check .",
     "fix": "eslint --fix . && prettier --write .",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
+    "@pagefind/default-ui": "^1.5.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.27.0",
@@ -32,6 +34,7 @@
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
+    "pagefind": "^1.5.2",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.32.1"
