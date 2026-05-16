@@ -140,9 +140,9 @@ TCP/IP използва Big-Endian ("network byte order"). При изпраща
 
 | Разширение                  | Тип данни                                     | Операции                           |
 | --------------------------- | --------------------------------------------- | ---------------------------------- |
-| **[SSE](/microprocessor-systems/glossary/#sse)**   | 4 × float32 (packed single)                   | Плаваща запетая с единична точност |
-| **[SSE2](/microprocessor-systems/glossary/#sse2)** | 2 × float64 (packed double)                   | Плаваща запетая с двойна точност   |
-| **[SSE2](/microprocessor-systems/glossary/#sse2)** | 16 × int8 / 8 × int16 / 4 × int32 / 2 × int64 | Целочислени 128-битови SIMD        |
+| **[SSE](/glossary/#sse)**   | 4 × float32 (packed single)                   | Плаваща запетая с единична точност |
+| **[SSE2](/glossary/#sse2)** | 2 × float64 (packed double)                   | Плаваща запетая с двойна точност   |
+| **[SSE2](/glossary/#sse2)** | 16 × int8 / 8 × int16 / 4 × int32 / 2 × int64 | Целочислени 128-битови SIMD        |
 | **SSE4.1/4.2**              | Допълнителни смесени операции                 |                                    |
 
 | Bits 127–96    | 95–64          | 63–32          | 31–0           | Режим                   |
@@ -156,8 +156,8 @@ TCP/IP използва Big-Endian ("network byte order"). При изпраща
 
 Въведени с Sandy Bridge (AVX, 2011). Разширяват XMM до 256 бита: **YMM0–YMM15**.
 
-- **[AVX](/microprocessor-systems/glossary/#avx)**: 8 × float32 или 4 × float64 packed операции
-- **[AVX2](/microprocessor-systems/glossary/#avx2)**: Разширява целочислените SIMD до 256 бита
+- **[AVX](/glossary/#avx)**: 8 × float32 или 4 × float64 packed операции
+- **[AVX2](/glossary/#avx2)**: Разширява целочислените SIMD до 256 бита
 - Използват **VEX prefix** вместо REX
 
 **Предназначение:** Машинно самообучение (матрични операции в невронни мрежи), обработка на изображения с висока разделителна способност (фотографски RAW конвертори), научни изчисления (симулация на молекулярна динамика, метеорология), кодиране на видео (x264/x265 енкодери).
@@ -244,7 +244,7 @@ x87 FPU поддържа три формата:
 - 8 регистъра **ST(0)–ST(7)** образуват стек (8 × 80-битови)
 - Операциите работят с **ST(0)** (top of stack)
 
-**[SSE2](/microprocessor-systems/glossary/#sse2)** работи с 32/64-битов IEEE 754 в XMM регистрите (не 80-битов).
+**[SSE2](/glossary/#sse2)** работи с 32/64-битов IEEE 754 в XMM регистрите (не 80-битов).
 
 ---
 
@@ -256,7 +256,7 @@ x87 FPU поддържа три формата:
 > - BCD: packed (2 цифри/байт) и unpacked (1 цифра/байт); корекция с DAA/DAS/AAA/AAS
 > - FPU поддържа 32/64/80-битов IEEE 754; 80-битовото extended е характерно за x87
 >
-> [→ Речник на всички съкращения](/microprocessor-systems/glossary/)
+> [→ Речник на всички съкращения](/glossary/)
 
 ---
 

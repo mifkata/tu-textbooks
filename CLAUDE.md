@@ -8,18 +8,21 @@ Educational course material pipeline: source documents → structured markdown �
 
 ```
 tu-schoolbooks/
-├── web/                         ← root Astro + Starlight site (serves all subjects)
-│   ├── astro.config.mjs         ← loads sidebars from subjects/*/web/sidebar.json
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── src/
-│       ├── content/
-│       │   ├── config.ts        ← glob loader: subjects/*/web/ + web/src/content/docs/
-│       │   ├── docs/index.mdx   ← root subjects listing (route: /)
-│       │   └── i18n/bg.json     ← Starlight UI translations
-│       ├── components/          ← shared Astro components (GlossaryTable, HomepageContent)
-│       ├── styles/custom.css
-│       └── assets/logo.svg
+├── astro.config.mjs             ← root Astro config; auto-discovers subjects via contents/sidebar.json
+├── tsconfig.json
+├── package.json                 ← single entry point: pnpm dev / pnpm build
+├── src/
+│   ├── content/
+│   │   ├── config.ts            ← glob loader: subjects/*/contents/ + src/content/docs/
+│   │   ├── docs/index.mdx       ← root subjects listing (route: /)
+│   │   └── i18n/bg.json         ← Starlight UI translations
+│   ├── components/              ← shared Astro components (GlossaryTable, HomepageContent)
+│   ├── glossary/
+│   │   └── glossary-index.json  ← GLOBAL glossary (all subjects, all entries unique)
+│   ├── pages/
+│   │   └── glossary/index.astro ← global glossary page (route: /glossary/)
+│   ├── styles/custom.css
+│   └── assets/logo.svg
 └── subjects/                    ← standardised subject workspace (primary)
     └── <name>/
         ├── source/              ← raw input: PDF, DOCX, DOC, images, scans
@@ -35,11 +38,10 @@ tu-schoolbooks/
             ├── index.mdx        ← subject landing page (route: /<name>/)
             ├── NN-slug.mdx      ← chapter pages (route: /<name>/NN-slug/)
             ├── sidebar.json     ← Starlight sidebar groups for this subject
-            ├── glossary.json    ← glossary entries (if applicable)
-            └── homepage.json    ← homepage card data (if applicable)
+            └── homepage.json    ← homepage card data
 ```
 
-The `subjects/` tree is the canonical structure. The `web/` Astro site aggregates all subjects automatically by scanning for `subjects/*/web/sidebar.json`.
+The `subjects/` tree is the canonical structure. The Astro site aggregates all subjects automatically by scanning for `subjects/*/contents/sidebar.json`.
 
 ---
 
@@ -63,6 +65,32 @@ The `subjects/` tree is the canonical structure. The `web/` Astro site aggregate
 - File naming: `NN-slug.md` where `NN` is zero-padded order (e.g. `01-introduction.md`).
 - Docs are **regeneratable**: they are derived from `tmp/` data, not hand-edited prose. Manually refining a doc is fine, but the extraction pipeline should be re-runnable and produce a mergeable result.
 - Content depth: thorough and precise — not oversimplified, not a raw OCR dump. Preserve technical terminology, formulas, and structure from the source.
+
+---
+
+## Global Glossary (`src/glossary/glossary-index.json`)
+
+The glossary is **global** — one file for all subjects. Rules:
+
+1. **All entries are unique by abbreviation** (`abbr` field). No two entries may have the same `abbr`.
+2. **Ambiguous entries** — if the same abbreviation means different things in different subjects, add a `note` field explaining the ambiguity and list all relevant chapters. Do not silently pick one meaning.
+3. **Entry format**:
+   ```json
+   {
+     "id": "apic",
+     "letter": "A",
+     "abbr": "APIC",
+     "full": "Advanced Programmable Interrupt Controller",
+     "description": "...",
+     "chapters": [
+       { "subject": "microprocessor-systems", "num": 9, "slug": "09-interrupts" }
+     ]
+   }
+   ```
+   The `chapters` array references the subject name and chapter slug so links resolve across subjects.
+4. **Do not add a per-subject `glossary.json`** — add entries to the global index instead.
+5. **Do not add a per-subject glossary page** — link to `/glossary/` from the subject sidebar if needed.
+6. The global glossary page lives at `/glossary/` (`src/pages/glossary/index.astro`).
 
 ---
 
@@ -120,30 +148,31 @@ Check availability with `which <tool>` before use; fall back gracefully.
 
 ## Astro Integration (pages layer)
 
-The root site is controlled from the repo root via `pnpm`. Run from the repo root:
+The site is controlled from the repo root:
 
 ```bash
 pnpm install    # first time (uses pnpm-lock.yaml)
 pnpm dev        # dev server at http://localhost:4321
-pnpm build      # production build to web/dist/
+pnpm build      # production build to dist/
 ```
 
 ### Adding a new subject
 
 1. Create `subjects/<name>/contents/` with MDX pages and `sidebar.json`.
-2. The `web/astro.config.mjs` auto-discovers any subject that has a `contents/sidebar.json`.
-3. All internal links in MDX files must be prefixed with `/<name>/` (e.g. `/microprocessor-systems/glossary/`).
-4. Components (`GlossaryTable`, `HomepageContent`) accept a `base` prop for link prefixing.
+2. `astro.config.mjs` auto-discovers any subject that has a `contents/sidebar.json`.
+3. All internal links in MDX files must be prefixed with `/<name>/` (e.g. `/microprocessor-systems/01-history/`).
+4. Glossary links always point to `/glossary/` (global, no subject prefix).
+5. `HomepageContent` accepts a `base` prop for chapter link prefixing.
 
 ### Content routing
 
-`web/src/content/config.ts` uses Astro 5's glob loader with a pattern array:
+`src/content/config.ts` uses Astro 5's glob loader with a pattern array:
 - `subjects/*/contents/**/*.{md,mdx}` → route `/<name>/<slug>/` (strips `/contents/` from path)
-- `web/src/content/docs/**/*.{md,mdx}` → root-level routes (e.g. `/`)
+- `src/content/docs/**/*.{md,mdx}` → root-level routes (e.g. `/`)
 
-Import components in MDX using the `@/` alias (maps to `web/src/`):
+Import components in MDX using the `@/` alias (maps to `src/`):
 ```mdx
-import GlossaryTable from '@/components/GlossaryTable.astro';
+import HomepageContent from '@/components/HomepageContent.astro';
 ```
 
 ### OCR tools (macOS)

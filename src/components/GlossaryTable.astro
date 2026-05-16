@@ -1,5 +1,6 @@
 ---
 interface ChapterRef {
+  subject: string;
   num: number;
   slug: string;
 }
@@ -13,10 +14,9 @@ interface Entry {
 }
 interface Props {
   entries: Entry[];
-  base: string;
 }
 
-const { entries, base } = Astro.props;
+const { entries } = Astro.props;
 
 const groups = new Map<string, Entry[]>();
 for (const entry of entries) {
@@ -29,54 +29,15 @@ const letters = [...groups.keys()].sort((a, b) => {
   if (b === "µ") return -1;
   return a.localeCompare(b, "en");
 });
-
-const chapterSlugs: Record<number, string> = {
-  1: "01-history",
-  2: "02-superscalar",
-  3: "03-data-types",
-  4: "04-programming-model",
-  5: "05-system-architecture",
-  6: "06-segmentation",
-  7: "07-paging",
-  8: "08-protection",
-  9: "09-interrupts",
-  10: "10-tasks",
-  11: "11-bus",
-  12: "12-dma",
-  13: "13-smp",
-  14: "14-interrupt-controllers",
-};
 ---
 
 <p>
-  <strong>Глави:</strong>
-  {
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((n, i) => (
-      <>
-        {i > 0 && " · "}
-        <a href={`/${base}/${chapterSlugs[n]}/`}>
-          {
-            [
-              "I",
-              "II",
-              "III",
-              "IV",
-              "V",
-              "VI",
-              "VII",
-              "VIII",
-              "IX",
-              "X",
-              "XI",
-              "XII",
-              "XIII",
-              "XIV",
-            ][i]
-          }
-        </a>
-      </>
-    ))
-  }
+  {letters.map((l, i) => (
+    <>
+      {i > 0 && " · "}
+      <a href={`#letter-${l.toLowerCase()}`}>{l}</a>
+    </>
+  ))}
 </p>
 
 <hr />
@@ -84,7 +45,7 @@ const chapterSlugs: Record<number, string> = {
 {
   letters.map((letter) => (
     <section>
-      <h2>{letter}</h2>
+      <h2 id={`letter-${letter.toLowerCase()}`}>{letter}</h2>
       <table>
         <thead>
           <tr>
@@ -108,7 +69,7 @@ const chapterSlugs: Record<number, string> = {
                 {entry.chapters.map((ch, i) => (
                   <>
                     {i > 0 && ", "}
-                    <a href={`/${base}/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
+                    <a href={`/${ch.subject}/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
                   </>
                 ))}
               </td>
@@ -123,8 +84,6 @@ const chapterSlugs: Record<number, string> = {
 <hr />
 
 <p>
-  <em
-    >Речникът обхваща всички съкращения от Глави I–XIV. При несъответствие —
-    меродавен е текстът на съответната глава.</em
-  >
+  <em>Речникът обхваща съкращенията от всички предмети. При несъответствие —
+    меродавен е текстът на съответната глава.</em>
 </p>

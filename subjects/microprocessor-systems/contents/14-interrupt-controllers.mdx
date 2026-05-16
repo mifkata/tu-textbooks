@@ -58,30 +58,30 @@ sequenceDiagram
 
 ![Физическа интегрална схема Intel 8259A — PIC контролер на прекъсванията](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Intel_8259A_IRQ_chip.JPG/960px-Intel_8259A_IRQ_chip.JPG)
 
-> **[IRQ](/microprocessor-systems/glossary/#irq)** (Interrupt Request) — входните линии на 8259A (IR0–IR7), по които периферните устройства заявяват прекъсване.
+> **[IRQ](/glossary/#irq)** (Interrupt Request) — входните линии на 8259A (IR0–IR7), по които периферните устройства заявяват прекъсване.
 
 ### 2.2 Основни регистри
 
-> **[IRQ](/microprocessor-systems/glossary/#irq)** (Interrupt Request) — входните линии на 8259A (IR0–IR7), по които периферните устройства заявяват прекъсване.
+> **[IRQ](/glossary/#irq)** (Interrupt Request) — входните линии на 8259A (IR0–IR7), по които периферните устройства заявяват прекъсване.
 
 ### 2.2 Основни регистри
 
 | Регистър                                               | Описание                                        |
 | ------------------------------------------------------ | ----------------------------------------------- |
-| **[IRR](/microprocessor-systems/glossary/#irr)** (Interrupt Request Register) | Запомня постъпилите заявки (IR0–IR7) асинхронно |
-| **[ISR](/microprocessor-systems/glossary/#isr)** (In-Service Register)        | Прекъсванията, чието обслужване е започнало     |
-| **[IMR](/microprocessor-systems/glossary/#imr)** (Interrupt Mask Register)    | Маски на заявките — бит=1 → маскирано           |
+| **[IRR](/glossary/#irr)** (Interrupt Request Register) | Запомня постъпилите заявки (IR0–IR7) асинхронно |
+| **[ISR](/glossary/#isr)** (In-Service Register)        | Прекъсванията, чието обслужване е започнало     |
+| **[IMR](/glossary/#imr)** (Interrupt Mask Register)    | Маски на заявките — бит=1 → маскирано           |
 
 **Приоритетна логика** анализира IRR, ISR и IMR → определя най-приоритетното необслужено прекъсване.
 
 ### 2.3 Алгоритъм на работа
 
-1. Заявки постъпват асинхронно на IR0–IR7 → запомват се в **[IRR](/microprocessor-systems/glossary/#irr)**
+1. Заявки постъпват асинхронно на IR0–IR7 → запомват се в **[IRR](/glossary/#irr)**
 2. Приоритетната логика определя най-приоритетната неблокирана заявка
 3. Активира **INT** → постъпва на INTR# на процесора
 4. Процесорът изпраща **INTA#** (цикъл 1) — контролерът запомва прекъсването
-5. При **INTA#** (цикъл 2) — контролерът поставя **номера на прекъсването** на D0–D7 и вдига съответния бит в **[ISR](/microprocessor-systems/glossary/#isr)** (маскира повторна заявка от същия източник)
-6. В края на обработката — ОС записва **[EOI](/microprocessor-systems/glossary/#eoi)** (End of Interrupt) → нулира ISR бита
+5. При **INTA#** (цикъл 2) — контролерът поставя **номера на прекъсването** на D0–D7 и вдига съответния бит в **[ISR](/glossary/#isr)** (маскира повторна заявка от същия източник)
+6. В края на обработката — ОС записва **[EOI](/glossary/#eoi)** (End of Interrupt) → нулира ISR бита
 7. Нова заявка се приема, ако не е маскирана и има **по-висок приоритет** от текущо обслужваната
 
 ### 2.4 Приоритет
@@ -111,8 +111,8 @@ flowchart LR
 
 ### 2.6 Програмиране
 
-**[ICW](/microprocessor-systems/glossary/#icw)** (Initialization Command Words) — четири инициализиращи думи, задаващи режима на работа на 8259A.
-**[OCW](/microprocessor-systems/glossary/#ocw)** (Operation Command Words) — три оперативни думи за управление по време на работа.
+**[ICW](/glossary/#icw)** (Initialization Command Words) — четири инициализиращи думи, задаващи режима на работа на 8259A.
+**[OCW](/glossary/#ocw)** (Operation Command Words) — три оперативни думи за управление по време на работа.
 
 Контролерът се програмира чрез две групи командни думи:
 
@@ -161,8 +161,8 @@ flowchart LR
 | **Входове**               | 8 (разширяемо до 64 каскадно) | Практически неограничени    |
 | **Вектори**               | Задава се чрез ICW2           | 240 вектора (16–255)        |
 | **Интеграция**            | Отделна ИС                    | Вграден в процесора (от P6) |
-| **[IMR](/microprocessor-systems/glossary/#imr)** | Явен регистър                 | Нняма; чрез TPR             |
-| **[IPI](/microprocessor-systems/glossary/#ipi)** | Не                            | Да (ICR регистър)           |
+| **[IMR](/glossary/#imr)** | Явен регистър                 | Нняма; чрез TPR             |
+| **[IPI](/glossary/#ipi)** | Не                            | Да (ICR регистър)           |
 | **Приоритет**             | По IR номер                   | TPR (задача-базиран)        |
 
 ### Взаимодействие 8259A и APIC
@@ -224,7 +224,7 @@ out 20h, al
 > - Локален APIC: вграден в процесора; без явен IMR (TPR); 240 вектора; IPI (ICR)
 > - ExtINT режим: APIC вход свързан с 8259A; APIC предизвиква INTA цикъл
 >
-> [→ Речник на всички съкращения](/microprocessor-systems/glossary/)
+> [→ Речник на всички съкращения](/glossary/)
 
 ---
 

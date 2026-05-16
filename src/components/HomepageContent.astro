@@ -50,11 +50,11 @@ const { data: homepage, base } = Astro.props;
 
 <hr />
 
-<h2>Съдържание на курса</h2>
+<h2>Конспект</h2>
 
 {
   homepage.chapters.map((ch) => (
-    <details>
+    <details open>
       <summary>
         <strong>
           Глава {ch.num} — <a href={`/${base}/${ch.slug}/`}>{ch.title}</a>
@@ -71,4 +71,4 @@ const { data: homepage, base } = Astro.props;
   ))
 }
 
-<p><a href={`/${base}/glossary/`}><strong>→ Речник на съкращенията</strong></a></p>
+<p><a href="/glossary/"><strong>→ Речник на съкращенията</strong></a></p>

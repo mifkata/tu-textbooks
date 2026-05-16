@@ -1,0 +1,19 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import GlossaryTable from '@/components/GlossaryTable.astro';
+import glossaryData from '@/glossary/glossary-index.json';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Речник на съкращенията',
+    description: 'Глобален речник на всички съкращения, използвани в курсовете',
+  }}
+>
+  <p>
+    Глобален речник на всички съкращения, използвани в учебните материали.
+    Всяко съкращение е уникално — при двусмислие е добавена бележка.
+  </p>
+
+  <GlossaryTable entries={glossaryData} />
+</StarlightPage>

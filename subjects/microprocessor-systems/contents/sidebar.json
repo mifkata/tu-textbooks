@@ -58,7 +58,6 @@
   {
     "label": "Справка",
     "items": [
-      { "slug": "glossary", "label": "Речник на съкращенията" },
       { "slug": "questions-answers", "label": "Въпроси и задачи — отговори" },
       { "slug": "exam-answers", "label": "Изпитен тест — Вариант №4" }
     ]

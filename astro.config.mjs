@@ -26,7 +26,13 @@ const subjectNames = readdirSync(subjectsRoot, { withFileTypes: true })
   .sort();
 
 const sidebar = [
-  { label: 'Начало', items: [{ slug: 'index', label: 'Всички предмети' }] },
+  {
+    label: 'Начало',
+    items: [
+      { slug: 'index', label: 'Всички предмети' },
+      { label: 'Речник на съкращенията', link: '/glossary/' },
+    ],
+  },
   ...subjectNames.flatMap(name => loadSubjectSidebar(name)),
 ];
 
