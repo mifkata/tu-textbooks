@@ -1,0 +1,311 @@
+---
+title: "Речник на съкращенията — Микропроцесорни системи"
+---
+
+> Тази страница съдържа всички съкращения, използвани в курса, с кратко обяснение и препратка към главата, в която са въведени.
+
+**Глави:** [I](/01-history/) · [II](/02-superscalar/) · [III](/03-data-types/) · [IV](/04-programming-model/) · [V](/05-system-architecture/) · [VI](/06-segmentation/) · [VII](/07-paging/) · [VIII](/08-protection/) · [IX](/09-interrupts/) · [X](/10-tasks/) · [XI](/11-bus/) · [XII](/12-dma/) · [XIII](/13-smp/) · [XIV](/14-interrupt-controllers/)
+
+---
+
+## A
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="acpi">**ACPI**</a> | Advanced Configuration and Power Interface | Стандарт за управление на захранването и конфигурация | [Гл. 5](/05-system-architecture/) |
+| <a id="apic">**APIC**</a> | Advanced Programmable Interrupt Controller | Разширен програмируем контролер на прекъсванията; заменя 8259A в многопроцесорни системи | [Гл. 13](/13-smp/), [Гл. 14](/14-interrupt-controllers/) |
+| <a id="ads">**ADS#**</a> | Address Strobe | Сигнал от процесора, маркиращ валиден адрес и тип на цикъла на шината | [Гл. 11](/11-bus/) |
+| <a id="alu">**ALU**</a> | Arithmetic Logic Unit | Целочислено аритметично-логическо устройство | [Гл. 2](/02-superscalar/) |
+| <a id="ahold">**AHOLD**</a> | Address Hold | Сигнал, задържащ адресните изводи на процесора (при кеш-снифинг) | [Гл. 11](/11-bus/) |
+| <a id="avl">**AVL**</a> | Available | Бит в дескриптора, достъпен за ОС | [Гл. 6](/06-segmentation/) |
+| <a id="avx">**AVX**</a> | Advanced Vector Extensions | 256-битови SIMD разширения (Sandy Bridge, 2011) | [Гл. 2](/02-superscalar/), [Гл. 3](/03-data-types/) |
+| <a id="avx2">**AVX2**</a> | Advanced Vector Extensions 2 | 256-битови SIMD разширения с FMA (fused multiply-add); въведени с Haswell (2013) | [Гл. 3](/03-data-types/) |
+
+---
+
+## B
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="be">**BE#**</a> | Byte Enable | Сигнали, указващи кои байтове са валидни в текущия шинен цикъл (BE0#–BE7#) | [Гл. 11](/11-bus/) |
+| <a id="bios">**BIOS**</a> | Basic Input/Output System | Базова входно-изходна система; инициализира хардуера при стартиране; заменена от **UEFI** | [Гл. 5](/05-system-architecture/) |
+| <a id="bcd">**BCD**</a> | Binary Coded Decimal | Двоично кодирано десетично число; x86 поддържа packed BCD и unpacked BCD формати | [Гл. 3](/03-data-types/) |
+| <a id="blast">**BLAST#**</a> | Burst Last | Сигнал, указващ последния цикъл от пакетно предаване | [Гл. 11](/11-bus/) |
+| <a id="boff">**BOFF#**</a> | Back Off | Принуждава процесора да освободи шината незабавно | [Гл. 11](/11-bus/) |
+| <a id="brdy">**BRDY#**</a> | Burst Ready | Сигнал за готовност при пакетен (burst) шинен цикъл | [Гл. 11](/11-bus/) |
+| <a id="btb">**BTB**</a> | Branch Target Buffer | Буфер за целеви адреси на преходи; компонент на динамичното предсказване | [Гл. 2](/02-superscalar/) |
+
+---
+
+## C
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="cas">**CAS**</a> | Column Address Strobe / Cascade | (1) Сигнал за DRAM адресиране; (2) Линии CAS0–CAS2 за каскадиране на 8259A | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="cisc">**CISC**</a> | Complex Instruction Set Computer | Архитектура с разширен набор от инструкции (x86 е CISC) | [Гл. 1](/01-history/) |
+| <a id="cpl">**CPL**</a> | Current Privilege Level | Текущото ниво на привилегия на изпълняваната програма (CS[1:0]) | [Гл. 8](/08-protection/) |
+| <a id="cr0-cr4">**CR0–CR4**</a> | Control Registers | Управляващи регистри; CR0 управлява PE, PG; [CR3](/glossary/#cr3) = PDBR; CR4 управлява [PAE](/glossary/#pae), [PSE](/glossary/#pse) | [Гл. 5](/05-system-architecture/), [Гл. 7](/07-paging/), [Гл. 8](/08-protection/) |
+| <a id="cr3">**CR3**</a> | Control Register 3 (PDBR) | Физически адрес на Page Directory / PML4; смяната инвалидира TLB | [Гл. 7](/07-paging/) |
+
+---
+
+## D
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="dack">**DACK**</a> | DMA Acknowledge | Сигнал от DMA контролера към периферното устройство, потвърждаващ предоставен канал | [Гл. 12](/12-dma/) |
+| <a id="dma">**DMA**</a> | Direct Memory Access | Пряк достъп до паметта без участие на процесора | [Гл. 12](/12-dma/) |
+| <a id="dmi">**DMI**</a> | Direct Media Interface | Последователна шина между процесор и чипсет (заменя [FSB](/glossary/#fsb) в Nehalem и по-нови) | [Гл. 2](/02-superscalar/) |
+| <a id="dpl">**DPL**</a> | Descriptor Privilege Level | Ниво на привилегия на сегмент/шлюз, записано в дескриптора | [Гл. 6](/06-segmentation/), [Гл. 8](/08-protection/) |
+| <a id="dreq">**DREQ**</a> | DMA Request | Заявка от периферно устройство към DMA контролера за предоставяне на шината | [Гл. 12](/12-dma/) |
+
+---
+
+## E
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="eop">**EOP#**</a> | End of Process | Сигнал, указващ края на DMA предаване | [Гл. 12](/12-dma/) |
+| <a id="eoi">**EOI**</a> | End of Interrupt | Команда до APIC/8259A, сигнализираща края на обработката на прекъсване; необходима преди IRET | [Гл. 13](/13-smp/), [Гл. 14](/14-interrupt-controllers/) |
+| <a id="eflags">**EFLAGS**</a> | Extended FLAGS register | 32-битов регистър на флаговете; съдържа IF, DF, NT, TF и пр. | [Гл. 4](/04-programming-model/), [Гл. 9](/09-interrupts/) |
+| <a id="eip">**EIP**</a> | Extended Instruction Pointer | 32-битов указател към следващата инструкция; 64-битовото разширение е RIP | [Гл. 4](/04-programming-model/), [Гл. 9](/09-interrupts/) |
+
+---
+
+## F
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="fsb">**FSB**</a> | Front Side Bus | Предна системна шина; свързва процесор с [MCH](/glossary/#mch)/Northbridge (заменена от [QPI](/glossary/#qpi)/[DMI](/glossary/#dmi)) | [Гл. 2](/02-superscalar/) |
+| <a id="fpu">**FPU**</a> | Floating-Point Unit | Устройство за операции с плаваща запетая | [Гл. 2](/02-superscalar/), [Гл. 3](/03-data-types/) |
+
+---
+
+## G
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="gdt">**GDT**</a> | Global Descriptor Table | Глобална дескрипторна таблица; обща за всички задачи в системата | [Гл. 6](/06-segmentation/), [Гл. 10](/10-tasks/) |
+| <a id="gdtr">**GDTR**</a> | GDT Register | 48-битов регистър (база 32b + лимит 16b), указващ местоположението на GDT | [Гл. 6](/06-segmentation/) |
+| <a id="gpr">**GPR**</a> | General-Purpose Registers | Регистри с общо предназначение (EAX–EDI / RAX–R15) | [Гл. 4](/04-programming-model/) |
+
+---
+
+## H
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="hlda">**HLDA**</a> | Hold Acknowledge | Потвърждение от процесора, че е освободил шината (в отговор на HRQ) | [Гл. 12](/12-dma/) |
+| <a id="hold">**HOLD**</a> | Hold Request (Bus Hold) | Заявка за управление на шината от друг шинен мастер | [Гл. 11](/11-bus/) |
+| <a id="hit">**HIT#**</a> | Cache Hit | Сигнал, указващ, че друг процесор притежава немодифициран ред в кеша | [Гл. 11](/11-bus/), [Гл. 13](/13-smp/) |
+| <a id="hitm">**HITM#**</a> | Hit Modified | Сигнал, указващ, че друг процесор притежава **модифициран** ред (изисква обратен запис) | [Гл. 11](/11-bus/), [Гл. 13](/13-smp/) |
+| <a id="hrq">**HRQ**</a> | Hold Request (DMA) | Заявка от DMA контролера към процесора за освобождаване на шината | [Гл. 12](/12-dma/) |
+| <a id="htt">**HTT**</a> | Hyper-Threading Technology | Симултанно многонишково изпълнение (SMT); 2 логически CPU от 1 физически | [Гл. 2](/02-superscalar/) |
+
+---
+
+## I
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="icr">**ICR**</a> | Interrupt Command Register | Регистър в LAPIC за изпращане на Inter-Processor Interrupts (IPI) | [Гл. 13](/13-smp/) |
+| <a id="icw">**ICW**</a> | Initialization Command Word | Инициализираща командна дума (ICW1–ICW4) за 8259A PIC | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="idt">**IDT**</a> | Interrupt Descriptor Table | Дескрипторна таблица на прекъсванията; съдържа шлюзове за вектори 0–255 | [Гл. 9](/09-interrupts/) |
+| <a id="idtr">**IDTR**</a> | IDT Register | 48-битов регистър, указващ местоположението на IDT | [Гл. 9](/09-interrupts/) |
+| <a id="ifu">**IFU**</a> | Instruction Fetch Unit | Устройство за извличане на инструкции от кеша | [Гл. 2](/02-superscalar/) |
+| <a id="imc">**IMC**</a> | Integrated Memory Controller | Вграден контролер на паметта в процесора (от Nehalem/Sandy Bridge нагоре) | [Гл. 2](/02-superscalar/) |
+| <a id="imr">**IMR**</a> | Interrupt Mask Register | Регистър на маската на прекъсванията в 8259A; маскира отделни IRQ линии | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="inta">**INTA**</a> | Interrupt Acknowledge | Цикъл за потвърждаване на прекъсване; два последователни цикъла с 4 такта помежду | [Гл. 11](/11-bus/), [Гл. 14](/14-interrupt-controllers/) |
+| <a id="intr">**INTR**</a> | Interrupt Request | Маскируем вход за прекъсване на процесора | [Гл. 9](/09-interrupts/) |
+| <a id="ioapic">**IOAPIC**</a> | I/O Advanced Programmable Interrupt Controller | Компонент на APIC системата, приемащ IRQ линии от периферни устройства и разпределящ ги към LAPIC | [Гл. 13](/13-smp/) |
+| <a id="ipi">**IPI**</a> | Inter-Processor Interrupt | Прекъсване, изпратено от един CPU до друг чрез APIC | [Гл. 13](/13-smp/) |
+| <a id="iopl">**IOPL**</a> | I/O Privilege Level | Битове EFLAGS[13:12]; минималното CPL за изпълнение на привилегировани I/O инструкции | [Гл. 5](/05-system-architecture/) |
+| <a id="irq">**IRQ**</a> | Interrupt Request | Заявка за прекъсване от периферно устройство | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="ieee">**IEEE**</a> | Institute of Electrical and Electronics Engineers | Организация, дефинираща стандарти; IEEE 754 е стандартът за числа с плаваща запетая | [Гл. 3](/03-data-types/) |
+| <a id="irr">**IRR**</a> | Interrupt Request Register | Регистър за заявки за прекъсвания в 8259A; защелква входящи IRQ сигнали | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="isr">**ISR**</a> | Interrupt Service Register | Регистър за обслужване на прекъсвания в 8259A; отбелязва текущо обработваното IRQ | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="ist">**IST**</a> | Interrupt Stack Table | Таблица с 7 стека за прекъсвания в 64-битовия TSS (Long Mode) | [Гл. 9](/09-interrupts/), [Гл. 10](/10-tasks/) |
+| <a id="iu">**IU**</a> | Integer Unit | Целочислено изпълнително устройство | [Гл. 2](/02-superscalar/) |
+
+---
+
+## J
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="jpu">**JPU**</a> | Jump Prediction Unit | Устройство за проверка на предсказани преходи в P6 | [Гл. 2](/02-superscalar/) |
+
+---
+
+## K
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="ken">**KEN#**</a> | Cache Enable | Сигнал, разрешаващ кеширане на текущия шинен цикъл | [Гл. 11](/11-bus/) |
+
+---
+
+## L
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="lapic">**LAPIC**</a> | Local Advanced Programmable Interrupt Controller | Локален APIC контролер, вграден в CPU кристала | [Гл. 13](/13-smp/) |
+| <a id="ldt">**LDT**</a> | Local Descriptor Table | Локална дескрипторна таблица; специфична за отделна задача | [Гл. 6](/06-segmentation/), [Гл. 10](/10-tasks/) |
+| <a id="ldtr">**LDTR**</a> | LDT Register | 16-битов регистър (+ 64-битов кеш), указващ LDT на текущата задача | [Гл. 6](/06-segmentation/) |
+| <a id="llc">**LLC**</a> | Last-Level Cache | Последно ниво на кеша (обикновено L3), споделено между всички ядра | [Гл. 2](/02-superscalar/) |
+| <a id="lvt">**LVT**</a> | Local Vector Table | Таблица в LAPIC с 6 регистъра; конфигурира обработката на локални прекъсвания (timer, thermal, LINT0/LINT1) | [Гл. 13](/13-smp/) |
+
+---
+
+## M
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="mch">**MCH**</a> | Memory Controller Hub | Северен мост (Northbridge) в традиционния чипсет; съдържа контролер на паметта; заменен от [IMC](/glossary/#imc) в Nehalem | [Гл. 2](/02-superscalar/) |
+| <a id="mesi">**MESI**</a> | Modified/Exclusive/Shared/Invalid | Протокол за съгласуваност на кешовете при SMP системи | [Гл. 13](/13-smp/) |
+| <a id="msr">**MSR**</a> | Model-Specific Register | 64-разредни регистри, специфични за модела процесор; достъп чрез RDMSR/WRMSR на ниво 0 | [Гл. 5](/05-system-architecture/) |
+| <a id="mmx">**MMX**</a> | MultiMedia eXtensions | 64-битови SIMD регистри (MM0–MM7) за целочислени операции (Pentium MMX, 1997) | [Гл. 3](/03-data-types/) |
+| <a id="ms">**MS**</a> | Microcode Sequencer (MIS) | Устройство за генериране на µops от микрокод при сложни инструкции | [Гл. 2](/02-superscalar/) |
+| <a id="mtrr">**MTRR**</a> | Memory Type Range Registers | MSR-регистри, дефиниращи типа на кеширане (WB, WT, UC) за физически адресни диапазони | [Гл. 5](/05-system-architecture/), [Гл. 13](/13-smp/) |
+
+---
+
+## N
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="nmi">**NMI**</a> | Non-Maskable Interrupt | Немаскируемо прекъсване; вектор 2; не се блокира с CLI | [Гл. 9](/09-interrupts/) |
+| <a id="nt">**NT**</a> | Nested Task | Флаг в EFLAGS; NT=1 показва вложена задача; IRET с NT=1 → превключване на задача | [Гл. 10](/10-tasks/) |
+
+---
+
+## O
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="ocw">**OCW**</a> | Operation Command Word | Оперативна командна дума (OCW1–OCW3) за управление на 8259A след инициализация | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="ooo">**OoO**</a> | Out-of-Order (execution) | Извън-редно изпълнение на инструкции; оптимизира използването на изпълнителните устройства | [Гл. 2](/02-superscalar/) |
+
+---
+
+## P
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="pae">**PAE**</a> | Physical Address Extension | Разширение на физическия адрес до 36 бита (от Pentium Pro) | [Гл. 7](/07-paging/) |
+| <a id="pcd">**PCD**</a> | Page Cache Disable | Бит в PTE/PDE или CR3; забранява кеширане на страницата | [Гл. 7](/07-paging/), [Гл. 11](/11-bus/) |
+| <a id="pde">**PDE**</a> | Page Directory Entry | Запис в Page Directory; указва Page Table или 4 MB физическа страница | [Гл. 7](/07-paging/) |
+| <a id="pdpt">**PDPT**</a> | Page Directory Pointer Table | Трето ниво на PAE и Long Mode странициране (4 записа при PAE, 512 при Long Mode) | [Гл. 7](/07-paging/) |
+| <a id="pic">**PIC**</a> | Programmable Interrupt Controller | Програмируем контролер на прекъсванията (Intel 8259A) | [Гл. 14](/14-interrupt-controllers/) |
+| <a id="plock">**PLOCK#**</a> | Pseudo-Lock | Псевдозаключване при i486 за предавания > 32 бита | [Гл. 11](/11-bus/) |
+| <a id="pml4">**PML4**</a> | Page Map Level 4 | Четвърто ниво на таблицата за странициране в Long Mode (512 × 8B записа) | [Гл. 7](/07-paging/) |
+| <a id="pse">**PSE**</a> | Page Size Extension | CR4[4]; разрешава 4 MB (32-bit) или 2 MB (PAE) Large Pages | [Гл. 7](/07-paging/) |
+| <a id="pte">**PTE**</a> | Page Table Entry | Запис в Page Table; указва физическия адрес на 4 KB страница и флагове | [Гл. 7](/07-paging/) |
+| <a id="pwt">**PWT**</a> | Page Write-Through | Бит в PTE/PDE; задава Write-Through кеширане на страницата | [Гл. 7](/07-paging/), [Гл. 11](/11-bus/) |
+
+---
+
+## Q
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="qpi">**QPI**</a> | QuickPath Interconnect | Последователна точка-до-точка шина, заменяща [FSB](/glossary/#fsb) в Nehalem (2008) | [Гл. 2](/02-superscalar/) |
+
+---
+
+## R
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="rat">**RAT**</a> | Register Alias Table | Таблица за преименуване на архитектурни регистри към физически (P6) | [Гл. 2](/02-superscalar/) |
+| <a id="rdy">**RDY#**</a> | Ready | Сигнал от паметта/ВУ за готовност при непакетен цикъл | [Гл. 11](/11-bus/) |
+| <a id="risc">**RISC**</a> | Reduced Instruction Set Computer | Архитектура с опростен набор от инструкции (вътрешното ядро на P6 е RISC) | [Гл. 1](/01-history/), [Гл. 2](/02-superscalar/) |
+| <a id="rob">**ROB**</a> | Reorder Buffer | Пул на инструкциите; позволява извън-редно изпълнение и в-ред завършване | [Гл. 2](/02-superscalar/) |
+| <a id="rpl">**RPL**</a> | Requested Privilege Level | Заявено ниво на привилегия в сегментния селектор (битове 1:0) | [Гл. 6](/06-segmentation/), [Гл. 8](/08-protection/) |
+| <a id="rs">**RS**</a> | Reservation Station | Буфер, съхраняващ µops, чакащи за операнди; управлява OoO изпълнение | [Гл. 2](/02-superscalar/) |
+| <a id="rflags">**RFLAGS**</a> | 64-bit FLAGS Register (Long Mode) | 64-битово разширение на EFLAGS; битове 32–63 запазени; RF, VM, NT са само в 32-bit форма | [Гл. 4](/04-programming-model/), [Гл. 5](/05-system-architecture/) |
+| <a id="rsb">**RSB**</a> | Return Stack Buffer | Буфер за предсказване на адреси при `RET` инструкции | [Гл. 2](/02-superscalar/) |
+
+---
+
+## S
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="simd">**SIMD**</a> | Single Instruction, Multiple Data | Един такт обработва множество данни паралелно (MMX, SSE, AVX) | [Гл. 3](/03-data-types/) |
+| <a id="smi">**SMI#**</a> | System Management Interrupt | Прекъсване за системно управление (преминаване в SMM режим) | [Гл. 11](/11-bus/) |
+| <a id="sib">**SIB**</a> | Scale-Index-Base byte | Байт от формата на инструкцията след ModR/M; Scale (×1/2/4/8), Index и Base регистри | [Гл. 4](/04-programming-model/) |
+| <a id="smm">**SMM**</a> | System Management Mode | Специален режим за управление на захранването и хардуерни функции | [Гл. 5](/05-system-architecture/) |
+| <a id="smt">**SMT**</a> | Simultaneous Multi-Threading | Симултанно многонишково изпълнение (Intel го наименова HTT) | [Гл. 2](/02-superscalar/) |
+| <a id="sse2">**SSE2**</a> | Streaming SIMD Extensions 2 | 128-битови целочислени SIMD + double-precision FP; въведени с Pentium 4 (2001) | [Гл. 1](/01-history/), [Гл. 3](/03-data-types/) |
+| <a id="smp">**SMP**</a> | Symmetric Multi-Processing | Симетрична многопроцесорна архитектура; всички CPU споделят памет и APIC | [Гл. 13](/13-smp/) |
+| <a id="sse">**SSE**</a> | Streaming SIMD Extensions | 128-битови SIMD регистри (XMM0–XMM15) за плаваща запетая (Pentium III, 1999) | [Гл. 3](/03-data-types/) |
+| <a id="sse3">**SSE3**</a> | Streaming SIMD Extensions 3 | Добавя LDDQU, ADDSUBPS/PD, HADDPS/PD; въведен с Prescott (2004) | [Гл. 3](/03-data-types/) |
+| <a id="sse4">**SSE4**</a> | Streaming SIMD Extensions 4.x | SSE4.1 (Penryn, 2007): BLENDPS, MPSADBW; SSE4.2 (Nehalem, 2008): CRC32, PCMPISTRI | [Гл. 3](/03-data-types/) |
+
+---
+
+## T
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="ti">**TI**</a> | Table Indicator | Бит 2 на сегментния селектор; TI=0 → GDT; TI=1 → LDT | [Гл. 6](/06-segmentation/) |
+| <a id="tlb">**TLB**</a> | Translation Lookaside Buffer | Кеш за резултатите от страничната трансформация | [Гл. 7](/07-paging/) |
+| <a id="tpr">**TPR**</a> | Task Priority Register | Регистър в LAPIC; прекъсвания с вектор ≤ TPR се маскират за текущото ядро | [Гл. 13](/13-smp/), [Гл. 14](/14-interrupt-controllers/) |
+| <a id="tr">**TR**</a> | Task Register | Регистър, чийто видим 16-битов селектор указва TSS на текущата задача | [Гл. 10](/10-tasks/) |
+| <a id="tss">**TSS**</a> | Task State Segment | Сегмент за съхранение на контекста на задача (регистри, стекове, LDT, CR3) | [Гл. 10](/10-tasks/) |
+| <a id="tsx">**TSX**</a> | Transactional Synchronization Extensions | Хардуерна транзакционна памет (Skylake) | [Гл. 2](/02-superscalar/) |
+
+---
+
+## U
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="uefi">**UEFI**</a> | Unified Extensible Firmware Interface | Наследник на BIOS; модерен фърмуерен интерфейс | [Гл. 5](/05-system-architecture/) |
+
+---
+
+## V
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="vex">**VEX**</a> | Vector Extension prefix | Префикс на инструкциите за AVX/AVX2 (заменя REX + legacy SSE prefix) | [Гл. 3](/03-data-types/) |
+
+---
+
+## W
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="wb-wt">**WB/WT#**</a> | Write Back / Write Through | Сигнал, задаващ метода на кеширане за текущия шинен цикъл | [Гл. 11](/11-bus/) |
+
+---
+
+## X
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="xd-nx">**XD/NX**</a> | Execute Disable / No-Execute | Бит в PTE; забранява изпълнение на код от страницата (защита от buffer-overflow атаки) | [Гл. 7](/07-paging/), [Гл. 8](/08-protection/) |
+| <a id="xmm">**XMM**</a> | XMM registers | 128-битови SIMD регистри (XMM0–XMM15) за SSE/SSE2/SSE4 | [Гл. 3](/03-data-types/) |
+
+---
+
+## Y / Z
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="ymm">**YMM**</a> | YMM registers | 256-битови SIMD регистри (YMM0–YMM15) за AVX/AVX2 | [Гл. 3](/03-data-types/) |
+| <a id="zmm">**ZMM**</a> | ZMM registers | 512-битови SIMD регистри (ZMM0–ZMM31) за AVX-512 | [Гл. 3](/03-data-types/) |
+
+---
+
+## µ (микро)
+
+| Съкращение | Пълно наименование | Описание | Глава |
+|---|---|---|---|
+| <a id="uop">**µop**</a> | Micro-operation | Вътрешна RISC-подобна операция, в която декодерите разбиват CISC инструкции | [Гл. 2](/02-superscalar/) |
+
+---
+
+*Речникът обхваща всички съкращения от Глави I–XIV. При несъответствие — меродавен е текстът на съответната глава.*

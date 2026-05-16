@@ -1,0 +1,95 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+import rehypeMermaid from 'rehype-mermaid';
+
+export default defineConfig({
+  integrations: [
+    starlight({
+      title: 'Микропроцесорни системи',
+      description: 'Образователен курс по микропроцесорни системи — ТУ Варна, специалност КСТ',
+      defaultLocale: 'root',
+      locales: {
+        root: { label: 'Български', lang: 'bg' },
+      },
+      social: [],
+      customCss: ['./src/styles/custom.css'],
+      sidebar: [
+        {
+          label: 'Начало',
+          items: [{ slug: 'index', label: 'За курса' }],
+        },
+        {
+          label: 'Архитектура на процесора',
+          items: [
+            { slug: '01-history',     label: 'I — Историческо развитие' },
+            { slug: '02-superscalar', label: 'II — Суперскаларни архитектури' },
+          ],
+        },
+        {
+          label: 'Типове данни и програмиране',
+          items: [
+            { slug: '03-data-types',       label: 'III — Типове данни' },
+            { slug: '04-programming-model', label: 'IV — Програмен модел' },
+          ],
+        },
+        {
+          label: 'Системна архитектура',
+          items: [
+            { slug: '05-system-architecture', label: 'V — Системна архитектура' },
+          ],
+        },
+        {
+          label: 'Управление на паметта',
+          items: [
+            { slug: '06-segmentation', label: 'VI — Сегментация' },
+            { slug: '07-paging',       label: 'VII — Странициране' },
+            { slug: '08-protection',   label: 'VIII — Защити' },
+          ],
+        },
+        {
+          label: 'Прекъсвания и задачи',
+          items: [
+            { slug: '09-interrupts', label: 'IX — Прекъсвания и изключения' },
+            { slug: '10-tasks',      label: 'X — Управление на задачите' },
+          ],
+        },
+        {
+          label: 'Шина, DMA и I/O',
+          items: [
+            { slug: '11-bus', label: 'XI — Организация на шината' },
+            { slug: '12-dma', label: 'XII — Директен достъп до памет' },
+          ],
+        },
+        {
+          label: 'Мултипроцесорни системи',
+          items: [
+            { slug: '13-smp',                  label: 'XIII — SMP архитектури' },
+            { slug: '14-interrupt-controllers', label: 'XIV — Контролери на прекъсвания' },
+          ],
+        },
+        {
+          label: 'Справка',
+          items: [
+            { slug: 'glossary', label: 'Речник на съкращенията' },
+            { slug: 'questions-answers', label: 'Въпроси и задачи — отговори' },
+            { slug: 'exam-answers', label: 'Изпитен тест — Вариант №4' },
+          ],
+        },
+      ],
+    }),
+  ],
+  markdown: {
+    rehypePlugins: [
+      [rehypeMermaid, {
+        strategy: 'inline-svg',
+        mermaidConfig: {
+          theme: 'neutral',
+          themeVariables: {
+            fontSize: '14px',
+          },
+        },
+      }],
+    ],
+  },
+});

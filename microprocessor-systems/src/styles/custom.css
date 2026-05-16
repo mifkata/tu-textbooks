@@ -1,0 +1,65 @@
+/* ── Mermaid inline-SVG output ─────────────────────────────────────────── */
+.sl-markdown-content svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  background: transparent;
+  border-radius: 6px;
+}
+
+/* Wrap SVGs that rehype-mermaid emits so they don't overflow on mobile */
+.sl-markdown-content figure:has(> svg) {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────────────── */
+.sl-markdown-content table {
+  font-size: 0.88rem;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.sl-markdown-content th {
+  background: var(--sl-color-gray-6);
+  font-weight: 600;
+}
+
+.sl-markdown-content td,
+.sl-markdown-content th {
+  border: 1px solid var(--sl-color-gray-5);
+  padding: 0.4rem 0.75rem;
+  vertical-align: top;
+}
+
+.sl-markdown-content tr:nth-child(even) td {
+  background: var(--sl-color-gray-7);
+}
+
+/* ── Blockquote "Резюме за изпита" ─────────────────────────────────────── */
+.sl-markdown-content blockquote {
+  border-left: 4px solid var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5rem 0;
+}
+
+/* ── Code blocks ─────────────────────────────────────────────────────────  */
+.sl-markdown-content pre {
+  font-size: 0.82rem;
+}
+
+/* ── Headings ────────────────────────────────────────────────────────────  */
+.sl-markdown-content .sl-heading-wrapper > h1,
+.sl-markdown-content .sl-heading-wrapper > h2,
+.sl-markdown-content .sl-heading-wrapper > h3,
+.sl-markdown-content .sl-heading-wrapper > h4,
+.sl-markdown-content .sl-heading-wrapper > h5,
+.sl-markdown-content .sl-heading-wrapper > h6 {
+  display: inline-block;
+}
