@@ -14,12 +14,38 @@ function hasCurrent(entry: { type: string; isCurrent?: boolean; entries?: any[] 
 // When on a subject page: show only that subject's group, flattened (no outer wrapper).
 // When on a non-subject page (root, glossary, etc.): show full sidebar.
 const subjectGroup = sidebar.find(hasCurrent);
-const sublist = subjectGroup?.type === 'group' ? subjectGroup.entries : sidebar;
+const entries = subjectGroup?.type === 'group' ? subjectGroup.entries : sidebar;
+
+// First entry is the subject homepage link — render it as a title above the sublist.
+const titleEntry = subjectGroup && entries[0]?.type === 'link' ? entries[0] : null;
+const sublist = titleEntry ? entries.slice(1) : entries;
 ---
 
 <SidebarPersister>
+  {titleEntry && (
+    <a href={titleEntry.href} class="sidebar-subject-title">
+      {titleEntry.label}
+    </a>
+  )}
   <SidebarSublist sublist={sublist} />
 </SidebarPersister>
+
+<style>
+  .sidebar-subject-title {
+    display: block;
+    font-size: var(--sl-text-lg);
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 100%;
+    color: var(--sl-color-white);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    position: sticky;
+  }
+  .sidebar-subject-title:hover {
+    color: var(--sl-color-text-accent);
+  }
+</style>
 
 <div class="md:sl-hidden">
   <MobileMenuFooter />
