@@ -1,0 +1,50 @@
+{
+  "name": "tu-schoolbooks",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd microprocessor-systems && astro dev",
+    "build": "cd microprocessor-systems && astro build",
+    "preview": "cd microprocessor-systems && astro preview",
+    "astro": "cd microprocessor-systems && astro",
+    "check": "eslint . && prettier --check .",
+    "fix": "eslint --fix . && prettier --write .",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/starlight": "^0.34.0",
+    "astro": "^5.7.0",
+    "mermaid": "^11.4.1",
+    "playwright": "^1.59.1",
+    "rehype-mermaid": "^3.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "eslint": "^9.27.0",
+    "eslint-plugin-astro": "^1.4.1",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript-eslint": "^8.32.1"
+  },
+  "lint-staged": {
+    "microprocessor-systems/**/*.{ts,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "microprocessor-systems/**/*.astro": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "microprocessor-systems/**/*.{css,json}": [
+      "prettier --write"
+    ],
+    "microprocessor-systems/**/*.{md,mdx}": [
+      "prettier --write"
+    ]
+  }
+}

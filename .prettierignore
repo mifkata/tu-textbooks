@@ -1,0 +1,15 @@
+# dependencies and build output
+node_modules/
+dist/
+.astro/
+
+# lock files (auto-generated, never hand-edited)
+pnpm-lock.yaml
+package-lock.json
+
+# OCR pipeline: temp working files and docs generated from source material
+microprocessor-systems/tmp/
+microprocessor-systems/docs/
+
+# subject workspaces: raw source docs, OCR output, extracted markdown
+subjects/

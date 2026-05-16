@@ -30,16 +30,19 @@ The `subjects/` tree is the canonical structure for new work. Legacy projects un
 ## Subject Conventions
 
 ### Source documents (`source/`)
+
 - Drop any raw files here: `*.pdf`, `*.docx`, `*.doc`, scanned images.
 - Sub-directories are allowed (e.g. `source/Textbook - split/`).
 - **Never modify** source files; treat them as read-only inputs.
 
 ### Temporary work (`tmp/`)
+
 - Every extraction run creates a new directory named by **session ID** (format: `YYYYMMDD-HHMMSS`).
 - Nothing inside `tmp/` is ever deleted — old sessions serve as a paper trail and allow diff-based re-processing.
 - A `manifest.json` at `tmp/manifest.json` (root level, not per-session) tracks which source files have been processed and under which session ID.
 
 ### Docs (`docs/`)
+
 - One markdown file per chapter or major section.
 - File naming: `NN-slug.md` where `NN` is zero-padded order (e.g. `01-introduction.md`).
 - Docs are **regeneratable**: they are derived from `tmp/` data, not hand-edited prose. Manually refining a doc is fine, but the extraction pipeline should be re-runnable and produce a mergeable result.
@@ -67,14 +70,14 @@ All intermediate files are kept. Re-running with new source files is additive.
 
 Use whatever is available on the system. Preferred stack:
 
-| Task | Tool |
-|------|------|
-| Split PDF by page | `pdfseparate` (poppler) or `mutool poster` |
-| PDF text layer | `pdftotext -layout` |
-| Render page to image | `pdftoppm -r 300 -png` |
-| OCR image | `tesseract <img> stdout -l bul+eng` (or `eng` only) |
-| DOCX → text | `pandoc --to plain` |
-| DOC → text | `antiword` or `catdoc` or LibreOffice headless |
+| Task                 | Tool                                                |
+| -------------------- | --------------------------------------------------- |
+| Split PDF by page    | `pdfseparate` (poppler) or `mutool poster`          |
+| PDF text layer       | `pdftotext -layout`                                 |
+| Render page to image | `pdftoppm -r 300 -png`                              |
+| OCR image            | `tesseract <img> stdout -l bul+eng` (or `eng` only) |
+| DOCX → text          | `pandoc --to plain`                                 |
+| DOC → text           | `antiword` or `catdoc` or LibreOffice headless      |
 
 Check availability with `which <tool>` before use; fall back gracefully.
 
@@ -109,6 +112,6 @@ When the Astro layer is added, each subject will get a `web/` directory alongsid
 
 ## Commands
 
-| Command | Purpose |
-|---------|---------|
+| Command             | Purpose                                    |
+| ------------------- | ------------------------------------------ |
 | `/s:extract <name>` | Scan source, OCR new documents, write docs |
