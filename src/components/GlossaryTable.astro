@@ -1,8 +1,11 @@
 ---
-interface ChapterRef {
-  subject: string;
-  num: number;
+interface Ref {
+  title: string;
   slug: string;
+}
+interface Mention {
+  subject: string;
+  refs: Ref[];
 }
 interface Entry {
   id: string;
@@ -10,7 +13,7 @@ interface Entry {
   abbr: string;
   full: string;
   description: string;
-  chapters: ChapterRef[];
+  mentions: Mention[];
 }
 interface Props {
   entries: Entry[];
@@ -52,7 +55,7 @@ const letters = [...groups.keys()].sort((a, b) => {
             <th>Съкращение</th>
             <th>Пълно наименование</th>
             <th>Описание</th>
-            <th>Глава</th>
+            <th>Източници</th>
           </tr>
         </thead>
         <tbody>
@@ -66,12 +69,14 @@ const letters = [...groups.keys()].sort((a, b) => {
               <td>{entry.full}</td>
               <td>{entry.description}</td>
               <td>
-                {entry.chapters.map((ch, i) => (
-                  <>
-                    {i > 0 && ", "}
-                    <a href={`/${ch.subject}/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
-                  </>
-                ))}
+                {entry.mentions.flatMap((m, mi) =>
+                  m.refs.map((r, ri) => (
+                    <>
+                      {(mi > 0 || ri > 0) && ", "}
+                      <a href={`/${m.subject}/${r.slug}/`}>{r.title}</a>
+                    </>
+                  ))
+                )}
               </td>
             </tr>
           ))}

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import react from '@astrojs/react';
 import rehypeMermaid from 'rehype-mermaid';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -46,7 +47,11 @@ export default defineConfig({
       social: [],
       customCss: ['./src/styles/custom.css'],
       sidebar,
+      components: {
+        Footer: './src/overrides/Footer.astro',
+      },
     }),
+    react(),
   ],
   markdown: {
     rehypePlugins: [[rehypeMermaid, {

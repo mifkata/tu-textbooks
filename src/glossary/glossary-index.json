@@ -5,11 +5,15 @@
     "abbr": "ACPI",
     "full": "Advanced Configuration and Power Interface",
     "description": "Стандарт за управление на захранването и конфигурация",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -19,11 +23,15 @@
     "abbr": "ADS#",
     "full": "Address Strobe",
     "description": "Сигнал от процесора, маркиращ валиден адрес и тип на цикъла на шината",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -33,11 +41,15 @@
     "abbr": "AHOLD",
     "full": "Address Hold",
     "description": "Сигнал, задържащ адресните изводи на процесора (при кеш-снифинг)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -47,11 +59,15 @@
     "abbr": "ALU",
     "full": "Arithmetic Logic Unit",
     "description": "Целочислено аритметично-логическо устройство",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -61,16 +77,19 @@
     "abbr": "APIC",
     "full": "Advanced Programmable Interrupt Controller",
     "description": "Разширен програмируем контролер на прекъсванията; заменя 8259A в многопроцесорни системи",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          },
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -80,11 +99,15 @@
     "abbr": "AVL",
     "full": "Available",
     "description": "Бит в дескриптора, достъпен за ОС",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
       }
     ]
   },
@@ -94,16 +117,19 @@
     "abbr": "AVX",
     "full": "Advanced Vector Extensions",
     "description": "256-битови SIMD разширения (Sandy Bridge, 2011)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          },
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -113,11 +139,15 @@
     "abbr": "AVX2",
     "full": "Advanced Vector Extensions 2",
     "description": "256-битови SIMD разширения с FMA (fused multiply-add); въведени с Haswell (2013)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -127,11 +157,15 @@
     "abbr": "BCD",
     "full": "Binary Coded Decimal",
     "description": "Двоично кодирано десетично число; x86 поддържа packed BCD и unpacked BCD формати",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -141,11 +175,15 @@
     "abbr": "BE#",
     "full": "Byte Enable",
     "description": "Сигнали, указващи кои байтове са валидни в текущия шинен цикъл (BE0#–BE7#)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -155,11 +193,15 @@
     "abbr": "BIOS",
     "full": "Basic Input/Output System",
     "description": "Базова входно-изходна система; инициализира хардуера при стартиране; заменена от UEFI",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -169,11 +211,15 @@
     "abbr": "BLAST#",
     "full": "Burst Last",
     "description": "Сигнал, указващ последния цикъл от пакетно предаване",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -183,11 +229,15 @@
     "abbr": "BOFF#",
     "full": "Back Off",
     "description": "Принуждава процесора да освободи шината незабавно",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -197,11 +247,15 @@
     "abbr": "BRDY#",
     "full": "Burst Ready",
     "description": "Сигнал за готовност при пакетен (burst) шинен цикъл",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -211,11 +265,15 @@
     "abbr": "BTB",
     "full": "Branch Target Buffer",
     "description": "Буфер за целеви адреси на преходи; компонент на динамичното предсказване",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -225,11 +283,15 @@
     "abbr": "CAS",
     "full": "Column Address Strobe / Cascade",
     "description": "(1) Сигнал за DRAM адресиране; (2) Линии CAS0–CAS2 за каскадиране на 8259A",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -239,11 +301,15 @@
     "abbr": "CISC",
     "full": "Complex Instruction Set Computer",
     "description": "Архитектура с разширен набор от инструкции (x86 е CISC)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 1,
-        "slug": "01-history"
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
+          }
+        ]
       }
     ]
   },
@@ -253,11 +319,15 @@
     "abbr": "CPL",
     "full": "Current Privilege Level",
     "description": "Текущото ниво на привилегия на изпълняваната програма (CS[1:0])",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 8,
-        "slug": "08-protection"
+        "refs": [
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
       }
     ]
   },
@@ -267,21 +337,23 @@
     "abbr": "CR0–CR4",
     "full": "Control Registers",
     "description": "Управляващи регистри; CR0 управлява PE, PG; CR3 = PDBR; CR4 управлява PAE, PSE",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 8,
-        "slug": "08-protection"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          },
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
       }
     ]
   },
@@ -291,11 +363,15 @@
     "abbr": "CR3",
     "full": "Control Register 3 (PDBR)",
     "description": "Физически адрес на Page Directory / PML4; смяната инвалидира TLB",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -305,11 +381,15 @@
     "abbr": "DACK",
     "full": "DMA Acknowledge",
     "description": "Сигнал от DMA контролера към периферното устройство, потвърждаващ предоставен канал",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -319,11 +399,15 @@
     "abbr": "DMA",
     "full": "Direct Memory Access",
     "description": "Пряк достъп до паметта без участие на процесора",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -333,11 +417,15 @@
     "abbr": "DMI",
     "full": "Direct Media Interface",
     "description": "Последователна шина между процесор и чипсет (заменя FSB в Nehalem и по-нови)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -347,16 +435,19 @@
     "abbr": "DPL",
     "full": "Descriptor Privilege Level",
     "description": "Ниво на привилегия на сегмент/шлюз, записано в дескриптора",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 8,
-        "slug": "08-protection"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
       }
     ]
   },
@@ -366,11 +457,15 @@
     "abbr": "DREQ",
     "full": "DMA Request",
     "description": "Заявка от периферно устройство към DMA контролера за предоставяне на шината",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -380,16 +475,19 @@
     "abbr": "EFLAGS",
     "full": "Extended FLAGS register",
     "description": "32-битов регистър на флаговете; съдържа IF, DF, NT, TF и пр.",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 4,
-        "slug": "04-programming-model"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -399,16 +497,19 @@
     "abbr": "EIP",
     "full": "Extended Instruction Pointer",
     "description": "32-битов указател към следващата инструкция; 64-битовото разширение е RIP",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 4,
-        "slug": "04-programming-model"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -418,16 +519,19 @@
     "abbr": "EOI",
     "full": "End of Interrupt",
     "description": "Команда до APIC/8259A, сигнализираща края на обработката на прекъсване; необходима преди IRET",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          },
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -437,11 +541,15 @@
     "abbr": "EOP#",
     "full": "End of Process",
     "description": "Сигнал, указващ края на DMA предаване",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -451,16 +559,19 @@
     "abbr": "FPU",
     "full": "Floating-Point Unit",
     "description": "Устройство за операции с плаваща запетая",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          },
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -470,11 +581,15 @@
     "abbr": "FSB",
     "full": "Front Side Bus",
     "description": "Предна системна шина; свързва процесор с MCH/Northbridge (заменена от QPI/DMI)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -484,16 +599,19 @@
     "abbr": "GDT",
     "full": "Global Descriptor Table",
     "description": "Глобална дескрипторна таблица; обща за всички задачи в системата",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -503,11 +621,15 @@
     "abbr": "GDTR",
     "full": "GDT Register",
     "description": "48-битов регистър (база 32b + лимит 16b), указващ местоположението на GDT",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
       }
     ]
   },
@@ -517,11 +639,15 @@
     "abbr": "GPR",
     "full": "General-Purpose Registers",
     "description": "Регистри с общо предназначение (EAX–EDI / RAX–R15)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 4,
-        "slug": "04-programming-model"
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
       }
     ]
   },
@@ -531,16 +657,19 @@
     "abbr": "HIT#",
     "full": "Cache Hit",
     "description": "Сигнал, указващ, че друг процесор притежава немодифициран ред в кеша",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          },
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -550,16 +679,19 @@
     "abbr": "HITM#",
     "full": "Hit Modified",
     "description": "Сигнал, указващ, че друг процесор притежава модифициран ред (изисква обратен запис)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          },
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -569,11 +701,15 @@
     "abbr": "HLDA",
     "full": "Hold Acknowledge",
     "description": "Потвърждение от процесора, че е освободил шината (в отговор на HRQ)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -583,11 +719,15 @@
     "abbr": "HOLD",
     "full": "Hold Request (Bus Hold)",
     "description": "Заявка за управление на шината от друг шинен мастер",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -597,11 +737,15 @@
     "abbr": "HRQ",
     "full": "Hold Request (DMA)",
     "description": "Заявка от DMA контролера към процесора за освобождаване на шината",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 12,
-        "slug": "12-dma"
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
       }
     ]
   },
@@ -611,11 +755,15 @@
     "abbr": "HTT",
     "full": "Hyper-Threading Technology",
     "description": "Симултанно многонишково изпълнение (SMT); 2 логически CPU от 1 физически",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -625,11 +773,15 @@
     "abbr": "ICR",
     "full": "Interrupt Command Register",
     "description": "Регистър в LAPIC за изпращане на Inter-Processor Interrupts (IPI)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -639,11 +791,15 @@
     "abbr": "ICW",
     "full": "Initialization Command Word",
     "description": "Инициализираща командна дума (ICW1–ICW4) за 8259A PIC",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -653,11 +809,15 @@
     "abbr": "IDT",
     "full": "Interrupt Descriptor Table",
     "description": "Дескрипторна таблица на прекъсванията; съдържа шлюзове за вектори 0–255",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -667,11 +827,15 @@
     "abbr": "IDTR",
     "full": "IDT Register",
     "description": "48-битов регистър, указващ местоположението на IDT",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -681,11 +845,15 @@
     "abbr": "IEEE",
     "full": "Institute of Electrical and Electronics Engineers",
     "description": "Организация, дефинираща стандарти; IEEE 754 е стандартът за числа с плаваща запетая",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -695,11 +863,15 @@
     "abbr": "IFU",
     "full": "Instruction Fetch Unit",
     "description": "Устройство за извличане на инструкции от кеша",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -709,11 +881,15 @@
     "abbr": "IMC",
     "full": "Integrated Memory Controller",
     "description": "Вграден контролер на паметта в процесора (от Nehalem/Sandy Bridge нагоре)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -723,11 +899,15 @@
     "abbr": "IMR",
     "full": "Interrupt Mask Register",
     "description": "Регистър на маската на прекъсванията в 8259A; маскира отделни IRQ линии",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -737,16 +917,19 @@
     "abbr": "INTA",
     "full": "Interrupt Acknowledge",
     "description": "Цикъл за потвърждаване на прекъсване; два последователни цикъла с 4 такта помежду",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          },
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -756,11 +939,15 @@
     "abbr": "INTR",
     "full": "Interrupt Request",
     "description": "Маскируем вход за прекъсване на процесора",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -770,11 +957,15 @@
     "abbr": "IOAPIC",
     "full": "I/O Advanced Programmable Interrupt Controller",
     "description": "Компонент на APIC системата, приемащ IRQ линии от периферни устройства и разпределящ ги към LAPIC",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -784,11 +975,15 @@
     "abbr": "IOPL",
     "full": "I/O Privilege Level",
     "description": "Битове EFLAGS[13:12]; минималното CPL за изпълнение на привилегировани I/O инструкции",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -798,11 +993,15 @@
     "abbr": "IPI",
     "full": "Inter-Processor Interrupt",
     "description": "Прекъсване, изпратено от един CPU до друг чрез APIC",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -812,11 +1011,15 @@
     "abbr": "IRQ",
     "full": "Interrupt Request",
     "description": "Заявка за прекъсване от периферно устройство",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -826,11 +1029,15 @@
     "abbr": "IRR",
     "full": "Interrupt Request Register",
     "description": "Регистър за заявки за прекъсвания в 8259A; защелква входящи IRQ сигнали",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -840,11 +1047,15 @@
     "abbr": "ISR",
     "full": "Interrupt Service Register",
     "description": "Регистър за обслужване на прекъсвания в 8259A; отбелязва текущо обработваното IRQ",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -854,16 +1065,19 @@
     "abbr": "IST",
     "full": "Interrupt Stack Table",
     "description": "Таблица с 7 стека за прекъсвания в 64-битовия TSS (Long Mode)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          },
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -873,11 +1087,15 @@
     "abbr": "IU",
     "full": "Integer Unit",
     "description": "Целочислено изпълнително устройство",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -887,11 +1105,15 @@
     "abbr": "JPU",
     "full": "Jump Prediction Unit",
     "description": "Устройство за проверка на предсказани преходи в P6",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -901,11 +1123,15 @@
     "abbr": "KEN#",
     "full": "Cache Enable",
     "description": "Сигнал, разрешаващ кеширане на текущия шинен цикъл",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -915,11 +1141,15 @@
     "abbr": "LAPIC",
     "full": "Local Advanced Programmable Interrupt Controller",
     "description": "Локален APIC контролер, вграден в CPU кристала",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -929,16 +1159,19 @@
     "abbr": "LDT",
     "full": "Local Descriptor Table",
     "description": "Локална дескрипторна таблица; специфична за отделна задача",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -948,11 +1181,15 @@
     "abbr": "LDTR",
     "full": "LDT Register",
     "description": "16-битов регистър (+ 64-битов кеш), указващ LDT на текущата задача",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
       }
     ]
   },
@@ -962,11 +1199,15 @@
     "abbr": "LLC",
     "full": "Last-Level Cache",
     "description": "Последно ниво на кеша (обикновено L3), споделено между всички ядра",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -976,11 +1217,15 @@
     "abbr": "LVT",
     "full": "Local Vector Table",
     "description": "Таблица в LAPIC с 6 регистъра; конфигурира обработката на локални прекъсвания (timer, thermal, LINT0/LINT1)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -990,11 +1235,15 @@
     "abbr": "MCH",
     "full": "Memory Controller Hub",
     "description": "Северен мост (Northbridge) в традиционния чипсет; съдържа контролер на паметта; заменен от IMC в Nehalem",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1004,11 +1253,15 @@
     "abbr": "MESI",
     "full": "Modified/Exclusive/Shared/Invalid",
     "description": "Протокол за съгласуваност на кешовете при SMP системи",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -1018,11 +1271,15 @@
     "abbr": "MMX",
     "full": "MultiMedia eXtensions",
     "description": "64-битови SIMD регистри (MM0–MM7) за целочислени операции (Pentium MMX, 1997)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1032,11 +1289,15 @@
     "abbr": "MS",
     "full": "Microcode Sequencer (MIS)",
     "description": "Устройство за генериране на µops от микрокод при сложни инструкции",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1046,11 +1307,15 @@
     "abbr": "MSR",
     "full": "Model-Specific Register",
     "description": "64-разредни регистри, специфични за модела процесор; достъп чрез RDMSR/WRMSR на ниво 0",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -1060,16 +1325,19 @@
     "abbr": "MTRR",
     "full": "Memory Type Range Registers",
     "description": "MSR-регистри, дефиниращи типа на кеширане (WB, WT, UC) за физически адресни диапазони",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -1079,11 +1347,15 @@
     "abbr": "NMI",
     "full": "Non-Maskable Interrupt",
     "description": "Немаскируемо прекъсване; вектор 2; не се блокира с CLI",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 9,
-        "slug": "09-interrupts"
+        "refs": [
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
       }
     ]
   },
@@ -1093,11 +1365,15 @@
     "abbr": "NT",
     "full": "Nested Task",
     "description": "Флаг в EFLAGS; NT=1 показва вложена задача; IRET с NT=1 → превключване на задача",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -1107,11 +1383,15 @@
     "abbr": "OCW",
     "full": "Operation Command Word",
     "description": "Оперативна командна дума (OCW1–OCW3) за управление на 8259A след инициализация",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -1121,11 +1401,15 @@
     "abbr": "OoO",
     "full": "Out-of-Order (execution)",
     "description": "Извън-редно изпълнение на инструкции; оптимизира използването на изпълнителните устройства",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1135,11 +1419,15 @@
     "abbr": "PAE",
     "full": "Physical Address Extension",
     "description": "Разширение на физическия адрес до 36 бита (от Pentium Pro)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1149,16 +1437,19 @@
     "abbr": "PCD",
     "full": "Page Cache Disable",
     "description": "Бит в PTE/PDE или CR3; забранява кеширане на страницата",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          },
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1168,11 +1459,15 @@
     "abbr": "PDE",
     "full": "Page Directory Entry",
     "description": "Запис в Page Directory; указва Page Table или 4 MB физическа страница",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1182,11 +1477,15 @@
     "abbr": "PDPT",
     "full": "Page Directory Pointer Table",
     "description": "Трето ниво на PAE и Long Mode странициране (4 записа при PAE, 512 при Long Mode)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1196,11 +1495,15 @@
     "abbr": "PIC",
     "full": "Programmable Interrupt Controller",
     "description": "Програмируем контролер на прекъсванията (Intel 8259A)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -1210,11 +1513,15 @@
     "abbr": "PLOCK#",
     "full": "Pseudo-Lock",
     "description": "Псевдозаключване при i486 за предавания > 32 бита",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1224,11 +1531,15 @@
     "abbr": "PML4",
     "full": "Page Map Level 4",
     "description": "Четвърто ниво на таблицата за странициране в Long Mode (512 × 8B записа)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1238,11 +1549,15 @@
     "abbr": "PSE",
     "full": "Page Size Extension",
     "description": "CR4[4]; разрешава 4 MB (32-bit) или 2 MB (PAE) Large Pages",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1252,11 +1567,15 @@
     "abbr": "PTE",
     "full": "Page Table Entry",
     "description": "Запис в Page Table; указва физическия адрес на 4 KB страница и флагове",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1266,16 +1585,19 @@
     "abbr": "PWT",
     "full": "Page Write-Through",
     "description": "Бит в PTE/PDE; задава Write-Through кеширане на страницата",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          },
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1285,11 +1607,15 @@
     "abbr": "QPI",
     "full": "QuickPath Interconnect",
     "description": "Последователна точка-до-точка шина, заменяща FSB в Nehalem (2008)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1299,11 +1625,15 @@
     "abbr": "RAT",
     "full": "Register Alias Table",
     "description": "Таблица за преименуване на архитектурни регистри към физически (P6)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1313,11 +1643,15 @@
     "abbr": "RDY#",
     "full": "Ready",
     "description": "Сигнал от паметта/ВУ за готовност при непакетен цикъл",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1327,16 +1661,19 @@
     "abbr": "RFLAGS",
     "full": "64-bit FLAGS Register (Long Mode)",
     "description": "64-битово разширение на EFLAGS; битове 32–63 запазени; RF, VM, NT са само в 32-bit форма",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 4,
-        "slug": "04-programming-model"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -1346,16 +1683,19 @@
     "abbr": "RISC",
     "full": "Reduced Instruction Set Computer",
     "description": "Архитектура с опростен набор от инструкции (вътрешното ядро на P6 е RISC)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 1,
-        "slug": "01-history"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
+          },
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1365,11 +1705,15 @@
     "abbr": "ROB",
     "full": "Reorder Buffer",
     "description": "Пул на инструкциите; позволява извън-редно изпълнение и в-ред завършване",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1379,16 +1723,19 @@
     "abbr": "RPL",
     "full": "Requested Privilege Level",
     "description": "Заявено ниво на привилегия в сегментния селектор (битове 1:0)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 8,
-        "slug": "08-protection"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
       }
     ]
   },
@@ -1398,11 +1745,15 @@
     "abbr": "RS",
     "full": "Reservation Station",
     "description": "Буфер, съхраняващ µops, чакащи за операнди; управлява OoO изпълнение",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1412,11 +1763,15 @@
     "abbr": "RSB",
     "full": "Return Stack Buffer",
     "description": "Буфер за предсказване на адреси при RET инструкции",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1426,11 +1781,15 @@
     "abbr": "SIB",
     "full": "Scale-Index-Base byte",
     "description": "Байт от формата на инструкцията след ModR/M; Scale (×1/2/4/8), Index и Base регистри",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 4,
-        "slug": "04-programming-model"
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
       }
     ]
   },
@@ -1440,11 +1799,15 @@
     "abbr": "SIMD",
     "full": "Single Instruction, Multiple Data",
     "description": "Един такт обработва множество данни паралелно (MMX, SSE, AVX)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1454,11 +1817,15 @@
     "abbr": "SMI#",
     "full": "System Management Interrupt",
     "description": "Прекъсване за системно управление (преминаване в SMM режим)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1468,11 +1835,15 @@
     "abbr": "SMM",
     "full": "System Management Mode",
     "description": "Специален режим за управление на захранването и хардуерни функции",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -1482,11 +1853,15 @@
     "abbr": "SMP",
     "full": "Symmetric Multi-Processing",
     "description": "Симетрична многопроцесорна архитектура; всички CPU споделят памет и APIC",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          }
+        ]
       }
     ]
   },
@@ -1496,11 +1871,15 @@
     "abbr": "SMT",
     "full": "Simultaneous Multi-Threading",
     "description": "Симултанно многонишково изпълнение (Intel го наименова HTT)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1510,11 +1889,15 @@
     "abbr": "SSE",
     "full": "Streaming SIMD Extensions",
     "description": "128-битови SIMD регистри (XMM0–XMM15) за плаваща запетая (Pentium III, 1999)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1524,16 +1907,19 @@
     "abbr": "SSE2",
     "full": "Streaming SIMD Extensions 2",
     "description": "128-битови целочислени SIMD + double-precision FP; въведени с Pentium 4 (2001)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 1,
-        "slug": "01-history"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
+          },
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1543,11 +1929,15 @@
     "abbr": "SSE3",
     "full": "Streaming SIMD Extensions 3",
     "description": "Добавя LDDQU, ADDSUBPS/PD, HADDPS/PD; въведен с Prescott (2004)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1557,11 +1947,15 @@
     "abbr": "SSE4",
     "full": "Streaming SIMD Extensions 4.x",
     "description": "SSE4.1 (Penryn, 2007): BLENDPS, MPSADBW; SSE4.2 (Nehalem, 2008): CRC32, PCMPISTRI",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1571,11 +1965,15 @@
     "abbr": "TI",
     "full": "Table Indicator",
     "description": "Бит 2 на сегментния селектор; TI=0 → GDT; TI=1 → LDT",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 6,
-        "slug": "06-segmentation"
+        "refs": [
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
       }
     ]
   },
@@ -1585,11 +1983,15 @@
     "abbr": "TLB",
     "full": "Translation Lookaside Buffer",
     "description": "Кеш за резултатите от страничната трансформация",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
       }
     ]
   },
@@ -1599,16 +2001,19 @@
     "abbr": "TPR",
     "full": "Task Priority Register",
     "description": "Регистър в LAPIC; прекъсвания с вектор ≤ TPR се маскират за текущото ядро",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 13,
-        "slug": "13-smp"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 14,
-        "slug": "14-interrupt-controllers"
+        "refs": [
+          {
+            "title": "SMP архитектури",
+            "slug": "13-smp"
+          },
+          {
+            "title": "Контролери на прекъсвания",
+            "slug": "14-interrupt-controllers"
+          }
+        ]
       }
     ]
   },
@@ -1618,11 +2023,15 @@
     "abbr": "TR",
     "full": "Task Register",
     "description": "Регистър, чийто видим 16-битов селектор указва TSS на текущата задача",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -1632,11 +2041,15 @@
     "abbr": "TSS",
     "full": "Task State Segment",
     "description": "Сегмент за съхранение на контекста на задача (регистри, стекове, LDT, CR3)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 10,
-        "slug": "10-tasks"
+        "refs": [
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
       }
     ]
   },
@@ -1646,11 +2059,15 @@
     "abbr": "TSX",
     "full": "Transactional Synchronization Extensions",
     "description": "Хардуерна транзакционна памет (Skylake)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   },
@@ -1660,11 +2077,15 @@
     "abbr": "UEFI",
     "full": "Unified Extensible Firmware Interface",
     "description": "Наследник на BIOS; модерен фърмуерен интерфейс",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 5,
-        "slug": "05-system-architecture"
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          }
+        ]
       }
     ]
   },
@@ -1674,11 +2095,15 @@
     "abbr": "VEX",
     "full": "Vector Extension prefix",
     "description": "Префикс на инструкциите за AVX/AVX2 (заменя REX + legacy SSE prefix)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1688,11 +2113,15 @@
     "abbr": "WB/WT#",
     "full": "Write Back / Write Through",
     "description": "Сигнал, задаващ метода на кеширане за текущия шинен цикъл",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 11,
-        "slug": "11-bus"
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
       }
     ]
   },
@@ -1702,16 +2131,19 @@
     "abbr": "XD/NX",
     "full": "Execute Disable / No-Execute",
     "description": "Бит в PTE; забранява изпълнение на код от страницата (защита от buffer-overflow атаки)",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 7,
-        "slug": "07-paging"
-      },
-      {
-        "subject": "microprocessor-systems",
-        "num": 8,
-        "slug": "08-protection"
+        "refs": [
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          },
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
       }
     ]
   },
@@ -1721,11 +2153,15 @@
     "abbr": "XMM",
     "full": "XMM registers",
     "description": "128-битови SIMD регистри (XMM0–XMM15) за SSE/SSE2/SSE4",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1735,11 +2171,15 @@
     "abbr": "YMM",
     "full": "YMM registers",
     "description": "256-битови SIMD регистри (YMM0–YMM15) за AVX/AVX2",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1749,11 +2189,15 @@
     "abbr": "ZMM",
     "full": "ZMM registers",
     "description": "512-битови SIMD регистри (ZMM0–ZMM31) за AVX-512",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 3,
-        "slug": "03-data-types"
+        "refs": [
+          {
+            "title": "Типове данни",
+            "slug": "03-data-types"
+          }
+        ]
       }
     ]
   },
@@ -1763,11 +2207,15 @@
     "abbr": "µop",
     "full": "Micro-operation",
     "description": "Вътрешна RISC-подобна операция, в която декодерите разбиват CISC инструкции",
-    "chapters": [
+    "mentions": [
       {
         "subject": "microprocessor-systems",
-        "num": 2,
-        "slug": "02-superscalar"
+        "refs": [
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
       }
     ]
   }
