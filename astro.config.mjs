@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import rehypeMermaid from 'rehype-mermaid';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
@@ -40,12 +42,12 @@ const sidebar = [
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'ТУ Варна — Учебни материали',
-      description: 'Курсови материали по технически дисциплини — ТУ Варна',
+      title: 'mifkata.textbooks',
+      description: 'Помощни учебни материали по технически дисциплини в Технически университет - Варна',
       defaultLocale: 'root',
       locales: { root: { label: 'Български', lang: 'bg' } },
       social: [],
-      customCss: ['./src/styles/custom.css'],
+      customCss: ['./src/styles/custom.css', 'katex/dist/katex.min.css'],
       sidebar,
       components: {
         Footer: './src/overrides/Footer.astro',
@@ -54,12 +56,19 @@ export default defineConfig({
     react(),
   ],
   markdown: {
-    rehypePlugins: [[rehypeMermaid, {
-      strategy: 'inline-svg',
-      mermaidConfig: { theme: 'neutral', themeVariables: { fontSize: '14px' } },
-    }]],
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [
+      rehypeKatex,
+      [rehypeMermaid, {
+        strategy: 'inline-svg',
+        mermaidConfig: { theme: 'neutral', themeVariables: { fontSize: '14px' } },
+      }],
+    ],
   },
   vite: {
-    resolve: { alias: { '@/': new URL('./src/', import.meta.url).pathname } },
+    resolve: {
+      alias: { '@/': new URL('./src/', import.meta.url).pathname },
+      dedupe: ['react', 'react-dom'],
+    },
   },
 });

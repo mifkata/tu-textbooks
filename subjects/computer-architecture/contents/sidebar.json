@@ -1,0 +1,64 @@
+[
+  {
+    "label": "Начало",
+    "items": [{ "slug": "index", "label": "За курса" }]
+  },
+  {
+    "label": "Основи на архитектурата",
+    "items": [
+      { "slug": "01-introduction", "label": "I — Въведение в дисциплината" },
+      { "slug": "02-cisc-and-risc", "label": "II — CISC и RISC архитектури" }
+    ]
+  },
+  {
+    "label": "Паралелна обработка",
+    "items": [
+      { "slug": "03-parallel-processing", "label": "III — Въведение в паралелната обработка" }
+    ]
+  },
+  {
+    "label": "Конвейерна обработка",
+    "items": [
+      { "slug": "04-pipeline-principles",    "label": "IV — Принципи на конвейерната обработка" },
+      { "slug": "05-instruction-pipelining", "label": "V — Конвейерно изпълнение на командите" }
+    ]
+  },
+  {
+    "label": "Процесори с паралелизъм",
+    "items": [
+      { "slug": "06-multiple-functional-units", "label": "VI — Процесор с множество ФУ" },
+      { "slug": "07-vector-processors",         "label": "VII — Векторни процесори" },
+      { "slug": "08-simd-processors",           "label": "VIII — Матрични (SIMD) процесори" },
+      { "slug": "09-systolic-processors",       "label": "IX — Систолични процесори" }
+    ]
+  },
+  {
+    "label": "Паралелни компютри",
+    "items": [
+      { "slug": "10-distributed-memory",  "label": "X — Компютри с разпределена памет" },
+      { "slug": "11-dataflow-computers",  "label": "XI — Компютри с потоково управление" },
+      { "slug": "12-interconnect-networks", "label": "XII — Комуникационни мрежи" }
+    ]
+  },
+  {
+    "label": "Архитектура на паметта",
+    "items": [
+      { "slug": "13-memory-architecture", "label": "XIII — Архитектура на паметта" },
+      { "slug": "14-disk-architecture",   "label": "XIV — Архитектура на дисковата памет" }
+    ]
+  },
+  {
+    "label": "Лабораторни упражнения",
+    "items": [
+      { "slug": "lab-01-performance", "label": "Упр. 1 — Производителност на компютъра" },
+      { "slug": "lab-textbook",       "label": "Ръководство за лабораторни упражнения" }
+    ]
+  },
+  {
+    "label": "Справка",
+    "items": [
+      { "slug": "00-syllabus",       "label": "Конспект" },
+      { "slug": "questions-answers", "label": "Контролни въпроси и задачи" }
+    ]
+  }
+]
