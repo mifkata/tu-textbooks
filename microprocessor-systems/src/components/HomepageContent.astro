@@ -1,0 +1,62 @@
+---
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import type homepageSchema from '../data/homepage.json';
+
+interface Props { data: typeof homepageSchema; }
+
+const { data: homepage } = Astro.props;
+---
+
+<p>
+  <strong>Специалност:</strong> {homepage.courseInfo.specialty}<br />
+  <strong>Катедра:</strong> {homepage.courseInfo.department}<br />
+  <strong>Лектор:</strong> {homepage.courseInfo.lecturer}
+</p>
+
+<hr />
+
+<h2>Формат на изпита</h2>
+
+<p>
+  {homepage.exam.format}<br />
+  {homepage.exam.scoring} Продължителност: <strong>{homepage.exam.durationMinutes} минути</strong>.
+</p>
+
+<hr />
+
+<h2>Теми</h2>
+
+<CardGrid>
+  {homepage.topicCards.map((card) => (
+    <Card title={card.title} icon={card.icon as any}>
+      {card.description}
+    </Card>
+  ))}
+</CardGrid>
+
+<hr />
+
+<h2>Съдържание на курса</h2>
+
+{homepage.chapters.map((ch) => (
+  <details>
+    <summary>
+      <strong>Глава {ch.num} — <a href={`/${ch.slug}/`}>{ch.title}</a></strong>
+    </summary>
+    {ch.topics.length > 0 && (
+      <ol>
+        {ch.topics.map((topic) => <li>{topic}</li>)}
+      </ol>
+    )}
+  </details>
+))}
+
+<p><a href="/glossary/"><strong>→ Речник на съкращенията</strong></a></p>
+
+<hr />
+
+<h2>Препоръчителна литература</h2>
+
+<ol>
+  {homepage.bibliography.map((item) => <li>{item}</li>)}
+</ol>

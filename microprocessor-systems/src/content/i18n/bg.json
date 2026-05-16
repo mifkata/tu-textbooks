@@ -26,5 +26,5 @@
   "aside.danger": "Опасност",
   "fileTree.directory": "Директория",
   "builtWithStarlight.label": "Изградено със Starlight",
-  "heading.anchorLabel": "Раздел: „{{title}}""
+  "heading.anchorLabel": "Раздел: „{{title}}“"
 }

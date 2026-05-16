@@ -1,31 +1,33 @@
-# CLAUDE.md — Инструкции за работа по МПС уебсайт
+# CLAUDE.md — Instructions for the MPS Website
 
-## Контекст на проекта
+> **Content language:** All website content (pages, glossary, Q&A) must be written in **Bulgarian**.
 
-Образователен уебсайт за курса **"Микропроцесорни системи"** в ТУ Варна (специалност КСТ, ФИТА).
-Съдържанието е на **български език**. Изходните материали са в `./docs/guide/*.md` (14 глави + речник).
+## Project Context
 
----
-
-## Технически стек
-
-- **Astro** + **@astrojs/starlight** (документационен сайт)
-- **MDX** за всички страници (`.mdx`)
-- **rehype-mermaid** с `strategy: 'inline-svg'` — Mermaid диаграмите се рендират до SVG при build-а
-- **Bulgariан i18n** — `src/content/i18n/bg.json` — превежда Starlight UI strings
-- Dev: `npm run dev` (порт 4321) · Build: `npm run build`
+Educational website for the **"Microprocessor Systems"** course at TU Varna (KST program, FITA faculty).
+Source materials are in `./docs/guide/*.md` (14 chapters + glossary).
 
 ---
 
-## Структура на файловете
+## Tech Stack
+
+- **Astro** + **@astrojs/starlight** (documentation site)
+- **MDX** for all pages (`.mdx`)
+- **rehype-mermaid** with `strategy: 'inline-svg'` — Mermaid diagrams are rendered to SVG at build time
+- **Bulgarian i18n** — `src/content/i18n/bg.json` — translates Starlight UI strings
+- Dev: `npm run dev` (port 4321) · Build: `npm run build`
+
+---
+
+## File Structure
 
 ```
 web/
-├── astro.config.mjs          ← sidebar навигация + rehype-mermaid config
+├── astro.config.mjs          ← sidebar navigation + rehype-mermaid config
 ├── src/
 │   ├── content/
 │   │   ├── config.ts         ← docsSchema + i18nSchema
-│   │   ├── i18n/bg.json      ← UI преводи (на тази страница, Търсене, ...)
+│   │   ├── i18n/bg.json      ← UI translations (On this page, Search, ...)
 │   │   └── docs/
 │   │       ├── index.mdx     ← landing page (splash template)
 │   │       ├── 01-history.mdx  … 14-interrupt-controllers.mdx
@@ -33,10 +35,10 @@ web/
 │   │       ├── questions-answers.mdx
 │   │       └── exam-answers.mdx
 │   └── styles/custom.css
-└── CLAUDE.md                 ← този файл
+└── CLAUDE.md                 ← this file
 ```
 
-Изходни материали (само за справка, не се редактират):
+Source materials (reference only, do not edit):
 ```
 ./docs/guide/01_history_x86.md … 14_interrupt_controllers.md
 ./docs/guide/glossary.md
@@ -44,7 +46,7 @@ web/
 
 ---
 
-## Конвенции за съдържание
+## Content Conventions
 
 ### Frontmatter
 ```mdx
@@ -53,123 +55,123 @@ title: "Глава IV — Програмен модел и система ком
 ---
 ```
 
-### Речникови линкове
-Линкове към речника използват anchor ID-то на термина:
+### Glossary Links
+Links to the glossary use the term's anchor ID:
 ```mdx
 [DPL](/glossary/#dpl)
 [IRQ](/glossary/#irq)
 ```
-Anchor ID-тата са дефинирани в `glossary.mdx` като `<a id="dpl">**DPL**</a>`.
+Anchor IDs are defined in `glossary.mdx` as `<a id="dpl">**DPL**</a>`.
 
-### Линкове към флагове и регистри
-Флагове, описани в глава 5, се линкват така:
+### Flag and Register Links
+Flags described in chapter 5 are linked like this:
 ```mdx
 [CR0.PG](/05-system-architecture/)
 [EFLAGS.IF](/05-system-architecture/)
 ```
 
-### Mermaid диаграми
-Работят стандартно с ````mermaid` блокове. Темата е `neutral`.
-Когато потребителят иска диаграма → **първо търси публична картинка** от Wikimedia Commons или друг надежден източник. Mermaid е запасен вариант.
+### Mermaid Diagrams
+Standard ` ```mermaid ` blocks. Theme is `neutral`.
+When a diagram is requested → **first search for a public image** from Wikimedia Commons or another reliable source. Mermaid is the fallback.
 
-### Изображения от интернет
+### Web Images
 
-**Задължително:** Изображенията се изтеглят локално и се добавят в `src/assets/images/`. Никога не се използват директни URL-и към външни сайтове в MDX страниците.
+**Required:** Images must be downloaded locally and stored in `src/assets/images/`. Never use direct external URLs in MDX pages.
 
-Предпочитани източници (достъпни без auth):
-- `https://upload.wikimedia.org/wikipedia/commons/...` — Wikipedia/Wikimedia (CC лиценз)
-- `https://www.eeeguide.com/wp-content/uploads/...` — eeeguide.com (образователни схеми)
+Preferred sources (accessible without auth):
+- `https://upload.wikimedia.org/wikipedia/commons/...` — Wikipedia/Wikimedia (CC license)
+- `https://www.eeeguide.com/wp-content/uploads/...` — eeeguide.com (educational diagrams)
 
-**Работен процес:**
-1. Намери подходящо изображение
-2. Провери визуално с WebFetch + Read tool
-3. Изтегли локално: `curl -o src/assets/images/ime-na-faila.png "URL"`
-4. Провери файла с Read tool (показва се визуално)
-5. Добави в MDX с относителен път
+**Workflow:**
+1. Find a suitable image
+2. Preview visually with WebFetch + Read tool
+3. Download locally: `curl -o src/assets/images/filename.png "URL"`
+4. Verify the file with Read tool (displayed visually)
+5. Reference in MDX with a relative path
 
-Пример за изображение в MDX:
+Example in MDX:
 ```mdx
 import imgProtectedMode from '../../assets/images/protected-mode-segments.png';
 
-<img src={imgProtectedMode.src} alt="Описание на изображението" />
+<img src={imgProtectedMode.src} alt="Description" />
 ```
 
-или (за по-прости случаи):
+or (for simpler cases):
 ```mdx
-![Описание на изображението](../../assets/images/protected-mode-segments.png)
+![Description](../../assets/images/protected-mode-segments.png)
 ```
 
 ---
 
-## Правила при редактиране на глави
+## Chapter Editing Rules
 
-1. **Не променяй структурата** (заглавия на раздели) без изрично искане
-2. **Синхронизирай с конспекта** — заглавията на разделите трябва да отговарят на официалния конспект на курса
-3. **Не добавяй коментари** в MDX (само ако наистина е нужно)
-4. **Резюмето за изпита** (`## Резюме за изпита`) присъства в края на всяка глава — поддържай го актуално при промени
-5. Когато правиш промени с Edit tool в MDX файл с **кирилица**, внимавай — `old_string` трябва да съвпада точно. При грешка използвай Python:
+1. **Do not change structure** (section headings) without explicit request
+2. **Sync with the syllabus** — section headings must match the official course outline
+3. **Do not add comments** in MDX (unless truly necessary)
+4. **Exam summary** (`## Резюме за изпита`) is present at the end of every chapter — keep it up to date when making changes
+5. When editing MDX files with Cyrillic using the Edit tool, `old_string` must match exactly. On failure, use Python:
    ```bash
    python3 -c "
    with open('path.mdx', 'r', encoding='utf-8') as f: c = f.read()
-   c = c.replace('СТАРО', 'НОВО')
+   c = c.replace('OLD', 'NEW')
    with open('path.mdx', 'w', encoding='utf-8') as f: f.write(c)
    "
    ```
 
 ---
 
-## Речник (glossary.mdx)
+## Glossary (glossary.mdx)
 
-- Всяко ново съкращение, добавено в дадена глава, трябва да бъде добавено и в речника
-- Формат на запис:
+- Every new abbreviation added in a chapter must also be added to the glossary
+- Entry format:
   ```mdx
-  | <a id="xxx">**XXX**</a> | Пълно наименование | Описание | [Гл. N](/NN-slug/) |
+  | <a id="xxx">**XXX**</a> | Full name | Description | [Ch. N](/NN-slug/) |
   ```
-- Речникът е наредбен по азбука (латиница)
+- Glossary is sorted alphabetically (Latin alphabet)
 
 ---
 
 ## Sidebar (astro.config.mjs)
 
-При нова страница я добави в `sidebar` в правилната група:
+When adding a new page, add it to the `sidebar` in the correct group:
 ```js
-{ slug: 'new-page', label: 'Заглавие' }
+{ slug: 'new-page', label: 'Title' }
 ```
-Групите: Начало · Архитектура · Типове данни · Системна архитектура · Управление на паметта · Прекъсвания и задачи · Шина DMA I/O · Мултипроцесорни системи · Справка
+Groups: Начало · Архитектура · Типове данни · Системна архитектура · Управление на паметта · Прекъсвания и задачи · Шина DMA I/O · Мултипроцесорни системи · Справка
 
 ---
 
-## Известни проблеми / решения
+## Known Issues / Solutions
 
-| Проблем | Решение |
+| Problem | Solution |
 |---------|---------|
-| Edit tool не намира кирилски `old_string` | Ползвай Python с UTF-8 |
-| Mermaid диаграма не се рендира | Провери syntax в [Mermaid Live Editor](https://mermaid.live) |
-| Изображение от eeeguide.com не се зарежда | URL-ите от eeeguide са стабилни; при проблем провери с curl |
-| `tableOfContents.onThisPage` и подобни низове в UI | Уверен се, че `src/content/i18n/bg.json` съществува и e добавен в `config.ts` като `i18nSchema` |
+| Edit tool can't find Cyrillic `old_string` | Use Python with UTF-8 |
+| Mermaid diagram doesn't render | Check syntax in [Mermaid Live Editor](https://mermaid.live) |
+| Image from eeeguide.com doesn't load | eeeguide URLs are stable; verify with curl if issues arise |
+| `tableOfContents.onThisPage` and similar UI strings | Ensure `src/content/i18n/bg.json` exists and is added to `config.ts` as `i18nSchema` |
 
 ---
 
-## Какво е направено (за контекст)
+## What's Done (context)
 
-- ✅ Всички 14 глави + речник конвертирани от Markdown в MDX
-- ✅ Речникови линкове (`/glossary/#term`) добавени навсякъде
-- ✅ Bulgариан i18n: `src/content/i18n/bg.json` + `config.ts`
-- ✅ `questions-answers.mdx` — отговори на всички въпроси от всички глави
-- ✅ `exam-answers.mdx` — отговори на Вариант №4 (10 есета)
-- ✅ Глава 11 разширена: T1/T2/Ti фази, HOLD/HLDA, Pentium pipelining, MTRR
-- ✅ Глава 9 разширена: пълен 9-стъпков цикъл на прекъсването
-- ✅ Изображения добавени: 8237A (DMA), 8259A (PIC), SMP, Protected mode segments
-- ✅ Глава 4: по-ясни обяснения, ASCII диаграми на регистри, примери за ModR/M и SIB
-- ✅ Глава 5: възстановена до оригиналната кратка форма; EFLAGS таблица без номера на битове
-- ✅ Глава 6: добавено разяснение за TR/TSS; сегментен селектор с примери; диаграма за транслация
-- ✅ Глава 7: обяснение за йерархичното странициране с аналогия
+- ✅ All 14 chapters + glossary converted from Markdown to MDX
+- ✅ Glossary links (`/glossary/#term`) added throughout
+- ✅ Bulgarian i18n: `src/content/i18n/bg.json` + `config.ts`
+- ✅ `questions-answers.mdx` — answers to all questions from all chapters
+- ✅ `exam-answers.mdx` — answers to Variant №4 (10 essays)
+- ✅ Chapter 11 expanded: T1/T2/Ti phases, HOLD/HLDA, Pentium pipelining, MTRR
+- ✅ Chapter 9 expanded: full 9-step interrupt cycle
+- ✅ Images added: 8237A (DMA), 8259A (PIC), SMP, Protected mode segments
+- ✅ Chapter 4: clearer explanations, ASCII register diagrams, ModR/M and SIB examples
+- ✅ Chapter 5: restored to original concise form; EFLAGS table without bit numbers
+- ✅ Chapter 6: added TR/TSS explanation; segment selector with examples; translation diagram
+- ✅ Chapter 7: explanation of hierarchical paging with analogy
 
 ---
 
-## Стил на отговорите
+## Response Style
 
-- Отговаряй на **български**
-- Бъди кратък и конкретен при обяснения
-- При търсене на изображения — **свали локално** в `src/assets/images/`, прегледай с Read tool, после добавяй в MDX с локален път (никога директни URL-и)
-- Ако нещо не може да се намери публично, кажи го директно вместо да го обещаваш
+- Respond in **Bulgarian**
+- Be concise and specific in explanations
+- For images — **download locally** to `src/assets/images/`, verify with Read tool, then reference in MDX with a local path (never direct external URLs)
+- If something can't be found publicly, say so directly instead of promising it

@@ -1,0 +1,1016 @@
+[
+  {
+    "id": "acpi",
+    "letter": "A",
+    "abbr": "ACPI",
+    "full": "Advanced Configuration and Power Interface",
+    "description": "Стандарт за управление на захранването и конфигурация",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "ads",
+    "letter": "A",
+    "abbr": "ADS#",
+    "full": "Address Strobe",
+    "description": "Сигнал от процесора, маркиращ валиден адрес и тип на цикъла на шината",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "ahold",
+    "letter": "A",
+    "abbr": "AHOLD",
+    "full": "Address Hold",
+    "description": "Сигнал, задържащ адресните изводи на процесора (при кеш-снифинг)",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "alu",
+    "letter": "A",
+    "abbr": "ALU",
+    "full": "Arithmetic Logic Unit",
+    "description": "Целочислено аритметично-логическо устройство",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "apic",
+    "letter": "A",
+    "abbr": "APIC",
+    "full": "Advanced Programmable Interrupt Controller",
+    "description": "Разширен програмируем контролер на прекъсванията; заменя 8259A в многопроцесорни системи",
+    "chapters": [
+      { "num": 13, "slug": "13-smp" },
+      { "num": 14, "slug": "14-interrupt-controllers" }
+    ]
+  },
+  {
+    "id": "avl",
+    "letter": "A",
+    "abbr": "AVL",
+    "full": "Available",
+    "description": "Бит в дескриптора, достъпен за ОС",
+    "chapters": [{ "num": 6, "slug": "06-segmentation" }]
+  },
+  {
+    "id": "avx",
+    "letter": "A",
+    "abbr": "AVX",
+    "full": "Advanced Vector Extensions",
+    "description": "256-битови SIMD разширения (Sandy Bridge, 2011)",
+    "chapters": [
+      { "num": 2, "slug": "02-superscalar" },
+      { "num": 3, "slug": "03-data-types" }
+    ]
+  },
+  {
+    "id": "avx2",
+    "letter": "A",
+    "abbr": "AVX2",
+    "full": "Advanced Vector Extensions 2",
+    "description": "256-битови SIMD разширения с FMA (fused multiply-add); въведени с Haswell (2013)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "bcd",
+    "letter": "B",
+    "abbr": "BCD",
+    "full": "Binary Coded Decimal",
+    "description": "Двоично кодирано десетично число; x86 поддържа packed BCD и unpacked BCD формати",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "be",
+    "letter": "B",
+    "abbr": "BE#",
+    "full": "Byte Enable",
+    "description": "Сигнали, указващи кои байтове са валидни в текущия шинен цикъл (BE0#–BE7#)",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "bios",
+    "letter": "B",
+    "abbr": "BIOS",
+    "full": "Basic Input/Output System",
+    "description": "Базова входно-изходна система; инициализира хардуера при стартиране; заменена от UEFI",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "blast",
+    "letter": "B",
+    "abbr": "BLAST#",
+    "full": "Burst Last",
+    "description": "Сигнал, указващ последния цикъл от пакетно предаване",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "boff",
+    "letter": "B",
+    "abbr": "BOFF#",
+    "full": "Back Off",
+    "description": "Принуждава процесора да освободи шината незабавно",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "brdy",
+    "letter": "B",
+    "abbr": "BRDY#",
+    "full": "Burst Ready",
+    "description": "Сигнал за готовност при пакетен (burst) шинен цикъл",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "btb",
+    "letter": "B",
+    "abbr": "BTB",
+    "full": "Branch Target Buffer",
+    "description": "Буфер за целеви адреси на преходи; компонент на динамичното предсказване",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "cas",
+    "letter": "C",
+    "abbr": "CAS",
+    "full": "Column Address Strobe / Cascade",
+    "description": "(1) Сигнал за DRAM адресиране; (2) Линии CAS0–CAS2 за каскадиране на 8259A",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "cisc",
+    "letter": "C",
+    "abbr": "CISC",
+    "full": "Complex Instruction Set Computer",
+    "description": "Архитектура с разширен набор от инструкции (x86 е CISC)",
+    "chapters": [{ "num": 1, "slug": "01-history" }]
+  },
+  {
+    "id": "cpl",
+    "letter": "C",
+    "abbr": "CPL",
+    "full": "Current Privilege Level",
+    "description": "Текущото ниво на привилегия на изпълняваната програма (CS[1:0])",
+    "chapters": [{ "num": 8, "slug": "08-protection" }]
+  },
+  {
+    "id": "cr0-cr4",
+    "letter": "C",
+    "abbr": "CR0–CR4",
+    "full": "Control Registers",
+    "description": "Управляващи регистри; CR0 управлява PE, PG; CR3 = PDBR; CR4 управлява PAE, PSE",
+    "chapters": [
+      { "num": 5, "slug": "05-system-architecture" },
+      { "num": 7, "slug": "07-paging" },
+      { "num": 8, "slug": "08-protection" }
+    ]
+  },
+  {
+    "id": "cr3",
+    "letter": "C",
+    "abbr": "CR3",
+    "full": "Control Register 3 (PDBR)",
+    "description": "Физически адрес на Page Directory / PML4; смяната инвалидира TLB",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "dack",
+    "letter": "D",
+    "abbr": "DACK",
+    "full": "DMA Acknowledge",
+    "description": "Сигнал от DMA контролера към периферното устройство, потвърждаващ предоставен канал",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "dma",
+    "letter": "D",
+    "abbr": "DMA",
+    "full": "Direct Memory Access",
+    "description": "Пряк достъп до паметта без участие на процесора",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "dmi",
+    "letter": "D",
+    "abbr": "DMI",
+    "full": "Direct Media Interface",
+    "description": "Последователна шина между процесор и чипсет (заменя FSB в Nehalem и по-нови)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "dpl",
+    "letter": "D",
+    "abbr": "DPL",
+    "full": "Descriptor Privilege Level",
+    "description": "Ниво на привилегия на сегмент/шлюз, записано в дескриптора",
+    "chapters": [
+      { "num": 6, "slug": "06-segmentation" },
+      { "num": 8, "slug": "08-protection" }
+    ]
+  },
+  {
+    "id": "dreq",
+    "letter": "D",
+    "abbr": "DREQ",
+    "full": "DMA Request",
+    "description": "Заявка от периферно устройство към DMA контролера за предоставяне на шината",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "eflags",
+    "letter": "E",
+    "abbr": "EFLAGS",
+    "full": "Extended FLAGS register",
+    "description": "32-битов регистър на флаговете; съдържа IF, DF, NT, TF и пр.",
+    "chapters": [
+      { "num": 4, "slug": "04-programming-model" },
+      { "num": 9, "slug": "09-interrupts" }
+    ]
+  },
+  {
+    "id": "eip",
+    "letter": "E",
+    "abbr": "EIP",
+    "full": "Extended Instruction Pointer",
+    "description": "32-битов указател към следващата инструкция; 64-битовото разширение е RIP",
+    "chapters": [
+      { "num": 4, "slug": "04-programming-model" },
+      { "num": 9, "slug": "09-interrupts" }
+    ]
+  },
+  {
+    "id": "eoi",
+    "letter": "E",
+    "abbr": "EOI",
+    "full": "End of Interrupt",
+    "description": "Команда до APIC/8259A, сигнализираща края на обработката на прекъсване; необходима преди IRET",
+    "chapters": [
+      { "num": 13, "slug": "13-smp" },
+      { "num": 14, "slug": "14-interrupt-controllers" }
+    ]
+  },
+  {
+    "id": "eop",
+    "letter": "E",
+    "abbr": "EOP#",
+    "full": "End of Process",
+    "description": "Сигнал, указващ края на DMA предаване",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "fpu",
+    "letter": "F",
+    "abbr": "FPU",
+    "full": "Floating-Point Unit",
+    "description": "Устройство за операции с плаваща запетая",
+    "chapters": [
+      { "num": 2, "slug": "02-superscalar" },
+      { "num": 3, "slug": "03-data-types" }
+    ]
+  },
+  {
+    "id": "fsb",
+    "letter": "F",
+    "abbr": "FSB",
+    "full": "Front Side Bus",
+    "description": "Предна системна шина; свързва процесор с MCH/Northbridge (заменена от QPI/DMI)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "gdt",
+    "letter": "G",
+    "abbr": "GDT",
+    "full": "Global Descriptor Table",
+    "description": "Глобална дескрипторна таблица; обща за всички задачи в системата",
+    "chapters": [
+      { "num": 6, "slug": "06-segmentation" },
+      { "num": 10, "slug": "10-tasks" }
+    ]
+  },
+  {
+    "id": "gdtr",
+    "letter": "G",
+    "abbr": "GDTR",
+    "full": "GDT Register",
+    "description": "48-битов регистър (база 32b + лимит 16b), указващ местоположението на GDT",
+    "chapters": [{ "num": 6, "slug": "06-segmentation" }]
+  },
+  {
+    "id": "gpr",
+    "letter": "G",
+    "abbr": "GPR",
+    "full": "General-Purpose Registers",
+    "description": "Регистри с общо предназначение (EAX–EDI / RAX–R15)",
+    "chapters": [{ "num": 4, "slug": "04-programming-model" }]
+  },
+  {
+    "id": "hit",
+    "letter": "H",
+    "abbr": "HIT#",
+    "full": "Cache Hit",
+    "description": "Сигнал, указващ, че друг процесор притежава немодифициран ред в кеша",
+    "chapters": [
+      { "num": 11, "slug": "11-bus" },
+      { "num": 13, "slug": "13-smp" }
+    ]
+  },
+  {
+    "id": "hitm",
+    "letter": "H",
+    "abbr": "HITM#",
+    "full": "Hit Modified",
+    "description": "Сигнал, указващ, че друг процесор притежава модифициран ред (изисква обратен запис)",
+    "chapters": [
+      { "num": 11, "slug": "11-bus" },
+      { "num": 13, "slug": "13-smp" }
+    ]
+  },
+  {
+    "id": "hlda",
+    "letter": "H",
+    "abbr": "HLDA",
+    "full": "Hold Acknowledge",
+    "description": "Потвърждение от процесора, че е освободил шината (в отговор на HRQ)",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "hold",
+    "letter": "H",
+    "abbr": "HOLD",
+    "full": "Hold Request (Bus Hold)",
+    "description": "Заявка за управление на шината от друг шинен мастер",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "hrq",
+    "letter": "H",
+    "abbr": "HRQ",
+    "full": "Hold Request (DMA)",
+    "description": "Заявка от DMA контролера към процесора за освобождаване на шината",
+    "chapters": [{ "num": 12, "slug": "12-dma" }]
+  },
+  {
+    "id": "htt",
+    "letter": "H",
+    "abbr": "HTT",
+    "full": "Hyper-Threading Technology",
+    "description": "Симултанно многонишково изпълнение (SMT); 2 логически CPU от 1 физически",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "icr",
+    "letter": "I",
+    "abbr": "ICR",
+    "full": "Interrupt Command Register",
+    "description": "Регистър в LAPIC за изпращане на Inter-Processor Interrupts (IPI)",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "icw",
+    "letter": "I",
+    "abbr": "ICW",
+    "full": "Initialization Command Word",
+    "description": "Инициализираща командна дума (ICW1–ICW4) за 8259A PIC",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "idt",
+    "letter": "I",
+    "abbr": "IDT",
+    "full": "Interrupt Descriptor Table",
+    "description": "Дескрипторна таблица на прекъсванията; съдържа шлюзове за вектори 0–255",
+    "chapters": [{ "num": 9, "slug": "09-interrupts" }]
+  },
+  {
+    "id": "idtr",
+    "letter": "I",
+    "abbr": "IDTR",
+    "full": "IDT Register",
+    "description": "48-битов регистър, указващ местоположението на IDT",
+    "chapters": [{ "num": 9, "slug": "09-interrupts" }]
+  },
+  {
+    "id": "ieee",
+    "letter": "I",
+    "abbr": "IEEE",
+    "full": "Institute of Electrical and Electronics Engineers",
+    "description": "Организация, дефинираща стандарти; IEEE 754 е стандартът за числа с плаваща запетая",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "ifu",
+    "letter": "I",
+    "abbr": "IFU",
+    "full": "Instruction Fetch Unit",
+    "description": "Устройство за извличане на инструкции от кеша",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "imc",
+    "letter": "I",
+    "abbr": "IMC",
+    "full": "Integrated Memory Controller",
+    "description": "Вграден контролер на паметта в процесора (от Nehalem/Sandy Bridge нагоре)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "imr",
+    "letter": "I",
+    "abbr": "IMR",
+    "full": "Interrupt Mask Register",
+    "description": "Регистър на маската на прекъсванията в 8259A; маскира отделни IRQ линии",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "inta",
+    "letter": "I",
+    "abbr": "INTA",
+    "full": "Interrupt Acknowledge",
+    "description": "Цикъл за потвърждаване на прекъсване; два последователни цикъла с 4 такта помежду",
+    "chapters": [
+      { "num": 11, "slug": "11-bus" },
+      { "num": 14, "slug": "14-interrupt-controllers" }
+    ]
+  },
+  {
+    "id": "intr",
+    "letter": "I",
+    "abbr": "INTR",
+    "full": "Interrupt Request",
+    "description": "Маскируем вход за прекъсване на процесора",
+    "chapters": [{ "num": 9, "slug": "09-interrupts" }]
+  },
+  {
+    "id": "ioapic",
+    "letter": "I",
+    "abbr": "IOAPIC",
+    "full": "I/O Advanced Programmable Interrupt Controller",
+    "description": "Компонент на APIC системата, приемащ IRQ линии от периферни устройства и разпределящ ги към LAPIC",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "iopl",
+    "letter": "I",
+    "abbr": "IOPL",
+    "full": "I/O Privilege Level",
+    "description": "Битове EFLAGS[13:12]; минималното CPL за изпълнение на привилегировани I/O инструкции",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "ipi",
+    "letter": "I",
+    "abbr": "IPI",
+    "full": "Inter-Processor Interrupt",
+    "description": "Прекъсване, изпратено от един CPU до друг чрез APIC",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "irq",
+    "letter": "I",
+    "abbr": "IRQ",
+    "full": "Interrupt Request",
+    "description": "Заявка за прекъсване от периферно устройство",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "irr",
+    "letter": "I",
+    "abbr": "IRR",
+    "full": "Interrupt Request Register",
+    "description": "Регистър за заявки за прекъсвания в 8259A; защелква входящи IRQ сигнали",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "isr",
+    "letter": "I",
+    "abbr": "ISR",
+    "full": "Interrupt Service Register",
+    "description": "Регистър за обслужване на прекъсвания в 8259A; отбелязва текущо обработваното IRQ",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "ist",
+    "letter": "I",
+    "abbr": "IST",
+    "full": "Interrupt Stack Table",
+    "description": "Таблица с 7 стека за прекъсвания в 64-битовия TSS (Long Mode)",
+    "chapters": [
+      { "num": 9, "slug": "09-interrupts" },
+      { "num": 10, "slug": "10-tasks" }
+    ]
+  },
+  {
+    "id": "iu",
+    "letter": "I",
+    "abbr": "IU",
+    "full": "Integer Unit",
+    "description": "Целочислено изпълнително устройство",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "jpu",
+    "letter": "J",
+    "abbr": "JPU",
+    "full": "Jump Prediction Unit",
+    "description": "Устройство за проверка на предсказани преходи в P6",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "ken",
+    "letter": "K",
+    "abbr": "KEN#",
+    "full": "Cache Enable",
+    "description": "Сигнал, разрешаващ кеширане на текущия шинен цикъл",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "lapic",
+    "letter": "L",
+    "abbr": "LAPIC",
+    "full": "Local Advanced Programmable Interrupt Controller",
+    "description": "Локален APIC контролер, вграден в CPU кристала",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "ldt",
+    "letter": "L",
+    "abbr": "LDT",
+    "full": "Local Descriptor Table",
+    "description": "Локална дескрипторна таблица; специфична за отделна задача",
+    "chapters": [
+      { "num": 6, "slug": "06-segmentation" },
+      { "num": 10, "slug": "10-tasks" }
+    ]
+  },
+  {
+    "id": "ldtr",
+    "letter": "L",
+    "abbr": "LDTR",
+    "full": "LDT Register",
+    "description": "16-битов регистър (+ 64-битов кеш), указващ LDT на текущата задача",
+    "chapters": [{ "num": 6, "slug": "06-segmentation" }]
+  },
+  {
+    "id": "llc",
+    "letter": "L",
+    "abbr": "LLC",
+    "full": "Last-Level Cache",
+    "description": "Последно ниво на кеша (обикновено L3), споделено между всички ядра",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "lvt",
+    "letter": "L",
+    "abbr": "LVT",
+    "full": "Local Vector Table",
+    "description": "Таблица в LAPIC с 6 регистъра; конфигурира обработката на локални прекъсвания (timer, thermal, LINT0/LINT1)",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "mch",
+    "letter": "M",
+    "abbr": "MCH",
+    "full": "Memory Controller Hub",
+    "description": "Северен мост (Northbridge) в традиционния чипсет; съдържа контролер на паметта; заменен от IMC в Nehalem",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "mesi",
+    "letter": "M",
+    "abbr": "MESI",
+    "full": "Modified/Exclusive/Shared/Invalid",
+    "description": "Протокол за съгласуваност на кешовете при SMP системи",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "mmx",
+    "letter": "M",
+    "abbr": "MMX",
+    "full": "MultiMedia eXtensions",
+    "description": "64-битови SIMD регистри (MM0–MM7) за целочислени операции (Pentium MMX, 1997)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "ms",
+    "letter": "M",
+    "abbr": "MS",
+    "full": "Microcode Sequencer (MIS)",
+    "description": "Устройство за генериране на µops от микрокод при сложни инструкции",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "msr",
+    "letter": "M",
+    "abbr": "MSR",
+    "full": "Model-Specific Register",
+    "description": "64-разредни регистри, специфични за модела процесор; достъп чрез RDMSR/WRMSR на ниво 0",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "mtrr",
+    "letter": "M",
+    "abbr": "MTRR",
+    "full": "Memory Type Range Registers",
+    "description": "MSR-регистри, дефиниращи типа на кеширане (WB, WT, UC) за физически адресни диапазони",
+    "chapters": [
+      { "num": 5, "slug": "05-system-architecture" },
+      { "num": 13, "slug": "13-smp" }
+    ]
+  },
+  {
+    "id": "nmi",
+    "letter": "N",
+    "abbr": "NMI",
+    "full": "Non-Maskable Interrupt",
+    "description": "Немаскируемо прекъсване; вектор 2; не се блокира с CLI",
+    "chapters": [{ "num": 9, "slug": "09-interrupts" }]
+  },
+  {
+    "id": "nt",
+    "letter": "N",
+    "abbr": "NT",
+    "full": "Nested Task",
+    "description": "Флаг в EFLAGS; NT=1 показва вложена задача; IRET с NT=1 → превключване на задача",
+    "chapters": [{ "num": 10, "slug": "10-tasks" }]
+  },
+  {
+    "id": "ocw",
+    "letter": "O",
+    "abbr": "OCW",
+    "full": "Operation Command Word",
+    "description": "Оперативна командна дума (OCW1–OCW3) за управление на 8259A след инициализация",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "ooo",
+    "letter": "O",
+    "abbr": "OoO",
+    "full": "Out-of-Order (execution)",
+    "description": "Извън-редно изпълнение на инструкции; оптимизира използването на изпълнителните устройства",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "pae",
+    "letter": "P",
+    "abbr": "PAE",
+    "full": "Physical Address Extension",
+    "description": "Разширение на физическия адрес до 36 бита (от Pentium Pro)",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pcd",
+    "letter": "P",
+    "abbr": "PCD",
+    "full": "Page Cache Disable",
+    "description": "Бит в PTE/PDE или CR3; забранява кеширане на страницата",
+    "chapters": [
+      { "num": 7, "slug": "07-paging" },
+      { "num": 11, "slug": "11-bus" }
+    ]
+  },
+  {
+    "id": "pde",
+    "letter": "P",
+    "abbr": "PDE",
+    "full": "Page Directory Entry",
+    "description": "Запис в Page Directory; указва Page Table или 4 MB физическа страница",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pdpt",
+    "letter": "P",
+    "abbr": "PDPT",
+    "full": "Page Directory Pointer Table",
+    "description": "Трето ниво на PAE и Long Mode странициране (4 записа при PAE, 512 при Long Mode)",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pic",
+    "letter": "P",
+    "abbr": "PIC",
+    "full": "Programmable Interrupt Controller",
+    "description": "Програмируем контролер на прекъсванията (Intel 8259A)",
+    "chapters": [{ "num": 14, "slug": "14-interrupt-controllers" }]
+  },
+  {
+    "id": "plock",
+    "letter": "P",
+    "abbr": "PLOCK#",
+    "full": "Pseudo-Lock",
+    "description": "Псевдозаключване при i486 за предавания > 32 бита",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "pml4",
+    "letter": "P",
+    "abbr": "PML4",
+    "full": "Page Map Level 4",
+    "description": "Четвърто ниво на таблицата за странициране в Long Mode (512 × 8B записа)",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pse",
+    "letter": "P",
+    "abbr": "PSE",
+    "full": "Page Size Extension",
+    "description": "CR4[4]; разрешава 4 MB (32-bit) или 2 MB (PAE) Large Pages",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pte",
+    "letter": "P",
+    "abbr": "PTE",
+    "full": "Page Table Entry",
+    "description": "Запис в Page Table; указва физическия адрес на 4 KB страница и флагове",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "pwt",
+    "letter": "P",
+    "abbr": "PWT",
+    "full": "Page Write-Through",
+    "description": "Бит в PTE/PDE; задава Write-Through кеширане на страницата",
+    "chapters": [
+      { "num": 7, "slug": "07-paging" },
+      { "num": 11, "slug": "11-bus" }
+    ]
+  },
+  {
+    "id": "qpi",
+    "letter": "Q",
+    "abbr": "QPI",
+    "full": "QuickPath Interconnect",
+    "description": "Последователна точка-до-точка шина, заменяща FSB в Nehalem (2008)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "rat",
+    "letter": "R",
+    "abbr": "RAT",
+    "full": "Register Alias Table",
+    "description": "Таблица за преименуване на архитектурни регистри към физически (P6)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "rdy",
+    "letter": "R",
+    "abbr": "RDY#",
+    "full": "Ready",
+    "description": "Сигнал от паметта/ВУ за готовност при непакетен цикъл",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "rflags",
+    "letter": "R",
+    "abbr": "RFLAGS",
+    "full": "64-bit FLAGS Register (Long Mode)",
+    "description": "64-битово разширение на EFLAGS; битове 32–63 запазени; RF, VM, NT са само в 32-bit форма",
+    "chapters": [
+      { "num": 4, "slug": "04-programming-model" },
+      { "num": 5, "slug": "05-system-architecture" }
+    ]
+  },
+  {
+    "id": "risc",
+    "letter": "R",
+    "abbr": "RISC",
+    "full": "Reduced Instruction Set Computer",
+    "description": "Архитектура с опростен набор от инструкции (вътрешното ядро на P6 е RISC)",
+    "chapters": [
+      { "num": 1, "slug": "01-history" },
+      { "num": 2, "slug": "02-superscalar" }
+    ]
+  },
+  {
+    "id": "rob",
+    "letter": "R",
+    "abbr": "ROB",
+    "full": "Reorder Buffer",
+    "description": "Пул на инструкциите; позволява извън-редно изпълнение и в-ред завършване",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "rpl",
+    "letter": "R",
+    "abbr": "RPL",
+    "full": "Requested Privilege Level",
+    "description": "Заявено ниво на привилегия в сегментния селектор (битове 1:0)",
+    "chapters": [
+      { "num": 6, "slug": "06-segmentation" },
+      { "num": 8, "slug": "08-protection" }
+    ]
+  },
+  {
+    "id": "rs",
+    "letter": "R",
+    "abbr": "RS",
+    "full": "Reservation Station",
+    "description": "Буфер, съхраняващ µops, чакащи за операнди; управлява OoO изпълнение",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "rsb",
+    "letter": "R",
+    "abbr": "RSB",
+    "full": "Return Stack Buffer",
+    "description": "Буфер за предсказване на адреси при RET инструкции",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "sib",
+    "letter": "S",
+    "abbr": "SIB",
+    "full": "Scale-Index-Base byte",
+    "description": "Байт от формата на инструкцията след ModR/M; Scale (×1/2/4/8), Index и Base регистри",
+    "chapters": [{ "num": 4, "slug": "04-programming-model" }]
+  },
+  {
+    "id": "simd",
+    "letter": "S",
+    "abbr": "SIMD",
+    "full": "Single Instruction, Multiple Data",
+    "description": "Един такт обработва множество данни паралелно (MMX, SSE, AVX)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "smi",
+    "letter": "S",
+    "abbr": "SMI#",
+    "full": "System Management Interrupt",
+    "description": "Прекъсване за системно управление (преминаване в SMM режим)",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "smm",
+    "letter": "S",
+    "abbr": "SMM",
+    "full": "System Management Mode",
+    "description": "Специален режим за управление на захранването и хардуерни функции",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "smp",
+    "letter": "S",
+    "abbr": "SMP",
+    "full": "Symmetric Multi-Processing",
+    "description": "Симетрична многопроцесорна архитектура; всички CPU споделят памет и APIC",
+    "chapters": [{ "num": 13, "slug": "13-smp" }]
+  },
+  {
+    "id": "smt",
+    "letter": "S",
+    "abbr": "SMT",
+    "full": "Simultaneous Multi-Threading",
+    "description": "Симултанно многонишково изпълнение (Intel го наименова HTT)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "sse",
+    "letter": "S",
+    "abbr": "SSE",
+    "full": "Streaming SIMD Extensions",
+    "description": "128-битови SIMD регистри (XMM0–XMM15) за плаваща запетая (Pentium III, 1999)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "sse2",
+    "letter": "S",
+    "abbr": "SSE2",
+    "full": "Streaming SIMD Extensions 2",
+    "description": "128-битови целочислени SIMD + double-precision FP; въведени с Pentium 4 (2001)",
+    "chapters": [
+      { "num": 1, "slug": "01-history" },
+      { "num": 3, "slug": "03-data-types" }
+    ]
+  },
+  {
+    "id": "sse3",
+    "letter": "S",
+    "abbr": "SSE3",
+    "full": "Streaming SIMD Extensions 3",
+    "description": "Добавя LDDQU, ADDSUBPS/PD, HADDPS/PD; въведен с Prescott (2004)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "sse4",
+    "letter": "S",
+    "abbr": "SSE4",
+    "full": "Streaming SIMD Extensions 4.x",
+    "description": "SSE4.1 (Penryn, 2007): BLENDPS, MPSADBW; SSE4.2 (Nehalem, 2008): CRC32, PCMPISTRI",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "ti",
+    "letter": "T",
+    "abbr": "TI",
+    "full": "Table Indicator",
+    "description": "Бит 2 на сегментния селектор; TI=0 → GDT; TI=1 → LDT",
+    "chapters": [{ "num": 6, "slug": "06-segmentation" }]
+  },
+  {
+    "id": "tlb",
+    "letter": "T",
+    "abbr": "TLB",
+    "full": "Translation Lookaside Buffer",
+    "description": "Кеш за резултатите от страничната трансформация",
+    "chapters": [{ "num": 7, "slug": "07-paging" }]
+  },
+  {
+    "id": "tpr",
+    "letter": "T",
+    "abbr": "TPR",
+    "full": "Task Priority Register",
+    "description": "Регистър в LAPIC; прекъсвания с вектор ≤ TPR се маскират за текущото ядро",
+    "chapters": [
+      { "num": 13, "slug": "13-smp" },
+      { "num": 14, "slug": "14-interrupt-controllers" }
+    ]
+  },
+  {
+    "id": "tr",
+    "letter": "T",
+    "abbr": "TR",
+    "full": "Task Register",
+    "description": "Регистър, чийто видим 16-битов селектор указва TSS на текущата задача",
+    "chapters": [{ "num": 10, "slug": "10-tasks" }]
+  },
+  {
+    "id": "tss",
+    "letter": "T",
+    "abbr": "TSS",
+    "full": "Task State Segment",
+    "description": "Сегмент за съхранение на контекста на задача (регистри, стекове, LDT, CR3)",
+    "chapters": [{ "num": 10, "slug": "10-tasks" }]
+  },
+  {
+    "id": "tsx",
+    "letter": "T",
+    "abbr": "TSX",
+    "full": "Transactional Synchronization Extensions",
+    "description": "Хардуерна транзакционна памет (Skylake)",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  },
+  {
+    "id": "uefi",
+    "letter": "U",
+    "abbr": "UEFI",
+    "full": "Unified Extensible Firmware Interface",
+    "description": "Наследник на BIOS; модерен фърмуерен интерфейс",
+    "chapters": [{ "num": 5, "slug": "05-system-architecture" }]
+  },
+  {
+    "id": "vex",
+    "letter": "V",
+    "abbr": "VEX",
+    "full": "Vector Extension prefix",
+    "description": "Префикс на инструкциите за AVX/AVX2 (заменя REX + legacy SSE prefix)",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "wb-wt",
+    "letter": "W",
+    "abbr": "WB/WT#",
+    "full": "Write Back / Write Through",
+    "description": "Сигнал, задаващ метода на кеширане за текущия шинен цикъл",
+    "chapters": [{ "num": 11, "slug": "11-bus" }]
+  },
+  {
+    "id": "xd-nx",
+    "letter": "X",
+    "abbr": "XD/NX",
+    "full": "Execute Disable / No-Execute",
+    "description": "Бит в PTE; забранява изпълнение на код от страницата (защита от buffer-overflow атаки)",
+    "chapters": [
+      { "num": 7, "slug": "07-paging" },
+      { "num": 8, "slug": "08-protection" }
+    ]
+  },
+  {
+    "id": "xmm",
+    "letter": "X",
+    "abbr": "XMM",
+    "full": "XMM registers",
+    "description": "128-битови SIMD регистри (XMM0–XMM15) за SSE/SSE2/SSE4",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "ymm",
+    "letter": "Y",
+    "abbr": "YMM",
+    "full": "YMM registers",
+    "description": "256-битови SIMD регистри (YMM0–YMM15) за AVX/AVX2",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "zmm",
+    "letter": "Z",
+    "abbr": "ZMM",
+    "full": "ZMM registers",
+    "description": "512-битови SIMD регистри (ZMM0–ZMM31) за AVX-512",
+    "chapters": [{ "num": 3, "slug": "03-data-types" }]
+  },
+  {
+    "id": "uop",
+    "letter": "µ",
+    "abbr": "µop",
+    "full": "Micro-operation",
+    "description": "Вътрешна RISC-подобна операция, в която декодерите разбиват CISC инструкции",
+    "chapters": [{ "num": 2, "slug": "02-superscalar" }]
+  }
+]
