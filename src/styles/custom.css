@@ -181,10 +181,72 @@
   display: inline-block;
 }
 
+/* ── Subject homepage hero — compact ────────────────────────────────────── */
+[data-has-hero] .hero {
+  padding-block: clamp(1rem, calc(0.5rem + 3vmin), 2.5rem);
+  gap: 0.75rem;
+}
+
+[data-has-hero] .hero h1 {
+  font-size: clamp(var(--sl-text-xl), calc(0.5rem + 3vw), var(--sl-text-4xl));
+}
+
+[data-has-hero] .hero .tagline {
+  font-size: var(--sl-text-base);
+}
+
+[data-has-hero] .hero .actions {
+  gap: 0.5rem 1rem;
+}
+
+/* Widen the right column for course info (default Starlight is 7fr 4fr) */
+@media (min-width: 50rem) {
+  [data-has-hero] .hero {
+    grid-template-columns: 5fr 4fr;
+  }
+}
+
+/* Override hero-html sizing: let course info fill the right column naturally */
+[data-has-hero] .hero > .hero-html {
+  width: auto;
+  margin-inline: 0;
+  align-items: flex-start;
+}
+
+/* Course info block in hero right column */
+.hero-course-info {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.6rem;
+  font-size: var(--sl-text-sm);
+  line-height: 1.6;
+  color: var(--sl-color-gray-2);
+  border-left: 2px solid var(--sl-color-gray-5);
+  padding-left: 1rem;
+}
+
+.hero-course-info dt {
+  font-weight: 600;
+  color: var(--sl-color-gray-1);
+  white-space: nowrap;
+}
+
+.hero-course-info dd {
+  margin: 0;
+}
+
 /* --- Math expressions ----──────────────────────────────────────────────- */
-.katex {
+/* select cases when only 1 kates */
+.sl-markdown-content p:has(.katex):not(:has(.katex ~ .katex)) .katex {
   display: block;
+  margin: 1.5rem auto;
   text-align: center;
-  font-size: 2.5rem !important;
-  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+/* --- Images ---────────────────────────────────────────────────────────── */
+/* Center images that are the only content of a paragraph */
+.sl-markdown-content p:has(img):not(:has(img ~ img)) img {
+  margin: 2rem auto;
 }

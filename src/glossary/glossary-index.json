@@ -846,6 +846,24 @@
     ]
   },
   {
+    "id": "eisa",
+    "letter": "E",
+    "abbr": "EISA",
+    "full": "Extended Industry Standard Architecture",
+    "description": "32-битова системна шина за персонални компютри, въведена през 1988 г. като обратно съвместим с ISA промишлен стандарт. Пропускателна способност 33 MB/s.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "CISC и RISC архитектури",
+            "slug": "02-cisc-and-risc"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "eoi",
     "letter": "E",
     "abbr": "EOI",
@@ -1760,6 +1778,24 @@
           {
             "title": "SMP архитектури",
             "slug": "13-smp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mca",
+    "letter": "M",
+    "abbr": "MCA",
+    "full": "Micro Channel Architecture",
+    "description": "32-битова системна шина за персонални компютри, въведена от IBM през 1987 г. като наследник на ISA. Несъвместима с ISA периферни модули.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "CISC и RISC архитектури",
+            "slug": "02-cisc-and-risc"
           }
         ]
       }
@@ -2980,6 +3016,24 @@
     ]
   },
   {
+    "id": "vesa",
+    "letter": "V",
+    "abbr": "VESA",
+    "full": "Video Electronics Standards Association",
+    "description": "Индустриална асоциация, стандартизираща видео и дисплейни интерфейси за персонални компютри. Издала спецификацията на локалната шина VL-Bus (1992 г.).",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "CISC и RISC архитектури",
+            "slug": "02-cisc-and-risc"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "vex",
     "letter": "V",
     "abbr": "VEX",
@@ -2992,6 +3046,24 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vl-bus",
+    "letter": "V",
+    "abbr": "VL-Bus",
+    "full": "VESA Local Bus",
+    "description": "32-битова локална шина за персонални компютри, обявена от VESA през 1992 г. с пропускателна способност 133 MB/s. Слотовете VL-Bus се използват съвместно с ISA или EISA слотове.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "CISC и RISC архитектури",
+            "slug": "02-cisc-and-risc"
           }
         ]
       }

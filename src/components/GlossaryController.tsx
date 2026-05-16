@@ -29,7 +29,9 @@ function buildIndex(entries: GlossaryEntry[]) {
   ];
   if (!patterns.length) return null;
 
-  const regex = new RegExp(`\\b(${patterns.join('|')})\\b`, 'gi');
+  // Use (?!\w) instead of \b at the end so terms ending in non-word chars
+  // like LOCK# or ADS# are matched correctly (\b fails after # in typical text).
+  const regex = new RegExp(`\\b(${patterns.join('|')})(?!\\w)`, 'gi');
   return { regex, byAbbr, byFull };
 }
 

@@ -14,13 +14,25 @@ function loadSubjectSidebar(name) {
   const path = join(subjectsRoot, name, 'contents', 'sidebar.json');
   if (!existsSync(path)) return [];
   const groups = JSON.parse(readFileSync(path, 'utf-8'));
-  return groups.map(group => ({
+
+  let label = name;
+  const indexPath = join(subjectsRoot, name, 'contents', 'index.mdx');
+  if (existsSync(indexPath)) {
+    const m = readFileSync(indexPath, 'utf-8').match(/^title:\s*["']?(.+?)["']?\s*$/m);
+    if (m) label = m[1];
+  }
+
+  // Drop the "Начало" group (single index link) — replaced by a direct link with the subject name.
+  const contentGroups = groups.filter(
+    g => !(g.items?.length === 1 && g.items[0].slug === 'index')
+  );
+
+  const prefixed = contentGroups.map(group => ({
     ...group,
-    items: group.items.map(item => ({
-      ...item,
-      slug: `${name}/${item.slug}`,
-    })),
+    items: group.items.map(item => ({ ...item, slug: `${name}/${item.slug}` })),
   }));
+
+  return [{ label, collapsed: true, items: [{ label, link: `/${name}/` }, ...prefixed] }];
 }
 
 const subjectNames = readdirSync(subjectsRoot, { withFileTypes: true })
@@ -29,17 +41,11 @@ const subjectNames = readdirSync(subjectsRoot, { withFileTypes: true })
   .sort();
 
 const sidebar = [
-  {
-    label: 'Начало',
-    items: [
-      { slug: 'index', label: 'Всички предмети' },
-      { label: 'Справочник на термините', link: '/glossary/' },
-    ],
-  },
   ...subjectNames.flatMap(name => loadSubjectSidebar(name)),
 ];
 
 export default defineConfig({
+  site: 'https://textbooks.mifkata.com',
   integrations: [
     starlight({
       title: 'mifkata.textbooks',
@@ -51,6 +57,8 @@ export default defineConfig({
       sidebar,
       components: {
         Footer: './src/overrides/Footer.astro',
+        Header: './src/overrides/Header.astro',
+        Sidebar: './src/overrides/Sidebar.astro',
       },
     }),
     react(),

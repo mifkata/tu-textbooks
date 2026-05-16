@@ -1,0 +1,110 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+export interface TopicCard {
+  title: string;
+  icon: string;
+  description: string;
+}
+
+interface Props {
+  cards: TopicCard[];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="topic-grid">
+  {
+    cards.map((card) => (
+      <div class="topic-card">
+        <div class="topic-card-header">
+          <div class="topic-icon-wrap">
+            <Icon name={card.icon as any} size="1rem" />
+          </div>
+          <span class="topic-card-title">{card.title}</span>
+        </div>
+        <p class="topic-card-desc">{card.description}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-block: 1rem;
+    /* stretch is the default; no need to declare */
+  }
+
+  /* lone last card → full width */
+  .topic-card:last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+  }
+  /* two cards in last row → first spans 2 cols */
+  .topic-card:nth-last-child(1):nth-child(2n + 1) {
+    grid-column: span 2;
+  }
+
+  .topic-card {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-bg-sidebar);
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    height: 100%;       /* belt-and-braces in case something kills stretch */
+    box-sizing: border-box;
+  }
+
+  .topic-card:hover {
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--sl-color-accent) 15%, transparent);
+    background: var(--sl-color-bg);
+  }
+
+  /* cycle icon accent colours */
+  .topic-card:nth-child(6n + 1) { --_ic: #f59e0b; }
+  .topic-card:nth-child(6n + 2) { --_ic: #8b5cf6; }
+  .topic-card:nth-child(6n + 3) { --_ic: #10b981; }
+  .topic-card:nth-child(6n + 4) { --_ic: #ec4899; }
+  .topic-card:nth-child(6n + 5) { --_ic: #3b82f6; }
+  .topic-card:nth-child(6n + 0) { --_ic: #ef4444; }
+
+  .topic-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .topic-icon-wrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.35rem;
+    background: color-mix(in srgb, var(--_ic) 14%, transparent);
+    color: var(--_ic);
+  }
+
+  .topic-card-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    color: var(--sl-color-white);
+  }
+
+  .topic-card-desc {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--sl-color-gray-3);
+    line-height: 1.45;
+  }
+</style>

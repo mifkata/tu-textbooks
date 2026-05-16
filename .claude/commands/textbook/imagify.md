@@ -81,20 +81,25 @@ Searching…
 
 ---
 
-## Step 3 — Search for images
+## Step 3 — Search and download images
 
 For each confirmed opportunity site:
 
 1. Run 2–3 web searches using the candidate queries.
 2. Evaluate each result for a suitable image:
    - **Preferred sources** (in order): Wikipedia / Wikimedia Commons, official manufacturer documentation (Intel, AMD, ARM, NVIDIA, Cray), IEEE / ACM digital library, university course slides (`.edu` domains), archived textbook publisher sites.
-   - **Reject**: search engine thumbnail proxies, CDN URLs with expiry tokens (`?X-Amz-Expires=`, `?token=`, etc.), social media image hosts, low-resolution images (below ~400 px wide).
-3. For each candidate image URL:
-   - Verify the URL is direct (ends in `.png`, `.jpg`, `.svg`, `.gif`, or is a Wikimedia `thumb` URL).
-   - Derive a descriptive alt text from the image caption or surrounding text.
-   - Derive a caption sentence (source attribution where possible).
-4. If **no suitable image** is found: record the site as "no image found" and leave a `<!-- imagify: <opportunity-type> — no image found, manual review needed -->` comment in the MDX at the insertion point.
-5. If a suitable image is found: record `{ file, heading, url, alt_text, caption, opportunity_type, source_domain }`.
+   - **Target minimum width: 960 px.** For Wikimedia URLs the valid thumb sizes are `20, 40, 60, 120, 250, 330, 500, 960, 1280` px — use `960px-` or `1280px-` as the prefix. Never use 400, 600, 800, or 1024 (those return HTTP 400). Reject images below 400 px wide.
+   - **Reject**: search engine thumbnail proxies, CDN URLs with expiry tokens (`?X-Amz-Expires=`, `?token=`, etc.), social media image hosts.
+3. **Download every image locally** — never embed remote URLs directly:
+   ```bash
+   mkdir -p public/images/<subject>
+   curl -L -o public/images/<subject>/<filename> <remote-url>
+   ```
+   Use a descriptive filename derived from the subject and concept (e.g. `von-neumann-architecture.svg.png`, `risc-i-die-shot.jpg`). Verify the file was downloaded (non-zero size).
+4. Reference the image in MDX using the local path: `/images/<subject>/<filename>`.
+5. Derive a descriptive alt text from the image caption or surrounding text.
+6. Derive a caption sentence (source attribution — original domain — where possible).
+7. If **no suitable image** is found: record the site as "no image found" and leave a `<!-- imagify: <opportunity-type> — no image found, manual review needed -->` comment in the MDX at the insertion point.
 
 ---
 
@@ -185,7 +190,8 @@ Sources used:
 
 ## Rules
 
-- **Stable URLs only.** Do not embed URLs containing expiry tokens, query-string auth parameters, or search engine thumbnail proxies. Wikipedia `thumb` URLs (`commons/thumb/…`) are acceptable.
+- **Always download images locally.** Never embed remote URLs directly. Download to `public/images/<subject>/<filename>` and reference as `/images/<subject>/<filename>`. Verify the downloaded file is non-zero before referencing it.
+- **Minimum 800 px wide.** Use the widest available variant of the source (Wikimedia `800px-` or `1024px-` thumb). Never embed images below 400 px wide.
 - **No fabricated alt text.** Alt text and captions must be derived from the actual image content or its source page title/caption — do not invent descriptions.
 - **Surgical injection.** Only touch the identified insertion points. Do not reformat surrounding content, fix typos, or alter headings.
 - **Language consistency.** Captions should match the language of the surrounding content (Bulgarian for Bulgarian pages).

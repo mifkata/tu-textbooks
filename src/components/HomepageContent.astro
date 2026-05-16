@@ -1,5 +1,5 @@
 ---
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import TopicCards from "@/components/TopicCards.astro";
 
 interface Chapter {
   num: number;
@@ -25,28 +25,9 @@ interface Props {
 const { data: homepage, base } = Astro.props;
 ---
 
-<p>
-  <strong>Специалност:</strong>
-  {homepage.courseInfo.specialty}<br />
-  <strong>Катедра:</strong>
-  {homepage.courseInfo.department}<br />
-  <strong>Лектор:</strong>
-  {homepage.courseInfo.lecturer}
-</p>
-
-<hr />
-
 <h2>Теми</h2>
 
-<CardGrid>
-  {
-    homepage.topicCards.map((card) => (
-      <Card title={card.title} icon={card.icon as any}>
-        {card.description}
-      </Card>
-    ))
-  }
-</CardGrid>
+<TopicCards cards={homepage.topicCards} />
 
 <hr />
 
@@ -70,5 +51,3 @@ const { data: homepage, base } = Astro.props;
     </details>
   ))
 }
-
-<p><a href="/glossary/"><strong>→ Справочник на термините</strong></a></p>

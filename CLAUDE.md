@@ -211,10 +211,11 @@ These rules govern how `contents/*.mdx` pages are written by `/textbook:compose`
 
 **Rule: prefer a real image over a diagram.**
 
-1. Search the web for a suitable image (Wikipedia, manufacturer datasheets, textbook publishers, IEEE). If a good one exists, embed it with a descriptive alt text: `![Block diagram of the P6 pipeline](https://…)`.
-2. Only if no suitable image is found, create a **Mermaid diagram**. Use the simplest diagram type that accurately represents the structure (flowchart for pipelines, block diagrams; sequence for protocols). Do not add decorative diagrams.
-3. Mermaid diagrams live in fenced blocks: ` ```mermaid `.
-4. Every visual (image or diagram) must have a caption as a following `*italic paragraph*` or inside an `<figcaption>` if wrapped in `<figure>`.
+1. Search the web for a suitable image (Wikipedia, manufacturer datasheets, textbook publishers, IEEE). Target at least **800 px wide**. For Wikimedia URLs the valid thumb sizes are `20, 40, 60, 120, 250, 330, 500, 960, 1280` — use `960px-` or `1280px-` as the thumb prefix (never 400, 600, 800, or 1024 — those return HTTP 400).
+2. **Download every image locally** — never embed remote URLs directly. Save to `public/images/<subject>/<filename>` and reference it as `/images/<subject>/<filename>`. Use `curl -L -o <path> <url>` to download; create the directory first with `mkdir -p`.
+3. Only if no suitable image is found, create a **Mermaid diagram**. Use the simplest diagram type that accurately represents the structure (flowchart for pipelines, block diagrams; sequence for protocols). Do not add decorative diagrams.
+4. Mermaid diagrams live in fenced blocks: ` ```mermaid `.
+5. Every visual (image or diagram) must have a caption as a following `*italic paragraph*` or inside an `<figcaption>` if wrapped in `<figure>`.
 
 ### Glossary cross-references
 

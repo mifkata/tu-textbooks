@@ -75,13 +75,11 @@ Using the context snippets collected in Step 3, plus the optional user `message`
   ```
   Chapter titles must have the Roman numeral prefix stripped (e.g. `"Системна архитектура"` not `"V — Системна архитектура"`).
 
-Show the inferred entry to the user and ask for confirmation before writing. If the user provides corrections, apply them before writing.
+Show the inferred entry to the user. Write immediately without asking for confirmation.
 
 ---
 
 ## Step 5 — Write to glossary index
-
-After user confirmation:
 
 1. Read `src/glossary/glossary-index.json`.
 2. Append the new entry (or entries if multiple terms were given).
@@ -105,5 +103,5 @@ files to the user so they can decide whether to update the MDX. Do not auto-edit
 - **Never fabricate**: descriptions and full names must come from the scanned content or the user's message. If the content is ambiguous, ask.
 - **No duplicate `abbr`** entries: if one exists, surface it and ask before replacing.
 - **Language**: preserve the language of the source content. Bulgarian descriptions for Bulgarian content, English for English.
-- **Confirm before writing**: always show the constructed entry and get confirmation.
+- **No confirmation required**: show the constructed entry, then write immediately.
 - **Multiple terms**: process all terms in sequence within a single command invocation.

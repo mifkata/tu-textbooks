@@ -1,0 +1,26 @@
+---
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+
+const { sidebar } = Astro.locals.starlightRoute;
+
+function hasCurrent(entry: { type: string; isCurrent?: boolean; entries?: any[] }): boolean {
+  if (entry.type === 'link') return Boolean(entry.isCurrent);
+  if (entry.type === 'group') return (entry.entries ?? []).some(hasCurrent);
+  return false;
+}
+
+// When on a subject page: show only that subject's group, flattened (no outer wrapper).
+// When on a non-subject page (root, glossary, etc.): show full sidebar.
+const subjectGroup = sidebar.find(hasCurrent);
+const sublist = subjectGroup?.type === 'group' ? subjectGroup.entries : sidebar;
+---
+
+<SidebarPersister>
+  <SidebarSublist sublist={sublist} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+  <MobileMenuFooter />
+</div>
