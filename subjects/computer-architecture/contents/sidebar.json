@@ -26,7 +26,7 @@
   {
     "label": "Процесори с паралелизъм",
     "items": [
-      { "slug": "06-multiple-functional-units", "label": "VI — Процесор с множество ФУ" },
+      { "slug": "06-multiple-functional-units", "label": "VI — Процесор с множество функционални устройства" },
       { "slug": "07-vector-processors",         "label": "VII — Векторни процесори" },
       { "slug": "08-simd-processors",           "label": "VIII — Матрични (SIMD) процесори" },
       { "slug": "09-systolic-processors",       "label": "IX — Систолични процесори" }

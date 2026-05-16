@@ -177,56 +177,53 @@ Bytes 3–0:  Selector | Offset[15:0]
 
 ### 32-битов режим
 
+Стекът расте към по-ниски адреси — процесорът **намалява ESP** и записва елементите отгоре надолу.
+
 **При прекъсване/изключение без превключване на привилегия (CPL = DPL):**
 
-```mermaid
-flowchart TD
-    ESP0["← ESP преди прекъсване"] --> EFLAGS["EFLAGS"]
-    EFLAGS --> CS["CS"]
-    CS --> EIP["EIP"]
-    EIP --> EC["Error Code\n(само при #DF, #TS, #NP, #SS, #GP, #PF, #AC)"]
-    EC --> ESP_NEW["← ESP след прекъсване"]
-    style ESP0 fill:#f9f,stroke:#333
-    style ESP_NEW fill:#9ff,stroke:#333
-```
+| Адрес | Съдържание |
+|-------|-----------|
+| ESP преди прекъсването | *(върхът преди прекъсване)* |
+| ESP − 4 | EFLAGS |
+| ESP − 8 | CS |
+| ESP − 12 | EIP (адрес на следващата инструкция) |
+| ESP − 16 | Error Code *(само при #DF, #TS, #NP, #SS, #GP, #PF, #AC)* |
+| **← ESP след прекъсването** | |
 
-**При прекъсване с превключване на привилегия (CPL > DPL):**
+**При прекъсване с превключване на привилегия (CPL > DPL, напр. Ring 3 → Ring 0):**
 
-```mermaid
-flowchart TD
-    TSS["TSS: SS0:ESP0 (нов стек)"] --> OldSS["Old SS"]
-    OldSS --> OldESP["Old ESP"]
-    OldESP --> EFLAGS2["EFLAGS"]
-    EFLAGS2 --> OldCS["Old CS"]
-    OldCS --> OldEIP["Old EIP"]
-    OldEIP --> EC2["Error Code (ако е приложимо)"]
-    EC2 --> ESP_NEW2["← ESP след прекъсване"]
-    style TSS fill:#ffd,stroke:#333
-    style ESP_NEW2 fill:#9ff,stroke:#333
-```
+Процесорът зарежда `SS0:ESP0` от TSS и превключва към нов стек преди запис:
+
+| Адрес (нов стек) | Съдържание |
+|-----------------|-----------|
+| SS0:ESP0 от TSS | *(начало на новия стек)* |
+| − 4 | Old SS (сегментен регистър на прекъснатата задача) |
+| − 8 | Old ESP |
+| − 12 | Old EFLAGS |
+| − 16 | Old CS |
+| − 20 | Old EIP |
+| − 24 | Error Code *(ако е приложимо)* |
+| **← ESP след прекъсването** | |
 
 ### 64-битов режим (Long Mode)
 
-- **64-битови стойности** за RIP, RSP, CS, SS се записват в стека
-- **RSP изравнен на 16 байта** преди записа
+Всички стойности са **8-байтови**; RSP се изравнява на 16 байта преди записа. SS и RSP се записват **винаги** (независимо от превключване на привилегия):
 
-```mermaid
-flowchart TD
-    RSP0["← RSP преди (16-byte aligned)"] --> OldSS64["Old SS (8 байта)"]
-    OldSS64 --> OldRSP["Old RSP (8 байта)"]
-    OldRSP --> RFLAGS["RFLAGS (8 байта)"]
-    RFLAGS --> OldCS64["Old CS (8 байта)"]
-    OldCS64 --> OldRIP["Old RIP (8 байта)"]
-    OldRIP --> EC64["Error Code (8 байта, ако е приложимо)"]
-    EC64 --> RSP_NEW["← RSP след прекъсване"]
-    style RSP0 fill:#f9f,stroke:#333
-    style RSP_NEW fill:#9ff,stroke:#333
-```
+| Адрес (8-байтови слотове) | Съдържание |
+|--------------------------|-----------|
+| RSP преди (изравнен на 16 B) | *(върхът преди прекъсване)* |
+| − 8 | Old SS |
+| − 16 | Old RSP |
+| − 24 | Old RFLAGS |
+| − 32 | Old CS |
+| − 40 | Old RIP |
+| − 48 | Error Code *(ако е приложимо, иначе слотът не се записва)* |
+| **← RSP след прекъсването** | |
 
 ### Завръщане с IRET/IRETD/IRETQ
 
 - Възстановява **EIP/RIP, CS, EFLAGS/RFLAGS** от стека
-- При NI=1 в EFLAGS → изпълнява превключване на задача (не нормално връщане)
+- При NT=1 в EFLAGS → изпълнява превключване на задача (не нормално връщане)
 
 ---
 
