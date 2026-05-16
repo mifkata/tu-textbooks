@@ -3,6 +3,7 @@ node_modules/
 /.compiler/
 dist/
 temp/
+tmp
 *.tsbuildinfo
 .DS_Store
 .vercel
@@ -14,6 +15,7 @@ scripts/memory/project/src/pages/
 benchmark/projects/
 benchmark/results/
 test-results/
+source
 *.log
 package-lock.json
 .turbo/
