@@ -1,0 +1,9 @@
+cloudflare_account_id = "your-cloudflare-account-id"
+project_name          = "tu-textbooks"
+github_owner          = "mifkata"
+github_repo           = "tu-textbooks"
+custom_domain         = "textbooks.mifkata.com"
+cloudflare_zone_id    = "your-zone-id"
+
+# Set CLOUDFLARE_API_TOKEN environment variable instead of putting it here
+# export TF_VAR_cloudflare_api_token="your-api-token"
