@@ -64,6 +64,7 @@
   cursor: pointer;
   font: inherit;
   padding: 0;
+  margin: 0;
   text-decoration: none;
 }
 
@@ -136,4 +137,9 @@
 .sl-markdown-content .sl-heading-wrapper > h5,
 .sl-markdown-content .sl-heading-wrapper > h6 {
   display: inline-block;
+}
+
+/* ── Lists ──────────────────────────────────────────────────────────────  */
+.sl-markdown-content li {
+  line-height: 28px;
 }
