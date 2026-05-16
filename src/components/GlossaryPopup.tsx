@@ -107,19 +107,15 @@ export default function GlossaryPopup({
         <p className="gl-popup__desc">{entry.description}</p>
       )}
       {entry.mentions.length > 0 && (
-        <p className="gl-popup__chapters">
-          {entry.mentions.map((m, mi) => (
-            <span key={m.subject}>
-              {mi > 0 && " · "}
-              {m.refs.map((r, ri) => (
-                <span key={r.slug}>
-                  {ri > 0 && ", "}
-                  <a href={`/${m.subject}/${r.slug}/`}>{r.title}</a>
-                </span>
-              ))}
-            </span>
-          ))}
-        </p>
+        <div className="gl-popup__chapters">
+          {entry.mentions.flatMap(m =>
+            m.refs.map(r => (
+              <a key={`${m.subject}/${r.slug}`} href={`/${m.subject}/${r.slug}/`}>
+                {r.title}
+              </a>
+            ))
+          )}
+        </div>
       )}
     </div>
   );

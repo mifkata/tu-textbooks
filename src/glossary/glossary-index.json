@@ -260,6 +260,28 @@
     ]
   },
   {
+    "id": "breq",
+    "letter": "B",
+    "abbr": "BREQ",
+    "full": "Bus Request",
+    "description": "Сигнал, с който процесорът или шинен мастер заявява нужда от шината; използван в DMA арбитража на Pentium шината",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          },
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "btb",
     "letter": "B",
     "abbr": "BTB",
@@ -332,6 +354,32 @@
     ]
   },
   {
+    "id": "cr0",
+    "letter": "C",
+    "abbr": "CR0",
+    "full": "Control Register 0",
+    "description": "Основен управляващ регистър с ключови битове: PE (бит 0) — включва защитен режим; PG (бит 31) — разрешава странициране; WP (бит 16) — ядрото не може да пише в read-only потребителски страници; CD (бит 30) — забранява вътрешен кеш; EM (бит 2) — емулация на FPU; TS (бит 3) — вдига се при всяко превключване на задача.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "cr0-cr4",
     "letter": "C",
     "abbr": "CR0–CR4",
@@ -358,18 +406,114 @@
     ]
   },
   {
-    "id": "cr3",
+    "id": "cr2",
     "letter": "C",
-    "abbr": "CR3",
-    "full": "Control Register 3 (PDBR)",
-    "description": "Физически адрес на Page Directory / PML4; смяната инвалидира TLB",
+    "abbr": "CR2",
+    "full": "Control Register 2 — Page Fault Linear Address",
+    "description": "Съдържа линейния адрес, предизвикал последното странично нарушение (#PF). Обработчикът на страничната грешка чете CR2, за да установи коя виртуална страница е причинила нарушението, след което проверява флаговете в стековия error code за вид (четене/запис, потребител/ядро, present/not-present).",
     "mentions": [
       {
         "subject": "microprocessor-systems",
         "refs": [
           {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
             "title": "Странициране",
             "slug": "07-paging"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cr3",
+    "letter": "C",
+    "abbr": "CR3",
+    "full": "Control Register 3 — Page Directory Base Register (PDBR)",
+    "description": "Битове 31–12 съдържат физическия базов адрес на Page Directory (32-бит режим) или PML4 таблицата (64-бит режим); битове PCD (4) и PWT (3) управляват кеширането на самата структура. Всяко зареждане на CR3 — включително при хардуерно превключване на задачи — инвалидира TLB кеша, с изключение на глобалните страници при CR4.PGE=1.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          },
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cr4",
+    "letter": "C",
+    "abbr": "CR4",
+    "full": "Control Register 4",
+    "description": "Регистър за разширени архитектурни характеристики: VME (бит 0) — Virtual-8086 Mode Extensions; PSE (бит 4) — 4 MB и 2 MB Large Pages; PAE (бит 5) — 36-битов физически адрес (до 64 GB RAM); PGE (бит 7) — глобални страници, незасегнати от смяна на CR3; MCE (бит 6) — Machine Check Enable.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Странициране",
+            "slug": "07-paging"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs",
+    "letter": "C",
+    "abbr": "CS",
+    "full": "Code Segment register",
+    "description": "Сегментен регистър за код; съдържа селектора на текущия кодов сегмент; битове CS[1:0] определят CPL. В 64-битов режим сегментирането е значително опростено, но CS все още носи CPL.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          },
+          {
+            "title": "Защити",
+            "slug": "08-protection"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "csp",
+    "letter": "C",
+    "abbr": "CSP",
+    "full": "Communicating Sequential Processes",
+    "description": "Формален модел за паралелни изчисления, предложен от Хоар, при който процесите взаимодействат чрез синхронизирано предаване на съобщения по именувани канали. Използва се като теоретична основа на MPI и PVM.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
           }
         ]
       }
@@ -381,6 +525,24 @@
     "abbr": "DACK",
     "full": "DMA Acknowledge",
     "description": "Сигнал от DMA контролера към периферното устройство, потвърждаващ предоставен канал",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dack2",
+    "letter": "D",
+    "abbr": "DACK2#",
+    "full": "DMA Acknowledge, Channel 2",
+    "description": "Потвърждение от 8237A DMA контролера към устройството на канал 2; активно-ниско; исторически свързан с флопи дисковия контролер в PC/AT системи",
     "mentions": [
       {
         "subject": "microprocessor-systems",
@@ -452,6 +614,28 @@
     ]
   },
   {
+    "id": "dram",
+    "letter": "D",
+    "abbr": "DRAM",
+    "full": "Dynamic Random Access Memory",
+    "description": "Динамична памет с произволен достъп; всеки бит се съхранява в кондензатор, изискващ периодично обновяване (refresh). По-бавна от SRAM, но с много по-висока плътност — използва се като основна системна памет.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
+          },
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "dreq",
     "letter": "D",
     "abbr": "DREQ",
@@ -464,6 +648,154 @@
           {
             "title": "Директен достъп до памет",
             "slug": "12-dma"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dreq2",
+    "letter": "D",
+    "abbr": "DREQ2",
+    "full": "DMA Request, Channel 2",
+    "description": "DMA заявка по канал 2 на 8237A контролера; исторически използван от флопи дисковия контролер. Каналите на 8237A имат фиксиран приоритет (0 е най-висок), а канал 2 е стандартно за FDC в PC/AT архитектурата.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Директен достъп до памет",
+            "slug": "12-dma"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ds",
+    "letter": "D",
+    "abbr": "DS",
+    "full": "Data Segment register",
+    "description": "Сегментен регистър за данни; по подразбиране използван при достъп до паметта от повечето инструкции (MOV, PUSH и др.). В 64-битов режим сегментирането е игнорирано за DS, ES и SS — базата е принудително нула.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eax",
+    "letter": "E",
+    "abbr": "EAX",
+    "full": "Extended Accumulator register",
+    "description": "32-битов регистър-акумулатор; 64-битовото разширение е RAX. По конвенция съдържа върнатата стойност от функция (return value). Използван и за I/O инструкции (IN/OUT) и за умножение/деление.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ebp",
+    "letter": "E",
+    "abbr": "EBP",
+    "full": "Extended Base Pointer",
+    "description": "32-битов базов показалец на стека; RBP в 64-битов режим. Традиционно сочи към базата на текущия стеков фрейм и се използва за адресиране на локални променливи и параметри. В 64-битов режим използването му за frame pointer е незадължително.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ebx",
+    "letter": "E",
+    "abbr": "EBX",
+    "full": "Extended Base register",
+    "description": "32-битов базов регистър; RBX в 64-битов режим. В System V AMD64 ABI е callee-saved (запазва стойността си между извиквания на функции).",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ecx",
+    "letter": "E",
+    "abbr": "ECX",
+    "full": "Extended Counter register",
+    "description": "32-битов брояч; RCX в 64-битов режим. Използван от REP/LOOP инструкции като брояч на повторения. В System V AMD64 ABI носи четвъртия целочислен аргумент (RCX); в Windows x64 ABI — първия.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "edi",
+    "letter": "E",
+    "abbr": "EDI",
+    "full": "Extended Destination Index",
+    "description": "32-битов индексен регистър за дестинация; RDI в 64-битов режим. Използван от стринговите инструкции (MOVS, STOS, SCAS) за адресиране на дестинационния операнд в ES сегмента.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "edx",
+    "letter": "E",
+    "abbr": "EDX",
+    "full": "Extended Data register",
+    "description": "32-битов регистър за данни; RDX в 64-битов режим. При 64-битово умножение (MUL/IMUL) и деление (DIV/IDIV) съдържа горната 32-битова половина на резултата. В System V AMD64 ABI носи третия целочислен аргумент.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
           }
         ]
       }
@@ -554,6 +886,86 @@
     ]
   },
   {
+    "id": "es",
+    "letter": "E",
+    "abbr": "ES",
+    "full": "Extra Segment register",
+    "description": "Допълнителен сегментен регистър; по подразбиране използван от стринговите инструкции (MOVS, SCAS, STOS) за дестинационния операнд. В 64-битов режим базата е принудително нула.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esi",
+    "letter": "E",
+    "abbr": "ESI",
+    "full": "Extended Source Index",
+    "description": "32-битов индексен регистър за източник; RSI в 64-битов режим. Използван от стринговите инструкции (MOVS, LODS, CMPS) за адресиране на изходния операнд в DS сегмента.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esp",
+    "letter": "E",
+    "abbr": "ESP",
+    "full": "Extended Stack Pointer",
+    "description": "32-битов показалец на върха на стека; RSP в 64-битов режим. Автоматично се обновява от PUSH/POP, CALL/RET и ENTER/LEAVE. При прекъсване процесорът превключва ESP от SS към стека на ниво 0 (TSS.ESP0).",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fpga",
+    "letter": "F",
+    "abbr": "FPGA",
+    "full": "Field Programmable Gate Arrays",
+    "description": "Реконфигурируема интегрална схема, чиято логика може да бъде програмирана след производство чрез LUT таблици и програмируеми interconnect матрици. Използва се за реализация на специализирани пресмятателни структури като систолични процесори.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Systolic Processors",
+            "slug": "09-systolic-processors"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fpu",
     "letter": "F",
     "abbr": "FPU",
@@ -570,6 +982,28 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fs",
+    "letter": "F",
+    "abbr": "FS",
+    "full": "Extra Segment F (FS segment register)",
+    "description": "Допълнителен сегментен регистър; в 64-битов режим базата се задава чрез MSR (IA32_FS_BASE) и се използва за Thread Local Storage (TLS) под Linux и Windows.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
           }
         ]
       }
@@ -646,6 +1080,28 @@
           {
             "title": "Програмен модел",
             "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gs",
+    "letter": "G",
+    "abbr": "GS",
+    "full": "Extra Segment G (GS segment register)",
+    "description": "Допълнителен сегментен регистър; в 64-битов режим базата се задава чрез MSR (IA32_GS_BASE / IA32_KERNEL_GS_BASE). Windows го използва за достъп до KPCR (Kernel Processor Control Region); Linux — за per-CPU данни в ядрото.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Сегментация",
+            "slug": "06-segmentation"
           }
         ]
       }
@@ -768,6 +1224,28 @@
     ]
   },
   {
+    "id": "ich",
+    "letter": "I",
+    "abbr": "ICH",
+    "full": "I/O Controller Hub",
+    "description": "Южен мост (Southbridge) в традиционния чипсет; управлява USB, SATA, PCIe, LPC шината, AC'97 аудио и прекъсващата логика (8259A/IOAPIC). Свързан с MCH (Northbridge) чрез DMI. Заменен от Platform Controller Hub (PCH) в Sandy Bridge архитектурата.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "icr",
     "letter": "I",
     "abbr": "ICR",
@@ -852,6 +1330,28 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "if",
+    "letter": "I",
+    "abbr": "IF",
+    "full": "Interrupt Flag",
+    "description": "Бит 9 в EFLAGS; IF=1 → маскируемите прекъсвания (INTR) са разрешени и ще бъдат доставени; IF=0 → маскирани. Управлява се с инструкциите STI (IF←1) и CLI (IF←0), а също косвено чрез POPF и IRET. Не засяга NMI и изключения.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
           }
         ]
       }
@@ -1042,6 +1542,24 @@
     ]
   },
   {
+    "id": "isa",
+    "letter": "I",
+    "abbr": "ISA",
+    "full": "Industry Standard Architecture",
+    "description": "16-битова системна шина; стандарт за разширителни карти в IBM PC/AT системи. Честота 8 MHz, максимален трансфер ~16 MB/s, 24-битово адресно пространство (16 MB). Наследник на 8-битовата XT шина; заменена от PCI за по-бързи устройства.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "isr",
     "letter": "I",
     "abbr": "ISR",
@@ -1212,6 +1730,24 @@
     ]
   },
   {
+    "id": "lock",
+    "letter": "L",
+    "abbr": "LOCK#",
+    "full": "Bus Lock",
+    "description": "Сигнал от процесора, заключващ шината за продължителността на атомарна read-modify-write операция. Активира се автоматично от XCHG (при операнд в памет) или с LOCK префикс пред инструкции като ADD, AND, CMPXCHG, OR, XOR. Никой друг шинен мастер не може да придобие шината, докато LOCK# е активен.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "lvt",
     "letter": "L",
     "abbr": "LVT",
@@ -1266,6 +1802,80 @@
     ]
   },
   {
+    "id": "mimd",
+    "letter": "M",
+    "abbr": "MIMD",
+    "full": "Multiple Instruction Stream, Multiple Data Stream",
+    "description": "Клас от таксономията на Флин, при който множество независими процесори изпълняват различни програми върху различни данни едновременно. Включва всички форми на мултипроцесорни конфигурации — от обединени работни станции до матрици от процесори, комуникиращи чрез обща памет или предаване на съобщения.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Въведение в дисциплината",
+            "slug": "01-introduction"
+          },
+          {
+            "title": "Въведение в паралелната обработка",
+            "slug": "03-parallel-processing"
+          },
+          {
+            "title": "Матрични (SIMD) процесори",
+            "slug": "08-simd-processors"
+          },
+          {
+            "title": "Систолични процесори",
+            "slug": "09-systolic-processors"
+          },
+          {
+            "title": "Комуникационни мрежи",
+            "slug": "12-interconnect-networks"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "misd",
+    "letter": "M",
+    "abbr": "MISD",
+    "full": "Multiple Instruction Stream, Single Data Stream",
+    "description": "Клас от таксономията на Флин, при който множество потоци от команди обработват един поток данни. Практическото приложение е ограничено; конвейерната архитектура може условно да се отнесе тук, но по-естествено принадлежи към SIMD.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Въведение в дисциплината",
+            "slug": "01-introduction"
+          },
+          {
+            "title": "Въведение в паралелната обработка",
+            "slug": "03-parallel-processing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mmp",
+    "letter": "M",
+    "abbr": "MMP",
+    "full": "Massively Multi Processors",
+    "description": "Слабо свързана паралелна система с разпределена памет — всеки процесор разполага с локална памет, до която останалите имат непряк и по-бавен достъп. Броят на процесорите варира от стотици до хиляди; единственият начин за програмиране е чрез обмен на съобщения (PVM, MPI). Подходящи предимно за алгоритми с груб паралелизъм. Представители: Intel iPSC, IBM Scalable Power Parallel System, NCUBE, Connection Machine.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Компютри с разпределена памет",
+            "slug": "10-distributed-memory"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "mmx",
     "letter": "M",
     "abbr": "MMX",
@@ -1278,6 +1888,24 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mpi",
+    "letter": "M",
+    "abbr": "MPI",
+    "full": "Message-Passing Interface",
+    "description": "Стандартизиран протокол и програмна библиотека за обмен на съобщения между процеси в разпределени паметови паралелни компютри. Поддържа point-to-point и колективни комуникационни операции.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
           }
         ]
       }
@@ -1378,6 +2006,24 @@
     ]
   },
   {
+    "id": "numa",
+    "letter": "N",
+    "abbr": "NUMA",
+    "full": "Non Uniform Memory Access",
+    "description": "Архитектура на паралелен компютър, при която времето за достъп до памет зависи от физическото разстояние между процесора и паметовия модул. Всеки процесор разполага с локална памет, а достъпът до отдалечена памет е по-бавен.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "ocw",
     "letter": "O",
     "abbr": "OCW",
@@ -1390,6 +2036,28 @@
           {
             "title": "Контролери на прекъсвания",
             "slug": "14-interrupt-controllers"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "of",
+    "letter": "O",
+    "abbr": "OF",
+    "full": "Overflow Flag",
+    "description": "Флаг за препълване в EFLAGS; OF=1 когато резултатът от знакова аритметична операция излиза извън диапазона за дадения тип данни (напр. при събиране на два положителни числа се получава отрицателен резултат). Използван от Jo/Jno условни преходи.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
           }
         ]
       }
@@ -1432,6 +2100,28 @@
     ]
   },
   {
+    "id": "pc-at",
+    "letter": "P",
+    "abbr": "PC/AT",
+    "full": "IBM Personal Computer/Advanced Technology",
+    "description": "Компютърна платформа, представена от IBM през 1984 г. с 80286 процесор и 16-битова ISA шина. Архитектурният стандарт на PC/AT — I/O портове, IRQ разпределение, DMA канали и BIOS интерфейс — е запазен съвместим и в съвременните x86 системи.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
+          },
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "pcd",
     "letter": "P",
     "abbr": "PCD",
@@ -1448,6 +2138,28 @@
           {
             "title": "Организация на шината",
             "slug": "11-bus"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pci",
+    "letter": "P",
+    "abbr": "PCI",
+    "full": "Peripheral Component Interconnect",
+    "description": "32/64-битова локална шина с честота 33/66 MHz и пропускателна способност до 133/266 MB/s. Заменя ISA за разширителни карти (видео, мрежа, SCSI); поддържа bus mastering и plug-and-play. Предшественик на PCI Express (PCIe).",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Организация на шината",
+            "slug": "11-bus"
+          },
+          {
+            "title": "Суперскаларни архитектури",
+            "slug": "02-superscalar"
           }
         ]
       }
@@ -1544,6 +2256,24 @@
     ]
   },
   {
+    "id": "previous-task-link",
+    "letter": "P",
+    "abbr": "Previous Task Link",
+    "full": "Previous Task Link (TSS поле)",
+    "description": "16-битово поле в началото на TSS; при хардуерно превключване на задача процесорът записва тук селектора на TSS на прекъснатата задача. Когато NT=1 в EFLAGS, инструкцията IRET използва това поле, за да се върне към предишната задача.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "pse",
     "letter": "P",
     "abbr": "PSE",
@@ -1574,6 +2304,24 @@
           {
             "title": "Странициране",
             "slug": "07-paging"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pvm",
+    "letter": "P",
+    "abbr": "PVM",
+    "full": "Parallel Virtual Machine",
+    "description": "Система за предаване на съобщения, която позволява разнородни компютри в мрежа да функционират като единна паралелна машина. Предшественик на MPI стандарта.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
           }
         ]
       }
@@ -1614,6 +2362,24 @@
           {
             "title": "Суперскаларни архитектури",
             "slug": "02-superscalar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ram",
+    "letter": "R",
+    "abbr": "RAM",
+    "full": "Random Access Memory",
+    "description": "Памет с произволен достъп; всяка клетка е достъпна за четене и запис за константно (O(1)) време независимо от адреса. Термин, обхващащ SRAM (статична) и DRAM (динамична); в разговорна употреба обикновено означава основната системна DRAM памет.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Историческо развитие",
+            "slug": "01-history"
           }
         ]
       }
@@ -1776,6 +2542,28 @@
     ]
   },
   {
+    "id": "sf",
+    "letter": "S",
+    "abbr": "SF",
+    "full": "Sign Flag",
+    "description": "Флаг за знак в EFLAGS; SF е копие на старшия (знаков) бит на резултата от аритметична или логическа операция. SF=1 означава отрицателен резултат при знакова интерпретация. Използван от Js/Jns условни преходи.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "sib",
     "letter": "S",
     "abbr": "SIB",
@@ -1806,6 +2594,28 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sisd",
+    "letter": "S",
+    "abbr": "SISD",
+    "full": "Single Instruction Stream, Single Data Stream",
+    "description": "Класическият фон Ноймански компютър с едно управляващо устройство и едно изпълнително. Всяка команда обработва един елемент данни — основата на традиционните последователни процесори. Един от четирите класа от таксономията на Флин (1966).",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Въведение в дисциплината",
+            "slug": "01-introduction"
+          },
+          {
+            "title": "Въведение в паралелната обработка",
+            "slug": "03-parallel-processing"
           }
         ]
       }
@@ -1884,6 +2694,46 @@
     ]
   },
   {
+    "id": "spmd",
+    "letter": "S",
+    "abbr": "SPMD",
+    "full": "Single Program Multiple Data",
+    "description": "Програмен модел за MMP компютри, при който всички процесори изпълняват една и съща програма, но върху различни подмножества от данните. Вариант на MIMD, опростяващ разпределението на задачите.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ss",
+    "letter": "S",
+    "abbr": "SS",
+    "full": "Stack Segment register",
+    "description": "Сегментен регистър за стека; неявно използван при PUSH, POP, CALL, RET и при всеки достъп чрез ESP/EBP. При превключване към по-привилегировано ниво (прекъсване) SS и ESP се заменят с SS0/ESP0 от TSS.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "sse",
     "letter": "S",
     "abbr": "SSE",
@@ -1954,6 +2804,28 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tf",
+    "letter": "T",
+    "abbr": "TF",
+    "full": "Trap Flag",
+    "description": "Бит 8 в EFLAGS; TF=1 → след изпълнението на всяка инструкция процесорът генерира #DB (Debug Exception, вектор 1). Използван от дебъгери за едностъпково трасиране. TF се изчиства автоматично при влизане в interrupt handler, за да се предотврати трасиране на самия handler.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Прекъсвания и изключения",
+            "slug": "09-interrupts"
           }
         ]
       }
@@ -2090,6 +2962,24 @@
     ]
   },
   {
+    "id": "uma",
+    "letter": "U",
+    "abbr": "UMA",
+    "full": "Uniform Memory Access",
+    "description": "Модел на паметта при SMP архитектурите, при който всички процесори имат еднакво (симетрично) време за достъп до споделената памет. Противопоставя се на NUMA.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Distributed-Memory Parallel Computers",
+            "slug": "10-distributed-memory"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "vex",
     "letter": "V",
     "abbr": "VEX",
@@ -2102,6 +2992,54 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vlsi",
+    "letter": "V",
+    "abbr": "VLSI",
+    "full": "Very Large Scale Integration",
+    "description": "Технология за производство на интегрални схеми с над 10 000 транзистора на чип. Позволява реализацията на сложни микропроцесори, памети и специализирани процесори върху единичен кристал.",
+    "mentions": [
+      {
+        "subject": "computer-architecture",
+        "refs": [
+          {
+            "title": "Introduction",
+            "slug": "01-introduction"
+          },
+          {
+            "title": "Parallel Processing",
+            "slug": "03-parallel-processing"
+          },
+          {
+            "title": "Systolic Processors",
+            "slug": "09-systolic-processors"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vm",
+    "letter": "V",
+    "abbr": "VM",
+    "full": "Virtual 8086 Mode Flag (EFLAGS.VM)",
+    "description": "Бит 17 в EFLAGS; VM=1 → процесорът превключва в режим Virtual-8086 (подрежим на защитения режим), позволявайки изпълнение на 8086 програми в защитена среда. Задава се при зареждане на EFLAGS чрез IRET или POPF. Изчиства се при всяко прекъсване или изключение.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Управление на задачите",
+            "slug": "10-tasks"
           }
         ]
       }
@@ -2178,6 +3116,28 @@
           {
             "title": "Типове данни",
             "slug": "03-data-types"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zf",
+    "letter": "Z",
+    "abbr": "ZF",
+    "full": "Zero Flag",
+    "description": "Бит 6 в EFLAGS; ZF=1 когато резултатът от последната аритметична или логическа операция е нула. Основа за условните преходи JZ/JE (ZF=1) и JNZ/JNE (ZF=0). Вдига се и от CMP и TEST без записване на резултат.",
+    "mentions": [
+      {
+        "subject": "microprocessor-systems",
+        "refs": [
+          {
+            "title": "Системна архитектура",
+            "slug": "05-system-architecture"
+          },
+          {
+            "title": "Програмен модел",
+            "slug": "04-programming-model"
           }
         ]
       }

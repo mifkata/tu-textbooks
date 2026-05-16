@@ -126,7 +126,49 @@
 }
 
 .gl-popup__chapters a {
+  display: block;
   color: var(--sl-color-accent);
+  line-height: 1.8;
+}
+
+/* ── ASM term highlights ─────────────────────────────────────────────────── */
+.gl-asm-term {
+  display: inline;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed #22c55e;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.gl-asm-term:hover {
+  color: #22c55e;
+}
+
+.gl-popup--asm {
+  border-color: #22c55e;
+}
+
+.gl-popup__sample {
+  margin: 0.5rem 0 0;
+  padding: 0.35rem 0.6rem;
+  background: var(--sl-color-gray-7);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.gl-popup__sample code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: inherit;
+  background: none;
+  padding: 0;
 }
 
 /* ── Headings ────────────────────────────────────────────────────────────  */
@@ -139,7 +181,10 @@
   display: inline-block;
 }
 
-/* ── Lists ──────────────────────────────────────────────────────────────  */
-.sl-markdown-content li {
-  line-height: 28px;
+/* --- Math expressions ----──────────────────────────────────────────────- */
+.katex {
+  display: block;
+  text-align: center;
+  font-size: 2.5rem !important;
+  margin: 2rem 0;
 }
