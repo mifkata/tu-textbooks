@@ -31,7 +31,7 @@ const sidebar = [
     label: 'Начало',
     items: [
       { slug: 'index', label: 'Всички предмети' },
-      { label: 'Речник на съкращенията', link: '/glossary/' },
+      { label: 'Справочник на термините', link: '/glossary/' },
     ],
   },
   ...subjectNames.flatMap(name => loadSubjectSidebar(name)),
