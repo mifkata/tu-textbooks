@@ -1,7 +1,19 @@
 ---
-interface ChapterRef { num: number; slug: string; }
-interface Entry { id: string; letter: string; abbr: string; full: string; description: string; chapters: ChapterRef[]; }
-interface Props { entries: Entry[]; }
+interface ChapterRef {
+  num: number;
+  slug: string;
+}
+interface Entry {
+  id: string;
+  letter: string;
+  abbr: string;
+  full: string;
+  description: string;
+  chapters: ChapterRef[];
+}
+interface Props {
+  entries: Entry[];
+}
 
 const { entries } = Astro.props;
 
@@ -12,64 +24,106 @@ for (const entry of entries) {
 }
 
 const letters = [...groups.keys()].sort((a, b) => {
-  if (a === 'µ') return 1;
-  if (b === 'µ') return -1;
-  return a.localeCompare(b, 'en');
+  if (a === "µ") return 1;
+  if (b === "µ") return -1;
+  return a.localeCompare(b, "en");
 });
 
 const chapterSlugs: Record<number, string> = {
-  1: '01-history', 2: '02-superscalar', 3: '03-data-types',
-  4: '04-programming-model', 5: '05-system-architecture', 6: '06-segmentation',
-  7: '07-paging', 8: '08-protection', 9: '09-interrupts', 10: '10-tasks',
-  11: '11-bus', 12: '12-dma', 13: '13-smp', 14: '14-interrupt-controllers',
+  1: "01-history",
+  2: "02-superscalar",
+  3: "03-data-types",
+  4: "04-programming-model",
+  5: "05-system-architecture",
+  6: "06-segmentation",
+  7: "07-paging",
+  8: "08-protection",
+  9: "09-interrupts",
+  10: "10-tasks",
+  11: "11-bus",
+  12: "12-dma",
+  13: "13-smp",
+  14: "14-interrupt-controllers",
 };
 ---
 
 <p>
   <strong>Глави:</strong>
-  {[1,2,3,4,5,6,7,8,9,10,11,12,13,14].map((n, i) => (
-    <>
-      {i > 0 && ' · '}
-      <a href={`/${chapterSlugs[n]}/`}>{['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV'][i]}</a>
-    </>
-  ))}
+  {
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((n, i) => (
+      <>
+        {i > 0 && " · "}
+        <a href={`/${chapterSlugs[n]}/`}>
+          {
+            [
+              "I",
+              "II",
+              "III",
+              "IV",
+              "V",
+              "VI",
+              "VII",
+              "VIII",
+              "IX",
+              "X",
+              "XI",
+              "XII",
+              "XIII",
+              "XIV",
+            ][i]
+          }
+        </a>
+      </>
+    ))
+  }
 </p>
 
 <hr />
 
-{letters.map((letter) => (
-  <section>
-    <h2>{letter}</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Съкращение</th>
-          <th>Пълно наименование</th>
-          <th>Описание</th>
-          <th>Глава</th>
-        </tr>
-      </thead>
-      <tbody>
-        {groups.get(letter)!.map((entry) => (
+{
+  letters.map((letter) => (
+    <section>
+      <h2>{letter}</h2>
+      <table>
+        <thead>
           <tr>
-            <td><a id={entry.id}><strong>{entry.abbr}</strong></a></td>
-            <td>{entry.full}</td>
-            <td>{entry.description}</td>
-            <td>
-              {entry.chapters.map((ch, i) => (
-                <>
-                  {i > 0 && ', '}
-                  <a href={`/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
-                </>
-              ))}
-            </td>
+            <th>Съкращение</th>
+            <th>Пълно наименование</th>
+            <th>Описание</th>
+            <th>Глава</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </section>
-))}
+        </thead>
+        <tbody>
+          {groups.get(letter)!.map((entry) => (
+            <tr>
+              <td>
+                <a id={entry.id}>
+                  <strong>{entry.abbr}</strong>
+                </a>
+              </td>
+              <td>{entry.full}</td>
+              <td>{entry.description}</td>
+              <td>
+                {entry.chapters.map((ch, i) => (
+                  <>
+                    {i > 0 && ", "}
+                    <a href={`/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
+                  </>
+                ))}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  ))
+}
 
 <hr />
 
-<p><em>Речникът обхваща всички съкращения от Глави I–XIV. При несъответствие — меродавен е текстът на съответната глава.</em></p>
+<p>
+  <em
+    >Речникът обхваща всички съкращения от Глави I–XIV. При несъответствие —
+    меродавен е текстът на съответната глава.</em
+  >
+</p>

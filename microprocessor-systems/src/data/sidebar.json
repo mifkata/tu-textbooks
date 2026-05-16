@@ -1,21 +1,19 @@
 [
   {
     "label": "Начало",
-    "items": [
-      { "slug": "index", "label": "За курса" }
-    ]
+    "items": [{ "slug": "index", "label": "За курса" }]
   },
   {
     "label": "Архитектура на процесора",
     "items": [
-      { "slug": "01-history",     "label": "I — Историческо развитие" },
+      { "slug": "01-history", "label": "I — Историческо развитие" },
       { "slug": "02-superscalar", "label": "II — Суперскаларни архитектури" }
     ]
   },
   {
     "label": "Типове данни и програмиране",
     "items": [
-      { "slug": "03-data-types",        "label": "III — Типове данни" },
+      { "slug": "03-data-types", "label": "III — Типове данни" },
       { "slug": "04-programming-model", "label": "IV — Програмен модел" }
     ]
   },
@@ -29,15 +27,15 @@
     "label": "Управление на паметта",
     "items": [
       { "slug": "06-segmentation", "label": "VI — Сегментация" },
-      { "slug": "07-paging",       "label": "VII — Странициране" },
-      { "slug": "08-protection",   "label": "VIII — Защити" }
+      { "slug": "07-paging", "label": "VII — Странициране" },
+      { "slug": "08-protection", "label": "VIII — Защити" }
     ]
   },
   {
     "label": "Прекъсвания и задачи",
     "items": [
       { "slug": "09-interrupts", "label": "IX — Прекъсвания и изключения" },
-      { "slug": "10-tasks",      "label": "X — Управление на задачите" }
+      { "slug": "10-tasks", "label": "X — Управление на задачите" }
     ]
   },
   {
@@ -50,16 +48,19 @@
   {
     "label": "Мултипроцесорни системи",
     "items": [
-      { "slug": "13-smp",                  "label": "XIII — SMP архитектури" },
-      { "slug": "14-interrupt-controllers", "label": "XIV — Контролери на прекъсвания" }
+      { "slug": "13-smp", "label": "XIII — SMP архитектури" },
+      {
+        "slug": "14-interrupt-controllers",
+        "label": "XIV — Контролери на прекъсвания"
+      }
     ]
   },
   {
     "label": "Справка",
     "items": [
-      { "slug": "glossary",          "label": "Речник на съкращенията" },
+      { "slug": "glossary", "label": "Речник на съкращенията" },
       { "slug": "questions-answers", "label": "Въпроси и задачи — отговори" },
-      { "slug": "exam-answers",      "label": "Изпитен тест — Вариант №4" }
+      { "slug": "exam-answers", "label": "Изпитен тест — Вариант №4" }
     ]
   }
 ]

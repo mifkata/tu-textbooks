@@ -104,21 +104,3 @@
 1. Цикъл за потвърждаване на външно прекъсване.
 2. Контролер I8259A: предназначение, блокова схема, сигнали и принцип на работа.
 3. Структура и функциониране на локален APIC.
-
----
-
-## Литература
-
-1. Intel 64 and IA-32 Architectures Software Developer's Manual, Combined vol. 1–4, Dec. 2017
-2. Intel 64 and IA-32 Architectures Software Developer's Manual Volume 3A-part-1, Sep. 2016
-3. Рускова Н. *Микропроцесорни системи. Ръководство за лаб. упражнения.* Печатна база при ТУ-Варна, 1999
-4. AMD64 Architecture Programmer's Manual Volume 1: Application Programming, Publication No. 24592, Revision 3.20, May 2013
-5. AMD64 Architecture Programmer's Manual Volume 2: System Programming, Publication No. 24593, Revision 3.32, October 2019
-
----
-
-## Формат на изпита
-
-Писмен изпит — тест, съдържащ десет въпроса от тип „есе". Всеки въпрос се оценява от 0 до 10 точки. Време за провеждане на писмения изпит: 120 мин.
-
-**Оценка:** Според правилата за оценяване в ТУ Варна, в съответствие с общия брой точки, получен от 10-те въпроса в теста.

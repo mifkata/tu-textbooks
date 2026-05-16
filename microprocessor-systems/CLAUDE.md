@@ -39,6 +39,7 @@ web/
 ```
 
 Source materials (reference only, do not edit):
+
 ```
 ./docs/guide/01_history_x86.md … 14_interrupt_controllers.md
 ./docs/guide/glossary.md
@@ -49,6 +50,7 @@ Source materials (reference only, do not edit):
 ## Content Conventions
 
 ### Frontmatter
+
 ```mdx
 ---
 title: "Глава IV — Програмен модел и система команди на x86 микропроцесорите"
@@ -56,21 +58,27 @@ title: "Глава IV — Програмен модел и система ком
 ```
 
 ### Glossary Links
+
 Links to the glossary use the term's anchor ID:
+
 ```mdx
 [DPL](/glossary/#dpl)
 [IRQ](/glossary/#irq)
 ```
+
 Anchor IDs are defined in `glossary.mdx` as `<a id="dpl">**DPL**</a>`.
 
 ### Flag and Register Links
+
 Flags described in chapter 5 are linked like this:
+
 ```mdx
 [CR0.PG](/05-system-architecture/)
 [EFLAGS.IF](/05-system-architecture/)
 ```
 
 ### Mermaid Diagrams
+
 Standard ` ```mermaid ` blocks. Theme is `neutral`.
 When a diagram is requested → **first search for a public image** from Wikimedia Commons or another reliable source. Mermaid is the fallback.
 
@@ -79,10 +87,12 @@ When a diagram is requested → **first search for a public image** from Wikimed
 **Required:** Images must be downloaded locally and stored in `src/assets/images/`. Never use direct external URLs in MDX pages.
 
 Preferred sources (accessible without auth):
+
 - `https://upload.wikimedia.org/wikipedia/commons/...` — Wikipedia/Wikimedia (CC license)
 - `https://www.eeeguide.com/wp-content/uploads/...` — eeeguide.com (educational diagrams)
 
 **Workflow:**
+
 1. Find a suitable image
 2. Preview visually with WebFetch + Read tool
 3. Download locally: `curl -o src/assets/images/filename.png "URL"`
@@ -90,13 +100,15 @@ Preferred sources (accessible without auth):
 5. Reference in MDX with a relative path
 
 Example in MDX:
+
 ```mdx
-import imgProtectedMode from '../../assets/images/protected-mode-segments.png';
+import imgProtectedMode from "../../assets/images/protected-mode-segments.png";
 
 <img src={imgProtectedMode.src} alt="Description" />
 ```
 
 or (for simpler cases):
+
 ```mdx
 ![Description](../../assets/images/protected-mode-segments.png)
 ```
@@ -134,20 +146,22 @@ or (for simpler cases):
 ## Sidebar (astro.config.mjs)
 
 When adding a new page, add it to the `sidebar` in the correct group:
+
 ```js
 { slug: 'new-page', label: 'Title' }
 ```
+
 Groups: Начало · Архитектура · Типове данни · Системна архитектура · Управление на паметта · Прекъсвания и задачи · Шина DMA I/O · Мултипроцесорни системи · Справка
 
 ---
 
 ## Known Issues / Solutions
 
-| Problem | Solution |
-|---------|---------|
-| Edit tool can't find Cyrillic `old_string` | Use Python with UTF-8 |
-| Mermaid diagram doesn't render | Check syntax in [Mermaid Live Editor](https://mermaid.live) |
-| Image from eeeguide.com doesn't load | eeeguide URLs are stable; verify with curl if issues arise |
+| Problem                                             | Solution                                                                             |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Edit tool can't find Cyrillic `old_string`          | Use Python with UTF-8                                                                |
+| Mermaid diagram doesn't render                      | Check syntax in [Mermaid Live Editor](https://mermaid.live)                          |
+| Image from eeeguide.com doesn't load                | eeeguide URLs are stable; verify with curl if issues arise                           |
 | `tableOfContents.onThisPage` and similar UI strings | Ensure `src/content/i18n/bg.json` exists and is added to `config.ts` as `i18nSchema` |
 
 ---
