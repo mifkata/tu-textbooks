@@ -117,7 +117,7 @@ lock bts [flags], 3        ; атомарен bit-test-and-set
 
 ### 4.1 Защо APIC?
 
-В SMP системи **[IRQ](/glossary/#irq)** линиите от периферните устройства постъпват в **[IOAPIC](/glossary/#ioapic)** (I/O APIC), откъдето се разпределят към локалните APIC контролери на отделните ядра.
+В SMP системи **[IRQ](/microprocessor-systems/glossary/#irq)** линиите от периферните устройства постъпват в **[IOAPIC](/microprocessor-systems/glossary/#ioapic)** (I/O APIC), откъдето се разпределят към локалните APIC контролери на отделните ядра.
 
 В SMP системи прекъсванията трябва да се разпределят ефективно:
 
@@ -159,14 +159,14 @@ APIC регистрите са в адресното пространство н
 
 ### 4.4 Структура на локалния APIC
 
-**[LAPIC](/glossary/#lapic)** (Local Advanced Programmable Interrupt Controller) — контролер на прекъсванията, вграден директно в процесорния кристал. Всеки CPU-ядро притежава собствен LAPIC.
+**[LAPIC](/microprocessor-systems/glossary/#lapic)** (Local Advanced Programmable Interrupt Controller) — контролер на прекъсванията, вграден директно в процесорния кристал. Всеки CPU-ядро притежава собствен LAPIC.
 
 #### Регистри за приемане (256-битови)
 
 | Регистър                                               | Описание                                      |
 | ------------------------------------------------------ | --------------------------------------------- |
-| **[IRR](/glossary/#irr)** (Interrupt Request Register) | Получени, но необработени прекъсвания         |
-| **[ISR](/glossary/#isr)** (In-Service Register)        | Прекъсвания в момента на обработка            |
+| **[IRR](/microprocessor-systems/glossary/#irr)** (Interrupt Request Register) | Получени, но необработени прекъсвания         |
+| **[ISR](/microprocessor-systems/glossary/#isr)** (In-Service Register)        | Прекъсвания в момента на обработка            |
 | **TMR** (Trigger Mode Register)                        | Начин на приемане: по фронт (0) / по ниво (1) |
 
 Всеки бит `i` отговаря на вектор `i`. Битове 0–15 не се използват (резервирани вектори).
@@ -188,7 +188,7 @@ APIC регистрите са в адресното пространство н
 **Начини на доставка**:
 
 - **Fixed** — INTR# към локалния процесор (използва вектора от LVT)
-- **[NMI](/glossary/#nmi)** — NMI# към локалния процесор (векторът се игнорира)
+- **[NMI](/microprocessor-systems/glossary/#nmi)** — NMI# към локалния процесор (векторът се игнорира)
 - **ExtINT** — предизвиква INTA цикъл към външен 8259A; само един вход може да е ExtINT
 
 #### Регистър за приоритет на задачата (TPR)
@@ -301,8 +301,8 @@ stateDiagram-v2
 
 | Сигнал                       | Описание                                        |
 | ---------------------------- | ----------------------------------------------- |
-| **[HIT#](/glossary/#hit)**   | Немодифициран ред в Кеш                         |
-| **[HITM#](/glossary/#hitm)** | Модифициран ред в Кеш                           |
+| **[HIT#](/microprocessor-systems/glossary/#hit)**   | Немодифициран ред в Кеш                         |
+| **[HITM#](/microprocessor-systems/glossary/#hitm)** | Модифициран ред в Кеш                           |
 | **DEFER#**                   | При неактивен — текущото предаване е "in order" |
 
 ### i486 — опростен протокол
@@ -322,7 +322,7 @@ stateDiagram-v2
 > - TPR: блокира прекъсвания с приоритет ≤ TPR; EOI → нулира ISR
 > - MESI: M (modified), E (exclusive), S (shared), I (invalid); HIT# / HITM# за съгласуваност
 >
-> [→ Речник на всички съкращения](/glossary/)
+> [→ Речник на всички съкращения](/microprocessor-systems/glossary/)
 
 ---
 

@@ -2,9 +2,9 @@
 title: "Речник на съкращенията — Микропроцесорни системи"
 ---
 
-import GlossaryTable from "../../components/GlossaryTable.astro";
-import glossaryData from "../../data/glossary.json";
+import GlossaryTable from '@/components/GlossaryTable.astro';
+import glossaryData from './glossary.json';
 
 > Тази страница съдържа всички съкращения, използвани в курса, с кратко обяснение и препратка към главата, в която са въведени.
 
-<GlossaryTable entries={glossaryData} />
+<GlossaryTable entries={glossaryData} base="microprocessor-systems" />

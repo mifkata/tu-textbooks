@@ -13,9 +13,10 @@ interface Entry {
 }
 interface Props {
   entries: Entry[];
+  base: string;
 }
 
-const { entries } = Astro.props;
+const { entries, base } = Astro.props;
 
 const groups = new Map<string, Entry[]>();
 for (const entry of entries) {
@@ -53,7 +54,7 @@ const chapterSlugs: Record<number, string> = {
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((n, i) => (
       <>
         {i > 0 && " · "}
-        <a href={`/${chapterSlugs[n]}/`}>
+        <a href={`/${base}/${chapterSlugs[n]}/`}>
           {
             [
               "I",
@@ -107,7 +108,7 @@ const chapterSlugs: Record<number, string> = {
                 {entry.chapters.map((ch, i) => (
                   <>
                     {i > 0 && ", "}
-                    <a href={`/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
+                    <a href={`/${base}/${ch.slug}/`}>Гл.&nbsp;{ch.num}</a>
                   </>
                 ))}
               </td>

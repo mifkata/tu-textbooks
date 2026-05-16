@@ -8,22 +8,38 @@ Educational course material pipeline: source documents → structured markdown �
 
 ```
 tu-schoolbooks/
-├── subjects/                    ← standardised subject workspace (primary)
-│   └── <name>/
-│       ├── source/              ← raw input: PDF, DOCX, DOC, images, scans
-│       ├── tmp/                 ← all intermediate work (never delete anything here)
-│       │   └── <session-id>/   ← one directory per extraction session
-│       │       └── <doc>/      ← per-document working files
-│       │           ├── pages/  ← split pages as images or raw text
-│       │           ├── chunks/ ← chapter/subchapter splits
-│       │           └── ocr/    ← tesseract output, one file per chunk
-│       └── docs/                ← final clean markdown (the content layer)
-│           └── **/*.md          ← organised by chapter / section
-└── <name>/                      ← legacy Astro project (e.g. microprocessor-systems)
-    └── CLAUDE.md                ← project-specific instructions
+├── web/                         ← root Astro + Starlight site (serves all subjects)
+│   ├── astro.config.mjs         ← loads sidebars from subjects/*/web/sidebar.json
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── src/
+│       ├── content/
+│       │   ├── config.ts        ← glob loader: subjects/*/web/ + web/src/content/docs/
+│       │   ├── docs/index.mdx   ← root subjects listing (route: /)
+│       │   └── i18n/bg.json     ← Starlight UI translations
+│       ├── components/          ← shared Astro components (GlossaryTable, HomepageContent)
+│       ├── styles/custom.css
+│       └── assets/logo.svg
+└── subjects/                    ← standardised subject workspace (primary)
+    └── <name>/
+        ├── source/              ← raw input: PDF, DOCX, DOC, images, scans
+        ├── tmp/                 ← all intermediate work (never delete anything here)
+        │   └── <session-id>/   ← one directory per extraction session
+        │       └── <doc>/      ← per-document working files
+        │           ├── pages/  ← split pages as images or raw text
+        │           ├── chunks/ ← chapter/subchapter splits
+        │           └── ocr/    ← tesseract output, one file per chunk
+        ├── docs/                ← final clean markdown (the content layer)
+        │   └── **/*.md          ← organised by chapter / section
+        └── contents/            ← subject web layer (MDX pages + JSON config)
+            ├── index.mdx        ← subject landing page (route: /<name>/)
+            ├── NN-slug.mdx      ← chapter pages (route: /<name>/NN-slug/)
+            ├── sidebar.json     ← Starlight sidebar groups for this subject
+            ├── glossary.json    ← glossary entries (if applicable)
+            └── homepage.json    ← homepage card data (if applicable)
 ```
 
-The `subjects/` tree is the canonical structure for new work. Legacy projects under the root keep their own CLAUDE.md and are not affected.
+The `subjects/` tree is the canonical structure. The `web/` Astro site aggregates all subjects automatically by scanning for `subjects/*/web/sidebar.json`.
 
 ---
 
@@ -104,9 +120,42 @@ Check availability with `which <tool>` before use; fall back gracefully.
 
 ## Astro Integration (pages layer)
 
-> **Not yet defined.** Page structure and build configuration will be added in a follow-up. For now, the `docs/` markdown files are the deliverable.
+The root site is controlled from the repo root via `pnpm`. Run from the repo root:
 
-When the Astro layer is added, each subject will get a `web/` directory alongside `source/`, `tmp/`, and `docs/`, following the same pattern as the legacy `microprocessor-systems/` project.
+```bash
+pnpm install    # first time (uses pnpm-lock.yaml)
+pnpm dev        # dev server at http://localhost:4321
+pnpm build      # production build to web/dist/
+```
+
+### Adding a new subject
+
+1. Create `subjects/<name>/contents/` with MDX pages and `sidebar.json`.
+2. The `web/astro.config.mjs` auto-discovers any subject that has a `contents/sidebar.json`.
+3. All internal links in MDX files must be prefixed with `/<name>/` (e.g. `/microprocessor-systems/glossary/`).
+4. Components (`GlossaryTable`, `HomepageContent`) accept a `base` prop for link prefixing.
+
+### Content routing
+
+`web/src/content/config.ts` uses Astro 5's glob loader with a pattern array:
+- `subjects/*/contents/**/*.{md,mdx}` → route `/<name>/<slug>/` (strips `/contents/` from path)
+- `web/src/content/docs/**/*.{md,mdx}` → root-level routes (e.g. `/`)
+
+Import components in MDX using the `@/` alias (maps to `web/src/`):
+```mdx
+import GlossaryTable from '@/components/GlossaryTable.astro';
+```
+
+### OCR tools (macOS)
+
+| Task | Tool |
+|------|------|
+| PDF text layer | `pdftotext -nopgbrk` (prefer over `-layout`) |
+| Render to image | `pdftoppm -r 300 -png` |
+| OCR | `tesseract <img> stdout -l bul+eng` |
+| DOC → text | `textutil -convert txt -stdout` (macOS built-in) |
+
+**macOS Unicode note**: filenames use NFD, pdftotext output uses NFC. Always normalize both sides with `unicodedata.normalize('NFC', s)` before comparing.
 
 ---
 
@@ -115,3 +164,5 @@ When the Astro layer is added, each subject will get a `web/` directory alongsid
 | Command             | Purpose                                    |
 | ------------------- | ------------------------------------------ |
 | `/s:extract <name>` | Scan source, OCR new documents, write docs |
+| `pnpm dev`          | Start dev server (from repo root)          |
+| `pnpm build`        | Production build (from repo root)          |

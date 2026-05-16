@@ -1,12 +1,28 @@
 ---
 import { Card, CardGrid } from "@astrojs/starlight/components";
-import type homepageSchema from "../data/homepage.json";
 
+interface Chapter {
+  num: number;
+  slug: string;
+  title: string;
+  topics: string[];
+}
+interface TopicCard {
+  title: string;
+  icon: string;
+  description: string;
+}
+interface HomepageData {
+  courseInfo: { specialty: string; department: string; lecturer: string };
+  topicCards: TopicCard[];
+  chapters: Chapter[];
+}
 interface Props {
-  data: typeof homepageSchema;
+  data: HomepageData;
+  base: string;
 }
 
-const { data: homepage } = Astro.props;
+const { data: homepage, base } = Astro.props;
 ---
 
 <p>
@@ -41,7 +57,7 @@ const { data: homepage } = Astro.props;
     <details>
       <summary>
         <strong>
-          Глава {ch.num} — <a href={`/${ch.slug}/`}>{ch.title}</a>
+          Глава {ch.num} — <a href={`/${base}/${ch.slug}/`}>{ch.title}</a>
         </strong>
       </summary>
       {ch.topics.length > 0 && (
@@ -55,4 +71,4 @@ const { data: homepage } = Astro.props;
   ))
 }
 
-<p><a href="/glossary/"><strong>→ Речник на съкращенията</strong></a></p>
+<p><a href={`/${base}/glossary/`}><strong>→ Речник на съкращенията</strong></a></p>

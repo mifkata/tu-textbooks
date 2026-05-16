@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "cd microprocessor-systems && astro dev",
-    "build": "cd microprocessor-systems && astro build",
-    "preview": "cd microprocessor-systems && astro preview",
-    "astro": "cd microprocessor-systems && astro",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "check": "eslint . && prettier --check .",
     "fix": "eslint --fix . && prettier --write .",
     "prepare": "husky"
@@ -32,18 +32,18 @@
     "typescript-eslint": "^8.32.1"
   },
   "lint-staged": {
-    "microprocessor-systems/**/*.{ts,js,mjs,cjs}": [
+    "web/**/*.{ts,js,mjs,cjs}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "microprocessor-systems/**/*.astro": [
+    "web/**/*.astro": [
       "eslint --fix",
       "prettier --write"
     ],
-    "microprocessor-systems/**/*.{css,json}": [
+    "web/**/*.{css,json}": [
       "prettier --write"
     ],
-    "microprocessor-systems/**/*.{md,mdx}": [
+    "subjects/**/*.{md,mdx}": [
       "prettier --write"
     ]
   }

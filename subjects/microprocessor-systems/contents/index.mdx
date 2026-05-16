@@ -7,21 +7,21 @@ hero:
   tagline: Образователен курс — Компютърни системи и технологии, ФИТА, ТУ Варна
   actions:
     - text: Започни от Глава I
-      link: /01-history/
+      link: /microprocessor-systems/01-history/
       icon: right-arrow
       variant: primary
     - text: Речник на съкращенията
-      link: /glossary/
+      link: /microprocessor-systems/glossary/
       icon: open-book
     - text: Въпроси и отговори
-      link: /questions-answers/
+      link: /microprocessor-systems/questions-answers/
       icon: document
     - text: Изпитен тест — Вариант №4
-      link: /exam-answers/
+      link: /microprocessor-systems/exam-answers/
       icon: pencil
 ---
 
-import HomepageContent from "../../components/HomepageContent.astro";
-import homepageData from "../../data/homepage.json";
+import HomepageContent from '@/components/HomepageContent.astro';
+import homepageData from './homepage.json';
 
-<HomepageContent data={homepageData} />
+<HomepageContent data={homepageData} base="microprocessor-systems" />
