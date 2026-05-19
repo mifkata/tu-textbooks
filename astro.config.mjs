@@ -48,7 +48,7 @@ export default defineConfig({
   site: 'https://textbooks.mifkata.com',
   integrations: [
     starlight({
-      title: 'mifkata.textbooks',
+      title: 'textbooks.mifkata',
       description: 'Помощни учебни материали по технически дисциплини в Технически университет - Варна',
       defaultLocale: 'root',
       locales: { root: { label: 'Български', lang: 'bg' } },
